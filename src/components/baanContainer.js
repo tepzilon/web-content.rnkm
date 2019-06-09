@@ -6,13 +6,27 @@ export default () => {
   const data = useStaticQuery(
     graphql`
       query {
-        allDataJson {
-          nodes {
-            baan {
+        allBaanJson {
+          edges {
+            node {
+              id
               name
               size
               description
-              imgPath
+              cover
+            }
+          }
+        }
+        allFile(filter: {relativeDirectory: {eq: "baan"}}) {
+          edges {
+            node {
+              name,
+              ext,
+              childImageSharp {
+                fixed(width:100, height:100) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
             }
           }
         }
@@ -20,20 +34,21 @@ export default () => {
     `
   )
 
-  console.log(data)
+  let imageFetcher = {}
+  data.allFile.edges.forEach(e => {
+    imageFetcher[e.node.name + e.node.ext] = e.node.childImageSharp.fixed
+  })
 
   return (
     <div>
-      {/* {data.allDataJson.nodes[0].baan[0].name} */}
-      {data.allDataJson.nodes[0].baan.map(baan => (
-        <div>
-          <ButtonBaan
-            name={baan.name}
-            size={baan.size}
-            description={baan.description}
-            imgPath={"baan/"+baan.imgPath}
-          />
-        </div>
+      {data.allBaanJson.edges.map(baan => (
+        <ButtonBaan 
+          key={baan.node.id}
+          name={baan.node.name}
+          size={baan.node.size}
+          description={baan.node.description}
+          cover={imageFetcher[baan.node.cover]}
+        />
       ))}
     </div>
   )

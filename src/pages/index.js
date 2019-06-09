@@ -4,8 +4,8 @@ import React from "react"
 // import DeleteOutline from '@material-ui/icons/DeleteOutline'
 
 // import indexStyles from "./index.module.scss"
-import { graphql, StaticQuery } from "gatsby"
-import Img from "gatsby-image"
+// import { graphql, StaticQuery } from "gatsby"
+// import Img from "gatsby-image"
 
 export default () => (
   // <h1>test</h1>
@@ -37,7 +37,7 @@ export default () => (
         </div>
       )}
     /> */}
-    <StaticQuery
+    {/* <StaticQuery
       query={graphql`
         query {
           file(relativePath: { eq: "prayut.jpg" }) {
@@ -52,6 +52,6 @@ export default () => (
       render={data=>{
         return <Img fixed={data.file.childImageSharp.fixed} />
       }}
-    />
+    /> */}
   </div>
 )
