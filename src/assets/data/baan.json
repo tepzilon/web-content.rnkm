@@ -1,0 +1,22 @@
+{
+  "baan": [
+    {
+      "name": "แอ๊บ",
+      "size": "small",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, qui! Assumenda accusantium earum ratione molestiae, velit quam sunt recusandae nulla.",
+      "imgPath": "abnormal.png"
+    },
+    {
+      "name": "หลายใจ",
+      "size": "medium",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, qui! Assumenda accusantium earum ratione molestiae, velit quam sunt recusandae nulla.",
+      "imgPath" : "laijai.png"
+    },
+    {
+        "name" : "โจ๋",
+        "size" : "large",
+        "description" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, qui! Assumenda accusantium earum ratione molestiae, velit quam sunt recusandae nulla.",
+        "imgPath" : "jo.png"
+    }
+  ]
+}
