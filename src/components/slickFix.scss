@@ -1,6 +1,8 @@
+@import '../styles/palette.scss';
+
 .slick-prev,
 .slick-next {
   &::before {
-    color: grey
+    color: $theme-pink;
   }
 }
