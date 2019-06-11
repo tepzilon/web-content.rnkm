@@ -2,8 +2,11 @@ import React from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.scss'
 import 'slick-carousel/slick/slick-theme.scss'
-import { Box, Button, Collapse, Fade } from '@material-ui/core'
+import { Box, Button, Collapse, Fade, createMuiTheme } from '@material-ui/core'
 import './slickFix.scss'
+
+
+
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
