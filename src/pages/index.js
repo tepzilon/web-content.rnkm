@@ -1,57 +1,37 @@
 import React from "react"
 
-// import { Button } from '@material-ui/core'
-// import DeleteOutline from '@material-ui/icons/DeleteOutline'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
+import { Fade, Box, Button } from '@material-ui/core'
 
-// import indexStyles from "./index.module.scss"
-// import { graphql, StaticQuery } from "gatsby"
-// import Img from "gatsby-image"
+import './index.scss'
 
-export default () => (
-  // <h1>test</h1>
-  <div>
-    {/* <StaticQuery
-      query={graphql`
-        query {
-          allDataJson {
-            nodes {
-              thailandPM {
-                id,
-                name,
-                path
-              }
-            }
-          }
-        }
-      `}
-      render={data => (
-        <div className={indexStyles.style1}>
-          <h3>รายชื่อนายก</h3>
-          <ul>
-            {data.allDataJson.nodes[0].thailandPM.map(x => (
-              <li key={x.id}>
-                {x.name}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    /> */}
-    {/* <StaticQuery
-      query={graphql`
-        query {
-          file(relativePath: { eq: "prayut.jpg" }) {
-            childImageSharp {
-              fixed(width: 1000, height:125) {
-                ...GatsbyImageSharpFixed
-              }
-            }
-          }
-        }
-      `}
-      render={data=>{
-        return <Img fixed={data.file.childImageSharp.fixed} />
-      }}
-    /> */}
-  </div>
-)
+import FeaturedContents from "../components/featuredContents";
+
+export default () => {
+  const matches = useMediaQuery('(min-width:600px)');
+  return (
+    <FeaturedContents />   
+    // <Box style={{
+    //   backgroundColor: 'orange',
+    //   width: '50vw',
+    //   height: '50vh', 
+    //   overflow: 'hidden',
+    //   position: 'absolute',
+    //   top: '20vh',
+    //   left: '20vw'
+    // }}>
+    //   {(() => {
+    //     var arr = []
+    //     for(var i = 0; i < 50; i++) {
+    //       arr = arr.concat([<Button>Hello World</Button>])
+    //     }
+    //     return arr
+    //   })()}
+    //   <Button type='contained' style={{
+    //     position: 'absolute',
+    //     top: '50px',
+    //     left: '20px'
+    //   }}>Test</Button>
+    // </Box>
+  )
+}
