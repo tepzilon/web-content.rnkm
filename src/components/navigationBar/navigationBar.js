@@ -7,7 +7,7 @@ import { MuiThemeProvider } from '@material-ui/core/styles'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import Img from 'gatsby-image'
 
-export default ({ isDesktop }) => {
+export default ({ responsive }) => {
   const menus = [
     { text: 'เกี่ยวกับ', link: '/',isExternal:false },
     { text: 'บ้าน', link: '/',isExternal:false },
@@ -15,7 +15,7 @@ export default ({ isDesktop }) => {
     { text: 'เข้าสู่ระบบ', link: 'https://www.google.com/',isExternal:true },
     { text: 'ติดต่อเรา', link: '/',isExternal:false },
   ]
-  const navigation = isDesktop ? (
+  const navigation = responsive.tablet ? (
     <DesktopNav menus={menus} />
   ) : (
     <MobileNav menus={menus} />

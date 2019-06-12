@@ -1,0 +1,29 @@
+@import '../../styles/palette.scss';
+
+$desktopMargin: 15vw;
+
+.button-container-desktop {
+  margin-left: $desktopMargin;
+  margin-right: $desktopMargin;
+  white-space: nowrap;
+}
+
+.button-holder-desktop {
+  width: calc(62vw/4);
+  height: calc((4/3)*62vw/4);
+  display: inline-block;
+  padding: 1vw;
+}
+
+.button-holder-mobile {
+  width: 50%;
+  height: calc(80vw/2);
+  display: inline-block;
+  padding: 1vw;
+}
+
+.button {
+  width: 100%;
+  height: 100%;
+  background-color: $theme-yellow;
+}

@@ -6,9 +6,9 @@ import { Box, Button } from '@material-ui/core'
 
 import styles from './featured.module.scss'
 
-export default ({isDesktop}) => {
+export default ({responsive}) => {
   const settings = {
-    arrows: isDesktop,
+    arrows: responsive.tablet,
     dots: true,
     infinite: true,
     speed: 500,
@@ -17,12 +17,12 @@ export default ({isDesktop}) => {
     adaptiveHeight: true
   }
   return (
-    <Box className={isDesktop ? styles.slideHolderDesktop : styles.slideHolderMobile}>
+    <Box className={responsive.tablet ? styles.slideHolderDesktop : styles.slideHolderMobile}>
       <Slider {...settings}>
         <div>
           <Box className={styles.featuredBox}>
             <h1>รับน้องก้าวใหม่</h1>
-            <p>สโลแกนสำหรับกิจกรรม โลเร็มยิบซัมบอยคอตผลักดันสแตนดาร์ด สเตอริโอสกายแคนูแอดมิชชั่นคำตอบ</p>
+            <p style={{textAlign: 'center'}}>สโลแกนสำหรับกิจกรรม โลเร็มยิบซัมบอยคอตผลักดันสแตนดาร์ด สเตอริโอสกายแคนูแอดมิชชั่นคำตอบ</p>
             <h3>ปุ่มสำหรับฟีเจอร์สำคัญ</h3>
             <Button variant='contained' bgcolor='primary.main'>ลงทะเบียน</Button>
           </Box>
