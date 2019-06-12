@@ -1,0 +1,20 @@
+@import '../styles/palette.scss';
+
+.featured-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 250px;
+}
+
+.slide-holder-desktop,
+.slide-holder-mobile {
+  background-color: $theme-pink;
+}
+
+.slide-holder-desktop {
+  padding-left: 40px;
+  padding-right: 40px;
+}
