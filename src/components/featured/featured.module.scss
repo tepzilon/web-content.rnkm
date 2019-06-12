@@ -1,4 +1,4 @@
-@import '../styles/palette.scss';
+@import '../../styles/palette.scss';
 
 .featured-box {
   display: flex;
@@ -12,6 +12,7 @@
 .slide-holder-desktop,
 .slide-holder-mobile {
   background-color: $theme-pink;
+  margin-bottom: 40px;
 }
 
 .slide-holder-desktop {

@@ -2,14 +2,13 @@ import React from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.scss'
 import 'slick-carousel/slick/slick-theme.scss'
-import { Box, Button, useMediaQuery } from '@material-ui/core'
+import { Box, Button } from '@material-ui/core'
 
 import styles from './featured.module.scss'
 
-export default () => {
-  const desktop = useMediaQuery('(min-width:640px)');
+export default ({isDesktop}) => {
   const settings = {
-    arrows: desktop,
+    arrows: isDesktop,
     dots: true,
     infinite: true,
     speed: 500,
@@ -18,14 +17,12 @@ export default () => {
     adaptiveHeight: true
   }
   return (
-    <Box className={desktop ? styles.slideHolderDesktop : styles.slideHolderMobile}>
-      <Slider {...settings} style={{
-        transition: 'height 0.5s'
-      }}>
+    <Box className={isDesktop ? styles.slideHolderDesktop : styles.slideHolderMobile}>
+      <Slider {...settings}>
         <div>
           <Box className={styles.featuredBox}>
             <h1>รับน้องก้าวใหม่</h1>
-            <p>สโลแกนสำหรับกิจกรรม อาจมีได้หลายพารากราฟ ถ้าหากข้อความยาวเกินหน้าจอ</p>
+            <p>สโลแกนสำหรับกิจกรรม โลเร็มยิบซัมบอยคอตผลักดันสแตนดาร์ด สเตอริโอสกายแคนูแอดมิชชั่นคำตอบ</p>
             <h3>ปุ่มสำหรับฟีเจอร์สำคัญ</h3>
             <Button variant='contained' bgcolor='primary.main'>ลงทะเบียน</Button>
           </Box>
