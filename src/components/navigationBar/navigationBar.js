@@ -1,15 +1,14 @@
 import React from 'react'
 import DesktopNav from './desktopNavBar'
 import MobileNav from './mobileNavBar'
-import AppBar from '@material-ui/core/AppBar'
-import { createMuiTheme, Toolbar } from '@material-ui/core'
+import { createMuiTheme, Toolbar, AppBar } from '@material-ui/core'
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import Img from 'gatsby-image'
 
 export default ({ responsive }) => {
   const menus = [
-    { text: 'เกี่ยวกับ', link: '/',isExternal:false },
+    // { text: 'เกี่ยวกับ', link: '/',isExternal:false },
     { text: 'บ้าน', link: '/gallery',isExternal:false },
     { text: 'ลงทะเบียน', link: 'https://www.yahoo.com/',isExternal:true },
     { text: 'เข้าสู่ระบบ', link: 'https://www.google.com/',isExternal:true },
@@ -25,7 +24,7 @@ export default ({ responsive }) => {
     overrides: {
       MuiToolbar: {
         root: {
-          padding : 5,
+          margin : '10px 0',
         },
       },
     },
@@ -48,8 +47,8 @@ export default ({ responsive }) => {
     <MuiThemeProvider theme={appBarTheme}>
       <AppBar color="default" position="sticky" color="secondary">
         <Toolbar>
-          <Link to="/">
-            <Img fixed={data.file.childImageSharp.fixed} />
+          <Link to="/" style={{height:60}}>
+            <Img fixed={data.file.childImageSharp.fixed} alt="rnkm logo"/>
           </Link>
           <div style={{ flexGrow: 1 }} />
           {navigation}
