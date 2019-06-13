@@ -10,7 +10,7 @@ import Img from 'gatsby-image'
 export default ({ responsive }) => {
   const menus = [
     { text: 'เกี่ยวกับ', link: '/',isExternal:false },
-    { text: 'บ้าน', link: '/',isExternal:false },
+    { text: 'บ้าน', link: '/gallery',isExternal:false },
     { text: 'ลงทะเบียน', link: 'https://www.yahoo.com/',isExternal:true },
     { text: 'เข้าสู่ระบบ', link: 'https://www.google.com/',isExternal:true },
     { text: 'ติดต่อเรา', link: '/',isExternal:false },

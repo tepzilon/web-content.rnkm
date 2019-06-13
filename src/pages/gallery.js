@@ -1,40 +1,36 @@
-// import React from "react"
-// import { graphql } from "gatsby"
-// import Img from "gatsby-image"
+import React from "react"
 
-// export default ({ data }) => {
-//   console.log(data)
-//   return (
-//     <div>
-//       {
-//         data.allFile.edges.map( e => (
-//           <Img key={} fixed={e.node.childImageSharp.fixed} />
-//         ))
-//       }
-//     </div>
-//   )
-// }
+import './index.scss'
 
-// export const query = graphql`
-//   query {
-//     allFile(filter: { extension: { eq: "png" } }) {
-//       edges {
-//         node {
-//           childImageSharp {
-//             fixed {
-//               ...GatsbyImageSharpFixed
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
-import React from 'react'
-import BannContainer from '../components/baanContainer'
+import { createMuiTheme, Typography, useMediaQuery } from '@material-ui/core'
+import { MuiThemeProvider } from "@material-ui/core/styles";
 
-export default () => (
-  <div>
-    <BannContainer />
-  </div>
-)
+import Featured from "../components/featured/featured";
+import NavigationBar from '../components/navigationBar/navigationBar'
+import Suggest from "../components/suggest/suggest";
+
+import BaanContainer from '../components/baanGallery/baanGallery';
+
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: 'Kanit, sans-serif',
+  }
+})
+
+export default () => {
+  let responsive = {
+    desktop: useMediaQuery('(min-width:991px)'),
+    tablet: useMediaQuery('(min-width:767px)'),
+    mobile: useMediaQuery('(min-width:479px)')
+  }
+  return (
+    <MuiThemeProvider theme={theme}>
+      <Typography component={'span'}>
+        <NavigationBar responsive={responsive}/>
+        <BaanContainer responsive={responsive}/>
+        {/* <Featured responsive={responsive}/>
+        <Suggest responsive={responsive}/>  */}
+      </Typography> 
+    </MuiThemeProvider>
+  )
+}
