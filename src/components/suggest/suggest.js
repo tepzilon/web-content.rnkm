@@ -41,8 +41,8 @@ const suggest = ({responsive}) => {
           </Grid>
           </Grid>
         }
-      <h3>สำหรับพี่ Staff</h3>
-      <p><a href='http://www.google.com'>คลิ๊กที่นี่</a> เพื่อเข้าสู่เว็บ Staff</p>
+      {/* <h3>สำหรับพี่ Staff</h3>
+      <p><a href='http://www.google.com'>คลิ้กที่นี่</a> เพื่อเข้าสู่เว็บ Staff</p> */}
     </Box>
   )
 }

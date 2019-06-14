@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import ButtonBaan from './buttonBaan'
-import { Box, Fade, Grid } from '@material-ui/core';
-import SizeSelector from './sizeSelector';
+import { Box, Fade, Grid } from '@material-ui/core'
+import SizeSelector from './sizeSelector'
+import styles from './baanGallery.module.scss'
+// import TouchRipple from '@material-ui/core/ButtonBase/TouchRipple'
 
-export default ({responsive}) => {
-
+export default ({ responsive }) => {
   const [size, setSize] = useState('S')
 
   const data = useStaticQuery(
@@ -20,14 +21,14 @@ export default ({responsive}) => {
             }
           }
         }
-        allFile(filter: {relativeDirectory: {eq: "baan"}}) {
+        allFile(filter: { relativeDirectory: { eq: "baan" } }) {
           edges {
             node {
-              name,
-              ext,
+              name
+              ext
               childImageSharp {
-                fixed(width:100, height:100) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxHeight: 100, maxWidth: 100) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
@@ -39,31 +40,35 @@ export default ({responsive}) => {
 
   let imageFetcher = {}
   data.allFile.edges.forEach(e => {
-    imageFetcher[e.node.name] = e.node.childImageSharp.fixed
+    imageFetcher[e.node.name] = e.node.childImageSharp.fluid
   })
 
-  let filteredBaan = data.allBaanJson.edges.filter(baan => baan.node.size === size);
+  let filteredBaan = data.allBaanJson.edges.filter(
+    baan => baan.node.size === size
+  )
 
   return (
-    <Box style={{
-      marginLeft: responsive.mobile ? '30vw' : '2vw',
-      marginRight: responsive.mobile ? '30vw' : '2vw',
-      marginTop: '20px'
-    }}>
-      <SizeSelector setSize={setSize}/>
+    <Box
+      style={{
+        marginLeft: responsive.mobile ? '30vw' : '2vw',
+        marginRight: responsive.mobile ? '30vw' : '2vw',
+        marginTop: '20px',
+      }}
+    >
+      <SizeSelector setSize={setSize} />
       <Grid container spacing={2}>
         {filteredBaan.map(baan => (
           <Grid item xs={4}>
-            <ButtonBaan
-              key={baan.node.id}
-              cover={imageFetcher[baan.node.nameURL]}
-            />
+            <div className={styles.imageWrapper}>
+              <ButtonBaan
+                key={baan.node.id}
+                cover={imageFetcher[baan.node.nameURL]}
+              />
+            </div>
           </Grid>
         ))}
         <Grid item xs={12}>
-          <Box bgcolor='primary.main'>
-            Test
-          </Box>
+          <Box bgcolor="primary.main">Test</Box>
         </Grid>
       </Grid>
     </Box>

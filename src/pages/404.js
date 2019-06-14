@@ -1,12 +1,8 @@
 import React from 'react'
-// import './index.scss'
-import { useMediaQuery } from '@material-ui/core'
-import Featured from '../components/featured/featured'
-import Suggest from '../components/suggest/suggest'
 import Layout from '../components/layout'
+import { useMediaQuery } from '@material-ui/core'
 
 export default () => {
-
   let responsive = {
     desktop: useMediaQuery('(min-width:991px)'),
     tablet: useMediaQuery('(min-width:767px)'),
@@ -15,8 +11,9 @@ export default () => {
 
   return (
     <Layout responsive={responsive}>
-          <Featured responsive={responsive} />
-          <Suggest responsive={responsive} />
+      <center>
+        <h1>404 Page Not Found.</h1>
+      </center>
     </Layout>
   )
 }
