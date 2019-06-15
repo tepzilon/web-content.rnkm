@@ -21,15 +21,15 @@ export default ({ responsive }) => {
     <MobileNav menus={menus} />
   )
 
-  const appBarTheme = createMuiTheme({
-    overrides: {
-      MuiToolbar: {
-        root: {
-          margin: '10px 0',
-        },
-      },
-    },
-  })
+  // const appBarTheme = createMuiTheme({
+  //   overrides: {
+  //     MuiToolbar: {
+  //       root: {
+  //         margin: '10px 0',
+  //       },
+  //     },
+  //   },
+  // })
   const data = useStaticQuery(
     graphql`
       query {
@@ -45,20 +45,14 @@ export default ({ responsive }) => {
   )
 
   return (
-    <div>
-      
-      {/* <MuiThemeProvider theme={appBarTheme}> */}
-        <AppBar position="sticky" color="secondary">
-          <Toolbar>
-            <Link to="/" style={{height:60}}>
-            <Img fixed={data.file.childImageSharp.fixed} alt="rnkm logo"/>
-          </Link>
-            <div style={{ flexGrow: 1 }} />
-            {navigation}
-          </Toolbar>
-        </AppBar>
-        
-      {/* </MuiThemeProvider> */}
-    </div>
+    <AppBar position="sticky" color="secondary" >
+      <Toolbar style={{ margin: '10px 0' }}>
+        <Link to="/" style={{ height: 60 }}>
+          <Img fixed={data.file.childImageSharp.fixed} alt="rnkm logo" />
+        </Link>
+        <div style={{ flexGrow: 1 }} />
+        {navigation}
+      </Toolbar>
+    </AppBar>
   )
 }
