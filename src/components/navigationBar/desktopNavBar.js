@@ -24,7 +24,7 @@ export default ({ menus }) => (
     {menus.map(menu => (
       <span>
         {menu.isExternal ? ( 
-          <a href={menu.link} target="_blank" style={listStyle}>
+          <a href={menu.link} target="_blank" style={listStyle} rel="noopener noreferrer">
             <Button size="large">{menu.text}</Button>
           </a>
         ) : (

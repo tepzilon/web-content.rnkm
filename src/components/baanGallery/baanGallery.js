@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import ButtonBaan from './buttonBaan'
-import { Box, Fade, Grid } from '@material-ui/core'
+import { Box, Grid } from '@material-ui/core'
 import SizeSelector from './sizeSelector'
 import styles from './baanGallery.module.scss'
 // import TouchRipple from '@material-ui/core/ButtonBase/TouchRipple'

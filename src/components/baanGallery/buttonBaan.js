@@ -1,6 +1,6 @@
 import React from 'react'
 import Img from 'gatsby-image'
-import styles from './buttonBaan.module.scss'
+// import styles from './buttonBaan.module.scss'
 
 
 export default ({ name, size, description, cover }) => {

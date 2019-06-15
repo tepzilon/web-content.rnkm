@@ -1,6 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
-import { IconButton, SwipeableDrawer, List, ListItem, ListItemText } from '@material-ui/core'
+import {
+  IconButton,
+  SwipeableDrawer,
+  List,
+  ListItem,
+  ListItemText,
+} from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 
@@ -15,7 +21,7 @@ export default ({ menus }) => {
 
   const listStyle = {
     textDecoration: 'none',
-    color : 'black',
+    color: 'black',
   }
 
   const toggleDrawer = open => event => {
@@ -35,16 +41,21 @@ export default ({ menus }) => {
         {menus.map(menu => (
           <span key={menu.text}>
             {menu.isExternal ? (
-              <a href={menu.link} target="_blank" style={listStyle}>
+              <a
+                href={menu.link}
+                target="_blank"
+                style={listStyle}
+                rel="noopener noreferrer"
+              >
                 <ListItem button>
                   <ListItemText primary={menu.text} />
                 </ListItem>
               </a>
             ) : (
               <Link to={menu.link} style={listStyle}>
-              <ListItem button>
-                <ListItemText primary={menu.text} />
-              </ListItem>
+                <ListItem button>
+                  <ListItemText primary={menu.text} />
+                </ListItem>
               </Link>
             )}
           </span>
@@ -54,7 +65,8 @@ export default ({ menus }) => {
   )
 
   return (
-    <MuiThemeProvider theme={mobileNavBarTheme}>
+    <div>
+      {/* <MuiThemeProvider theme={mobileNavBarTheme}> */}
       <IconButton color="inherit" onClick={toggleDrawer(true)}>
         <MenuIcon />
       </IconButton>
@@ -66,6 +78,7 @@ export default ({ menus }) => {
       >
         {sideList()}
       </SwipeableDrawer>
-    </MuiThemeProvider>
+      {/* </MuiThemeProvider> */}
+    </div>
   )
 }

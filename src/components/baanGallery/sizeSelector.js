@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Button, Fab, Box } from '@material-ui/core';
+import { Grid, Fab, Box } from '@material-ui/core';
 
 const sizeSelector = ({setSize}) => {
   return (

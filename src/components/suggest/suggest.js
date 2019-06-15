@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from './suggest.module.scss'
-import { Grid, Button, Box } from '@material-ui/core';
+// import styles from './suggest.module.scss'
+import { Grid,  Box } from '@material-ui/core';
 
 const lorem = (<p>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget nisl quis neque dignissim mollis. Proin eu hendrerit felis, luctus sodales diam. Nullam lobortis rhoncus ex, ac auctor nisl fermentum ut. Mauris in pretium elit. Fusce non leo vitae nibh pretium commodo. In feugiat porttitor purus in hendrerit. Nam velit lectus, pellentesque vel justo eu, auctor sodales nulla. Sed ac imperdiet lacus. In pretium lorem ac consectetur pellentesque. Etiam imperdiet, lectus ut faucibus tincidunt, est odio luctus augue, ac pharetra odio nunc nec nibh. In at vulputate libero, sed consectetur justo. Nam porttitor est quis mauris pharetra sodales. Aenean nec accumsan arcu.

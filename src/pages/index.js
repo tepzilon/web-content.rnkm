@@ -1,5 +1,4 @@
 import React from 'react'
-// import './index.scss'
 import { useMediaQuery } from '@material-ui/core'
 import Featured from '../components/featured/featured'
 import Suggest from '../components/suggest/suggest'
