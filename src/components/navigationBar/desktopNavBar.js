@@ -22,7 +22,7 @@ const listStyle = {
 export default ({ menus }) => (
   <MuiThemeProvider theme={desktopNavBarTheme}>
     {menus.map(menu => (
-      <span>
+      <span key={menu.text}>
         {menu.isExternal ? ( 
           <a href={menu.link} target="_blank" style={listStyle} rel="noopener noreferrer">
             <Button size="large">{menu.text}</Button>

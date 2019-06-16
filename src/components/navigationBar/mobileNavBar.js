@@ -8,14 +8,6 @@ import {
   ListItemText,
 } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-
-// const mobileNavBarTheme = createMuiTheme({
-//   typography: {
-//     fontFamily: `'Kanit', sans-serif`,
-//   },
-// })
-
 export default ({ menus }) => {
   const [isOpen, setOpen] = useState(false)
 

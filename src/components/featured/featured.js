@@ -14,7 +14,8 @@ export default ({responsive}) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    adaptiveHeight: true
+    adaptiveHeight: true,
+    autoplay : true,
   }
   return (
     <Box className={responsive.tablet ? styles.slideHolderDesktop : styles.slideHolderMobile}>
