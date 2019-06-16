@@ -5,7 +5,6 @@ import Suggest from '../components/suggest/suggest'
 import Layout from '../components/layout'
 
 export default () => {
-
   let responsive = {
     desktop: useMediaQuery('(min-width:991px)'),
     tablet: useMediaQuery('(min-width:767px)'),
@@ -13,9 +12,9 @@ export default () => {
   }
 
   return (
-    <Layout responsive={responsive}>
-          <Featured responsive={responsive} />
-          <Suggest responsive={responsive} />
+    <Layout responsive={responsive} title="รับน้องก้าวใหม่">
+      <Featured responsive={responsive} />
+      <Suggest responsive={responsive} />
     </Layout>
   )
 }
