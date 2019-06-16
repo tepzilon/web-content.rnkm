@@ -46,7 +46,7 @@ export default ({ responsive }) => {
 
   return (
     <AppBar position="sticky" color="secondary" >
-      <Toolbar style={{ margin: '10px 0' }}>
+      <Toolbar style={{ margin: '10px 0',height:'60px' }}>
         <Link to="/" style={{ height: 60 }}>
           <Img fixed={data.file.childImageSharp.fixed} alt="rnkm logo" />
         </Link>

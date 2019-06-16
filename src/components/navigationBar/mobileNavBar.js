@@ -10,11 +10,11 @@ import {
 import MenuIcon from '@material-ui/icons/Menu'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 
-const mobileNavBarTheme = createMuiTheme({
-  typography: {
-    fontFamily: `'Kanit', sans-serif`,
-  },
-})
+// const mobileNavBarTheme = createMuiTheme({
+//   typography: {
+//     fontFamily: `'Kanit', sans-serif`,
+//   },
+// })
 
 export default ({ menus }) => {
   const [isOpen, setOpen] = useState(false)
@@ -37,7 +37,10 @@ export default ({ menus }) => {
 
   const sideList = () => (
     <div style={{ width: '40vw' }}>
-      <List>
+      <div style={{ height: '80px',backgroundColor:'#f50057' }}>
+        
+      </div>
+      <List style={{ paddingTop: 0 }}>
         {menus.map(menu => (
           <span key={menu.text}>
             {menu.isExternal ? (
