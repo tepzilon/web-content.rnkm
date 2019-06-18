@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import ButtonBaan from './buttonBaan'
 import { Box, Grid } from '@material-ui/core'
 import SizeSelector from './sizeSelector'
@@ -60,10 +60,12 @@ export default ({ responsive }) => {
         {filteredBaan.map(baan => (
           <Grid item xs={4}>
             <div className={styles.imageWrapper}>
-              <ButtonBaan
-                key={baan.node.id}
-                cover={imageFetcher[baan.node.nameURL]}
-              />
+              <Link to={`gallery/`+baan.node.nameURL}>
+                <ButtonBaan
+                  key={baan.node.id}
+                  cover={imageFetcher[baan.node.nameURL]}
+                />
+              </Link>
             </div>
           </Grid>
         ))}
