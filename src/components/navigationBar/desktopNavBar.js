@@ -7,24 +7,31 @@ const desktopNavBarTheme = createMuiTheme({
   overrides: {
     MuiButton: {
       text: {
-        fontFamily: `'Kanit', sans-serif`,
-        marginLeft : '0.6em',
-        color: 'white',
+        fontFamily: `'Chulalongkorn', sans-serif`,
+        marginLeft: '0.6rem',
+        // color: 'white',
       },
+      
     },
   },
 })
 
 const listStyle = {
   textDecoration: 'none',
+  height : '100%',
 }
 
 export default ({ menus }) => (
   <MuiThemeProvider theme={desktopNavBarTheme}>
     {menus.map(menu => (
       <span key={menu.text}>
-        {menu.isExternal ? ( 
-          <a href={menu.link} target="_blank" style={listStyle} rel="noopener noreferrer">
+        {menu.isExternal ? (
+          <a
+            href={menu.link}
+            target="_blank"
+            style={listStyle}
+            rel="noopener noreferrer"
+          >
             <Button size="large">{menu.text}</Button>
           </a>
         ) : (

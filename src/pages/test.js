@@ -4,10 +4,10 @@ import GlobalStyles from '../shared/css/globalStyles'
 export default () => (
     <div>
         <GlobalStyles />
-        <div style={{fontFamily:"Blanch-Caps"}}>Hello สวัสดี</div>
-        <div style={{fontFamily:"Chulalongkorn"}}>Hello สวัสดี</div>
-        <div style={{fontFamily:"Chulalongkorn", fontWeight:"bold"}}>Hello สวัสดี</div>
-        <div style={{fontFamily:"Block"}}>Hello สวัสดี</div>
+        <span style={{fontFamily:"Blanch-Caps"}}>Hello สวัสดี</span>
+        <span style={{fontFamily:"Chulalongkorn"}}>Hello สวัสดี</span>
+        <span style={{fontFamily:"Chulalongkorn", fontWeight:"bold"}}>Hello สวัสดี</span>
+        <span style={{fontFamily:"Block"}}>Hello สวัสดี</span>
         
     </div>
 )

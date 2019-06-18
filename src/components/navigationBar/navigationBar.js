@@ -32,10 +32,10 @@ export default ({ responsive }) => {
   const data = useStaticQuery(
     graphql`
       query {
-        file(relativePath: { eq: "logo.png" }) {
+        file(relativePath: { eq: "rnkm_logo_filled.png" }) {
           childImageSharp {
-            fixed(width: 60, height: 60) {
-              ...GatsbyImageSharpFixed
+            fluid(maxWidth: 100, maxHeight: 100) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -44,12 +44,17 @@ export default ({ responsive }) => {
   )
 
   return (
-    <AppBar position="sticky" color="secondary" >
-      <Toolbar style={{ margin: '10px 0',height:'60px' }}>
-        <Link to="/" style={{ height: 60 }}>
-          <Img fixed={data.file.childImageSharp.fixed} alt="rnkm logo" />
-        </Link>
-        <div style={{ flexGrow: 1 }} />
+    <AppBar position="sticky" color="default">
+      <Toolbar style={{ margin: '10px 0' }}>
+        <div style={{ height: '100px', width: '100px' }}>
+          <Link to="/">
+          <Img fluid={data.file.childImageSharp.fluid} alt="rnkm logo" />
+          </Link>
+        </div>
+
+        <div style={{ flexGrow: 1, textAlign: 'center',paddingBottom:0 }}>
+          <h1>รับน้องก้าวใหม่</h1>
+        </div>
         {navigation}
       </Toolbar>
     </AppBar>
