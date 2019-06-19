@@ -3,30 +3,36 @@ import { createMuiTheme, Typography } from '@material-ui/core'
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import NavigationBar from './navigationBar/navigationBar'
 import { Helmet } from 'react-helmet'
-import favicon from '../assets/images/logo.png'
+import favicon from '../assets/images/favicon.ico'
 
+import GlobalStyles from '../shared/css/globalStyles'
 import './layout.scss'
 
 const theme = createMuiTheme({
   typography: {
-    fontFamily: 'Kanit, sans-serif',
+    fontFamily: 'ChulalongkornFixed, sans-serif',
   },
+  
 })
 
 const layout = ({ children, responsive, title }) => {
   return (
-    <MuiThemeProvider theme={theme}>
+    <div>
+      <GlobalStyles />
+       <MuiThemeProvider theme={theme}>
       <Typography component={'span'}>
-        <Helmet 
-          title={title}
+        <Helmet  
+          title={title+` | รับน้องก้าวใหม่ ปีการศึกษา 2562`}
           link={[
-            { rel: 'icon', type: 'image/png', sizes: "16x16", href: `${favicon}` },
+            { rel: 'icon', type: 'image/x-icon', href: `${favicon}` },
           ]}
         />
-        <NavigationBar responsive={responsive} />
+        <NavigationBar responsive={responsive} title={title}/>
         {children}
       </Typography>
     </MuiThemeProvider>
+    </div>
+   
   )
 }
 

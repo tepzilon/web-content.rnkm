@@ -13,7 +13,7 @@ export default ({ menus }) => {
 
   const listStyle = {
     textDecoration: 'none',
-    color: 'black',
+    color: '#424242',
   }
 
   const toggleDrawer = open => event => {
@@ -29,9 +29,9 @@ export default ({ menus }) => {
 
   const sideList = () => (
     <div style={{ width: '40vw' }}>
-      <div style={{ height: '80px',backgroundColor:'#f50057' }}>
+      {/* <div style={{ height: '80px',backgroundColor:'#f50057' }}>
         
-      </div>
+      </div> */}
       <List style={{ paddingTop: 0 }}>
         {menus.map(menu => (
           <span key={menu.text}>
