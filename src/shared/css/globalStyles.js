@@ -21,6 +21,7 @@ export default createGlobalStyle`
         src: url(${fontFiles.ChulaBoldOTF}) format("opentype");
         font-style: normal;
         font-weight: bold;
+        
     }
 
     @font-face{
@@ -30,5 +31,11 @@ export default createGlobalStyle`
         font-weight: normal;
     }
 
+    @font-face{
+        font-family: "ChulalongkornFixed";
+        src: url(${fontFiles.ChulaRedFixedTTF}) format("truetype");
+        font-style: normal;
+        font-weight: normal;
+    }
 `
  

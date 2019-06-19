@@ -10,8 +10,9 @@ import './layout.scss'
 
 const theme = createMuiTheme({
   typography: {
-    fontFamily: 'Chulalongkorn, sans-serif',
+    fontFamily: 'ChulalongkornFixed, sans-serif',
   },
+  
 })
 
 const layout = ({ children, responsive, title }) => {
@@ -20,13 +21,13 @@ const layout = ({ children, responsive, title }) => {
       <GlobalStyles />
        <MuiThemeProvider theme={theme}>
       <Typography component={'span'}>
-        <Helmet 
-          title={title}
+        <Helmet  
+          title={title+` | รับน้องก้าวใหม่ ปีการศึกษา 2562`}
           link={[
             { rel: 'icon', type: 'image/x-icon', href: `${favicon}` },
           ]}
         />
-        <NavigationBar responsive={responsive} />
+        <NavigationBar responsive={responsive} title={title}/>
         {children}
       </Typography>
     </MuiThemeProvider>

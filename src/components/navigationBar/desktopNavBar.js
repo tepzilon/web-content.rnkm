@@ -7,7 +7,7 @@ const desktopNavBarTheme = createMuiTheme({
   overrides: {
     MuiButton: {
       text: {
-        fontFamily: `'Chulalongkorn', sans-serif`,
+        fontFamily: `'ChulalongkornFixed', sans-serif`,
         marginLeft: '0.6rem',
         // color: 'white',
       },
