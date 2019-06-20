@@ -56,7 +56,7 @@ export default class NavigationBar extends React.Component {
           query {
             file(relativePath: { eq: "rnkm_logo_filled.png" }) {
               childImageSharp {
-                fluid(maxWidth: 60, maxHeight: 60, quality: 100) {
+                fluid(maxWidth: 120, maxHeight: 120, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }

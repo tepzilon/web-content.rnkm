@@ -3,19 +3,62 @@
 .featured-box {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: 20px;
-  height: 250px;
+  height: 300px;
 }
 
 .slide-holder-desktop,
 .slide-holder-mobile {
   background-color: $theme-pink;
   margin-bottom: 40px;
+  max-height: 340px;
 }
 
 .slide-holder-desktop {
   padding-left: 40px;
   padding-right: 40px;
+}
+
+.logo {
+  animation: bounce-in-top 1.2s both;
+  width: 180px;
+  height: 180px;
+}
+
+@keyframes bounce-in-top {
+  0% {
+    transform: translateY(-250px);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    transform: translateY(-65px);
+    animation-timing-function: ease-in;
+  }
+  72% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+  }
+  81% {
+    transform: translateY(-28px);
+    animation-timing-function: ease-in;
+  }
+  90% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+  }
+  95% {
+    transform: translateY(-8px);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+  }
 }
