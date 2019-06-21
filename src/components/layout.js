@@ -15,7 +15,7 @@ const theme = createMuiTheme({
   
 })
 
-const layout = ({ children, responsive, title }) => {
+const layout = ({ children, responsive, title, color }) => {
   return (
     <div>
       <GlobalStyles />
