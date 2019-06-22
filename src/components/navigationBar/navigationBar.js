@@ -1,55 +1,58 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { graphql, StaticQuery, Link } from 'gatsby'
+import styles from './navigationBar.module.scss'
+import Img from 'gatsby-image'
 import DesktopNav from './desktopNavBar'
 import MobileNav from './mobileNavBar'
-import { Toolbar, AppBar } from '@material-ui/core'
-import { graphql, StaticQuery } from 'gatsby'
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
-import styles from './navigationBar.module.scss'
 
-export default class NavigationBar extends React.Component {
-  componentDidMount() {
-    window.addEventListener('scroll', this.listenToScroll)
-  }
-  
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.listenToScroll)
-  }
+class NavigationBar extends Component {
+  // componentDidMount() {
+  //   window.addEventListener('scroll', this.listenToScroll.bind(this))
+  // }
 
-  listenToScroll = () => {
-    const winScroll =
-    document.body.scrollTop || document.documentElement.scrollTop
+  // componentWillUnmount() {
+  //   window.removeEventListener('scroll', this.listenToScroll)
+  // }
 
-    const height =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight
+  // listenToScroll = () => {
+  //   const winScroll =
+  //     document.body.scrollTop || document.documentElement.scrollTop
 
-    const scrolled = winScroll / height
+  //   const height =
+  //     document.documentElement.scrollHeight -
+  //     document.documentElement.clientHeight
 
-    if (scrolled > 0.1) {
-      document
-        .getElementById('img-wrapper')
-        .classList.remove(styles.notScrolled)
-      document.getElementById('img-wrapper').classList.add(styles.scrolled)
-    } else {
-      document.getElementById('img-wrapper').classList.remove(styles.scrolled)
-      document.getElementById('img-wrapper').classList.add(styles.notScrolled)
-    }
-  }
-
+  //   const scrolled = winScroll / height
+  //   console.log('scrolled =', scrolled)
+  //   if (scrolled > 0.1) {
+  //     document.getElementById('toolbar').style.height = '40px'
+  //     document.getElementById('logo wrapper').style.height = '30px'
+  //     document.getElementById('logo wrapper').style.width = '30px'
+  //   } else if (scrolled < 0.03) {
+  //     document.getElementById('toolbar').style.height = '80px'
+  //     document.getElementById('logo wrapper').style.height = '60px'
+  //     document.getElementById('logo wrapper').style.width = '60px'
+  //   }
+  // }
   render() {
-    const {responsive, title} = this.props
+    const { responsive, title, theme, children } = this.props
     const menus = [
+      { text: 'หน้าแรก', link: '/', isExternal: false },
       { text: 'บ้าน', link: '/gallery', isExternal: false },
-      { text: 'ลงทะเบียน', link: 'https://www.yahoo.com/', isExternal: true },
-      { text: 'เข้าสู่ระบบ', link: 'https://www.google.com/', isExternal: true },
+      {
+        text: 'ลงทะเบียน/เข้าสู่ระบบ',
+        link: 'https://www.yahoo.com/',
+        isExternal: true,
+      },
+      { text: 'ประกาศ', link: '/', isExternal: false },
       { text: 'ติดต่อเรา', link: '/', isExternal: false },
     ]
     const navigation = responsive.tablet ? (
-      <DesktopNav menus={menus} />
+      <DesktopNav menus={menus} theme={theme} />
     ) : (
-      <MobileNav menus={menus} />
+      <MobileNav menus={menus} theme={theme} />
     )
+
     return (
       <StaticQuery
         query={graphql`
@@ -60,26 +63,33 @@ export default class NavigationBar extends React.Component {
                   ...GatsbyImageSharpFluid
                 }
               }
-            } 
+            }
           }
         `}
-        render={data=>(
-          <AppBar position="sticky" color="default">
-            <Toolbar style={{ margin: '5px 0',minHeight:'auto' }}>
-              <Link to="/">
-              <div id="img-wrapper" className={styles.notScrolled}>
-                <Img fluid={data.file.childImageSharp.fluid} alt="rnkm logo" />
-              </div>
-              </Link>
-              <div style={{ flexGrow: 1 }}>
-                {/* <h1>| {title}</h1> */}
+        render={data => (
+          <div>
+            <div className={styles.appbar}>
+              <div className={styles.toolbar} theme={theme} id="toolbar">
+                <div className={styles.logoWrapper} id="logo wrapper">
+                  <Link to="/">
+                    <Img fluid={data.file.childImageSharp.fluid} />
+                  </Link>
                 </div>
-              {navigation}
-            </Toolbar>
-          </AppBar>
+                <div
+                  className={styles.header}
+                  desktop={responsive.tablet ? 'true' : 'false'}
+                >
+                  | {title}
+                </div>
+                <div className={styles.navigation}>{navigation}</div>
+              </div>
+            </div>
+            {children}
+          </div>
         )}
-      >
-      </StaticQuery>
+      />
     )
   }
 }
+
+export default NavigationBar

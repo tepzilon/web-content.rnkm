@@ -1,11 +1,53 @@
-.not-scrolled {
-    width: 60px;
-    height: 60px;
-    transition: 0.4s;
+@import '../../shared/css/palette.scss';
+
+.appbar {
+  position: sticky;
+  top: 0;
+  z-index: 1200;
 }
 
-.scrolled {
-    width: 40px;
-    height: 40px;
-    transition: 0.4s;
+.header{
+  flex-grow: 1;
+  color: white;
+}
+
+.header[desktop="true"]{ 
+  font-size: 1.5rem;
+}
+
+.header[desktop="false"]{
+  font-size: 1rem;
+}
+
+.toolbar {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+
+.toolbar[theme="pink"] {
+  background-color: $theme-pink;
+}
+
+.toolbar[theme="yellow"] {
+  background-color: $theme-yellow;
+}
+
+.toolbar[theme="blue"] {
+  background-color: $theme-blue;
+}
+
+.logo-wrapper{
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, .3);
+  transition: 0.5s;
+}
+
+.navigation {
+  padding : 10px;
 }

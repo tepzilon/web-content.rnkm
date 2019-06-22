@@ -10,7 +10,7 @@ export default () => {
     mobile: useMediaQuery('(min-width:479px)'),
   }
   return (
-    <Layout responsive={responsive} title="บ้านรับน้อง">
+    <Layout responsive={responsive} title="บ้านรับน้อง" theme="pink">
       <BaanContainer responsive={responsive} />
     </Layout>
   )

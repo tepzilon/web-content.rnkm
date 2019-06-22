@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../components/layout.new'
+import Layout from '../components/layout'
 import { useMediaQuery } from '@material-ui/core'
 import Featured from '../components/featured/featured'
 import Suggest from '../components/suggest/suggest'

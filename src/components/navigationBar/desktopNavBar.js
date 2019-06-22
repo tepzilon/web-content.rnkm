@@ -1,45 +1,32 @@
 import React from 'react'
-import Button from '@material-ui/core/Button'
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import styles from './desktopNavBar.module.scss'
 import { Link } from 'gatsby'
 
-const desktopNavBarTheme = createMuiTheme({
-  overrides: {
-    MuiButton: {
-      text: {
-        fontFamily: `'ChulalongkornFixed', sans-serif`,
-        marginLeft: '0.6rem',
-        // color: 'white',
-      },
-      
-    },
-  },
-})
-
-const listStyle = {
-  textDecoration: 'none',
-  height : '100%',
+export default ({ menus, theme }) => {
+  const linkStyle = {
+    textDecoration: 'none',
+    height: '100%',
+  }
+  return (
+    <div className={styles.menus}>
+      {menus.map(menu => (
+        <div key={menu.text}>
+          {menu.isExternal ? (
+            <a
+              href={menu.link}
+              target="_blank"
+              style={linkStyle}
+              rel="noopener noreferrer"
+            >
+              <div className={styles.button} theme={theme}>{menu.text}</div>
+            </a>
+          ) : (
+            <Link to={menu.link} style={linkStyle} >
+              <div className={styles.button} theme={theme}>{menu.text}</div>
+            </Link>
+          )}
+        </div>
+      ))}
+    </div>
+  ) 
 }
-
-export default ({ menus }) => (
-  <MuiThemeProvider theme={desktopNavBarTheme}>
-    {menus.map(menu => (
-      <span key={menu.text}>
-        {menu.isExternal ? (
-          <a
-            href={menu.link}
-            target="_blank"
-            style={listStyle}
-            rel="noopener noreferrer"
-          >
-            <Button size="large">{menu.text}</Button>
-          </a>
-        ) : (
-          <Link to={menu.link} style={listStyle}>
-            <Button size="large">{menu.text}</Button>
-          </Link>
-        )}
-      </span>
-    ))}
-  </MuiThemeProvider>
-)
