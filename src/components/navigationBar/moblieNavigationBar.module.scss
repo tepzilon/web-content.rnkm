@@ -1,0 +1,30 @@
+@import '../../shared/css/palette.scss';
+
+.header {
+  font-size: 1.2rem;
+}
+
+.divider {
+  height: 5px;
+}
+
+.divider[theme='pink'] {
+  background-color: $theme-pink;
+}
+
+.divider[theme='blue'] {
+  background-color: $theme-blue;
+}
+
+.divider[theme='yellow'] {
+  background-color: $theme-yellow;
+}
+
+.link {
+  padding: 10px 10%;
+  font-size: 16px;
+  transition: 0.5s;
+  &:active {
+    background-color: #ddd;
+  }
+}

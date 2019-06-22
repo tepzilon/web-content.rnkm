@@ -25,6 +25,7 @@
   align-items: center;
   padding: 0 20px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
 }
 
 .toolbar[theme="pink"] {
@@ -39,17 +40,17 @@
   background-color: $theme-blue;
 }
 
-.shadow {
-  background-color: #000;
-  height: 3px;
-  opacity: 0.7;
-}
+// .scrolled {
+//   background-color: transparent;
+// }
+
 
 .logo-wrapper{
   height: 60px;
   width: 60px;
   border-radius: 50%;
   background: rgba(0, 0, 0, .3);
+  transition: 0.5s;
 }
 
 .navigation {

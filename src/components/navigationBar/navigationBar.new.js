@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { graphql, StaticQuery } from 'gatsby'
+import { graphql, StaticQuery, Link } from 'gatsby'
 import styles from './navigationBar.new.module.scss'
 import Img from 'gatsby-image'
 import DesktopNav from './desktopNavBar.new'
@@ -7,7 +7,7 @@ import MobileNav from './mobileNavBar.new'
 
 class NavigationBar extends Component {
   componentDidMount() {
-    window.addEventListener('scroll', this.listenToScroll)
+    window.addEventListener('scroll', this.listenToScroll.bind(this))
   }
 
   componentWillUnmount() {
@@ -23,15 +23,15 @@ class NavigationBar extends Component {
       document.documentElement.clientHeight
 
     const scrolled = winScroll / height
-
+    console.log('scrolled =', scrolled)
     if (scrolled > 0.1) {
-      //   document
-      //     .getElementById('img-wrapper')
-      //     .classList.remove(styles.notScrolled)
-      //   document.getElementById('img-wrapper').classList.add(styles.scrolled)
-    } else {
-      //   document.getElementById('img-wrapper').classList.remove(styles.scrolled)
-      //   document.getElementById('img-wrapper').classList.add(styles.notScrolled)
+      // document.getElementById('toolbar').style.height = '40px'
+      // document.getElementById('logo wrapper').style.height = '30px'
+      // document.getElementById('logo wrapper').style.width = '30px'
+    } else if (scrolled < 0.03) {
+      // document.getElementById('toolbar').style.height = '80px'
+      // document.getElementById('logo wrapper').style.height = '60px'
+      // document.getElementById('logo wrapper').style.width = '60px'
     }
   }
   render() {
@@ -43,13 +43,13 @@ class NavigationBar extends Component {
         link: 'https://www.yahoo.com/',
         isExternal: true,
       },
-      { text: 'ประกาศ', link: '/', isExternal: false },
+      { text: 'ประกาศ', link: '/newNav', isExternal: false },
       { text: 'ติดต่อเรา', link: '/', isExternal: false },
     ]
     const navigation = responsive.tablet ? (
-      <DesktopNav menus={menus} theme={theme}/>
+      <DesktopNav menus={menus} theme={theme} />
     ) : (
-      <MobileNav menus={menus} theme={theme}/>
+      <MobileNav menus={menus} theme={theme} />
     )
 
     return (
@@ -67,18 +67,21 @@ class NavigationBar extends Component {
         `}
         render={data => (
           <div>
-            <div className={styles.appbar} id="appbar">
-              <div className={styles.toolbar} theme={theme}>
-                <div className={styles.logoWrapper}>
-                  <Img fluid={data.file.childImageSharp.fluid} />
+            <div className={styles.appbar}>
+              <div className={styles.toolbar} theme={theme} id="toolbar">
+                <div className={styles.logoWrapper} id="logo wrapper">
+                  <Link to="/">
+                    <Img fluid={data.file.childImageSharp.fluid} />
+                  </Link>
                 </div>
-                <div className={styles.header} desktop={responsive.tablet ? "true":"false"}>
+                <div
+                  className={styles.header}
+                  desktop={responsive.tablet ? 'true' : 'false'}
+                >
                   | {title}
                 </div>
                 <div className={styles.navigation}>{navigation}</div>
               </div>
-
-              {/* <div className={styles.shadow} /> */}
             </div>
             {children}
           </div>
