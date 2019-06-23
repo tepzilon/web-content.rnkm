@@ -21,13 +21,19 @@ export default ({ responsive }) => {
             }
           }
         }
-        allFile(filter: { relativeDirectory: { eq: "baan" } }) {
+        allFile(filter:{
+          relativePath: {
+            regex: "/^baan\/logo\/500px/"
+          },
+          name: {
+            regex: "/big1$/"
+          }
+        }) {
           edges {
             node {
               name
-              ext
               childImageSharp {
-                fluid(maxHeight: 100, maxWidth: 100) {
+                fluid(maxWidth: 160, maxHeight: 160){
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -40,8 +46,9 @@ export default ({ responsive }) => {
 
   let imageFetcher = {}
   data.allFile.edges.forEach(e => {
-    imageFetcher[e.node.name] = e.node.childImageSharp.fluid
+    imageFetcher[e.node.name.split('.')[0]] = e.node.childImageSharp.fluid
   })
+
 
   let filteredBaan = data.allBaanJson.edges.filter(
     baan => baan.node.size === size
@@ -61,10 +68,11 @@ export default ({ responsive }) => {
           <Grid item xs={4}>
             <div className={styles.imageWrapper}>
               <Link to={`gallery/`+baan.node.nameURL}>
+                {imageFetcher[baan.node.nameURL] !== undefined ? 
                 <ButtonBaan
                   key={baan.node.id}
                   cover={imageFetcher[baan.node.nameURL]}
-                />
+                /> : <div>{baan.node.nameURL} ชื่อผิดไอสัส</div>}
               </Link>
             </div>
           </Grid>
