@@ -3,25 +3,10 @@ import fontFiles from './fonts'
 
 export default createGlobalStyle`
     @font-face{
-        font-family: "Blanch-Caps";
+        font-family: "Blanch Caps";
         src: url(${fontFiles.BlanchOTF}) format("opentype");
         font-style: normal;
         font-weight: normal;
-    }
-
-    @font-face{
-        font-family: "Chulalongkorn";
-        src: url(${fontFiles.ChulaRegOTF}) format("opentype");
-        font-style: normal;
-        font-weight: normal;
-    }
-
-    @font-face{
-        font-family: "Chulalongkorn";
-        src: url(${fontFiles.ChulaBoldOTF}) format("opentype");
-        font-style: normal;
-        font-weight: bold;
-        
     }
 
     @font-face{
@@ -31,13 +16,6 @@ export default createGlobalStyle`
         font-weight: normal;
     }
 
-    @font-face{
-        font-family: "ChulalongkornFixed";
-        src: url(${fontFiles.ChulaRedFixedTTF}) format("truetype");
-        font-style: normal;
-        font-weight: normal;
-    }
-    
     @font-face{
         font-family: "Noto Sans Thai";
         src: url(${fontFiles.NotoSansThaiTTF}) format("truetype");
