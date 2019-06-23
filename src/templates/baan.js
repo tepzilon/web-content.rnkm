@@ -30,7 +30,7 @@ const baan = ({data}) => {
     }
   }
   return (
-    <Layout responsive={responsive} title="รับน้องก้าวใหม่" theme="blue">
+    <Layout responsive={responsive} title="ข้อมูลบ้าน" theme="blue">
       <BaanInfo bundle={bundle} device={responsive.getDevice()}/>
     </Layout>
   )
