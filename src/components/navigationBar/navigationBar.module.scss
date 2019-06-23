@@ -6,16 +6,16 @@
   z-index: 1200;
 }
 
-.header{
+.header {
   flex-grow: 1;
   color: white;
 }
 
-.header[desktop="true"]{ 
+.header[desktop='true'] {
   font-size: 1.5rem;
 }
 
-.header[desktop="false"]{
+.header[desktop='false'] {
   font-size: 1rem;
 }
 
@@ -28,26 +28,29 @@
   transition: 0.5s;
 }
 
-.toolbar[theme="pink"] {
+.toolbar[theme='pink'] {
   background-color: $theme-pink;
 }
 
-.toolbar[theme="yellow"] {
+.toolbar[theme='yellow'] {
   background-color: $theme-yellow;
 }
 
-.toolbar[theme="blue"] {
+.toolbar[theme='blue'] {
   background-color: $theme-blue;
 }
 
-.logo-wrapper{
+.logo-wrapper {
   height: 60px;
   width: 60px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, .3);
+  background: rgba(0, 0, 0, 0.3);
   transition: 0.5s;
+  &:active {
+    background: rgba(255, 255, 255, 0.3);
+  }
 }
 
 .navigation {
-  padding : 10px;
+  padding: 10px;
 }

@@ -6,34 +6,34 @@ import DesktopNav from './desktopNavBar'
 import MobileNav from './mobileNavBar'
 
 class NavigationBar extends Component {
-  // componentDidMount() {
-  //   window.addEventListener('scroll', this.listenToScroll.bind(this))
-  // }
+  componentDidMount() {
+    window.addEventListener('scroll', this.listenToScroll.bind(this))
+  }
 
-  // componentWillUnmount() {
-  //   window.removeEventListener('scroll', this.listenToScroll)
-  // }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.listenToScroll)
+  }
 
-  // listenToScroll = () => {
-  //   const winScroll =
-  //     document.body.scrollTop || document.documentElement.scrollTop
+  listenToScroll = () => {
+    const winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop
 
-  //   const height =
-  //     document.documentElement.scrollHeight -
-  //     document.documentElement.clientHeight
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight
 
-  //   const scrolled = winScroll / height
-  //   console.log('scrolled =', scrolled)
-  //   if (scrolled > 0.1) {
-  //     document.getElementById('toolbar').style.height = '40px'
-  //     document.getElementById('logo wrapper').style.height = '30px'
-  //     document.getElementById('logo wrapper').style.width = '30px'
-  //   } else if (scrolled < 0.03) {
-  //     document.getElementById('toolbar').style.height = '80px'
-  //     document.getElementById('logo wrapper').style.height = '60px'
-  //     document.getElementById('logo wrapper').style.width = '60px'
-  //   }
-  // }
+    const scrolled = winScroll / height
+    // console.log('scrolled =', scrolled)
+    if (scrolled > 0.2) {
+      document.getElementById('toolbar').style.height = '40px'
+      document.getElementById('logo wrapper').style.height = '30px'
+      document.getElementById('logo wrapper').style.width = '30px'
+    } else if (scrolled < 0.1) {
+      document.getElementById('toolbar').style.height = '80px'
+      document.getElementById('logo wrapper').style.height = '60px'
+      document.getElementById('logo wrapper').style.width = '60px'
+    }
+  }
   render() {
     const { responsive, title, theme, children } = this.props
     const menus = [
@@ -44,8 +44,8 @@ class NavigationBar extends Component {
         link: 'https://www.yahoo.com/',
         isExternal: true,
       },
-      { text: 'ประกาศ', link: '/', isExternal: false },
-      { text: 'ติดต่อเรา', link: '/', isExternal: false },
+      { text: 'ประกาศ', link: '/annouce', isExternal: false },
+      { text: 'ติดต่อเรา', link: '/contact', isExternal: false },
     ]
     const navigation = responsive.tablet ? (
       <DesktopNav menus={menus} theme={theme} />
