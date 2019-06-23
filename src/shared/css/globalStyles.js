@@ -37,5 +37,19 @@ export default createGlobalStyle`
         font-style: normal;
         font-weight: normal;
     }
+    
+    @font-face{
+        font-family: "Noto Sans Thai";
+        src: url(${fontFiles.NotoSansThaiTTF}) format("truetype");
+        font-style: normal;
+        font-weight: normal;
+    }
+
+    @font-face{
+        font-family: "Noto Sans";
+        src: url(${fontFiles.NotoSansRegTTF}) format("truetype");
+        font-style: normal;
+        font-weight: normal;
+    }
 `
  

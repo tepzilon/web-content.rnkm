@@ -1,79 +1,86 @@
-import React, { useState } from 'react'
+import React from 'react'
+import 'antd/dist/antd.css'
+import { Drawer } from 'antd'
 import { Link } from 'gatsby'
-import {
-  IconButton,
-  SwipeableDrawer,
-  List,
-  ListItem,
-  ListItemText,
-} from '@material-ui/core'
-import MenuIcon from '@material-ui/icons/Menu'
-export default ({ menus }) => {
-  const [isOpen, setOpen] = useState(false)
+import styles from './moblieNavigationBar.module.scss'
 
-  const listStyle = {
-    textDecoration: 'none',
-    color: '#424242',
+export default class MobileNavigation extends React.Component {
+  state = { visible: false }
+
+  showDrawer = () => {
+    this.setState({
+      visible: true,
+    })
   }
 
-  const toggleDrawer = open => event => {
-    if (
-      event &&
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
-    ) {
-      return
+  onClose = () => {
+    this.setState({
+      visible: false,
+    })
+  }
+
+  render() {
+    const { menus, theme } = this.props
+
+    const header = <div className={styles.header}>รับน้องก้าวใหม่ 2562</div>
+
+    const listStyle = {
+      textDecoration: 'none',
+      color: '#424242',
     }
-    setOpen(open)
-  }
 
-  const sideList = () => (
-    <div style={{ width: '40vw' }}>
-      {/* <div style={{ height: '80px',backgroundColor:'#f50057' }}>
-        
-      </div> */}
-      <List style={{ paddingTop: 0 }}>
-        {menus.map(menu => (
-          <span key={menu.text}>
-            {menu.isExternal ? (
-              <a
-                href={menu.link}
-                target="_blank"
-                style={listStyle}
-                rel="noopener noreferrer"
-              >
-                <ListItem button>
-                  <ListItemText primary={menu.text} />
-                </ListItem>
-              </a>
-            ) : (
-              <Link to={menu.link} style={listStyle}>
-                <ListItem button>
-                  <ListItemText primary={menu.text} />
-                </ListItem>
-              </Link>
-            )}
-          </span>
-        ))}
-      </List>
-    </div>
-  )
-
-  return (
-    <div>
-      {/* <MuiThemeProvider theme={mobileNavBarTheme}> */}
-      <IconButton color="inherit" onClick={toggleDrawer(true)}>
-        <MenuIcon />
-      </IconButton>
-      <SwipeableDrawer
-        anchor="right"
-        open={isOpen}
-        onClose={toggleDrawer(false)}
-        onOpen={toggleDrawer(true)}
+    const menuIcon = (
+      <div
+        style={{ width: '20px', margin: '1px 0' }}
+        onClick={this.showDrawer}
       >
-        {sideList()}
-      </SwipeableDrawer>
-      {/* </MuiThemeProvider> */}
-    </div>
-  )
+        <div style={{ height: '3px', backgroundColor: 'white' }} />
+        <div style={{ height: '3px' }} />
+        <div style={{ height: '3px', backgroundColor: 'white' }} />
+        <div style={{ height: '3px' }} />
+        <div style={{ height: '3px', backgroundColor: 'white' }} />
+      </div>
+    ) 
+    return (
+      <div>
+        {menuIcon}
+        <Drawer
+          title={header}
+          placement="right"
+          closable={true}
+          onClose={this.onClose}
+          visible={this.state.visible}
+          zIndex={1500}
+          width="70vw"
+          bodyStyle={{ padding: 0 }}
+        >
+          <div className={styles.divider} theme={theme} />
+          <div>
+            {menus.map(menu => (
+              <div key={menu.text}>
+                {menu.isExternal ? (
+                  <a
+                    href={menu.link}
+                    target="_blank"
+                    style={listStyle}
+                    rel="noopener noreferrer"
+                  >
+                    <div className={styles.link}>{menu.text}</div>
+                  </a>
+                ) : (
+                  <Link
+                    to={menu.link}
+                    style={listStyle}
+                    activeStyle={{ color: '#ccc' }}
+                  >
+                    <div className={styles.link}>{menu.text}</div>
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+        </Drawer>
+      </div>
+    )
+  }
 }

@@ -1,0 +1,29 @@
+@import '../../shared/css/palette.scss';
+
+.menus {
+    display: flex;
+}
+
+.button {
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-left: 10px;
+    &:hover{
+        transition: 0.7s;
+        background: rgba(255, 255, 255, .8);
+        cursor: pointer;
+    }
+
+    &:hover[theme="pink"]{
+        color: $theme-pink;
+    }
+
+    &:hover[theme="yellow"]{
+        color: $theme-yellow;
+    }
+
+    &:hover[theme="blue"]{
+        color: $theme-blue;
+    }
+}

@@ -12,7 +12,7 @@ export default () => {
   }
 
   return (
-    <Layout responsive={responsive} title="รับน้องก้าวใหม่">
+    <Layout responsive={responsive} title="รับน้องก้าวใหม่" theme="blue">
       <Featured responsive={responsive} />
       <Suggest responsive={responsive} />
     </Layout>

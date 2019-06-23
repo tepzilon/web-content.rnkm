@@ -10,7 +10,7 @@ export default () => {
   }
 
   return (
-    <Layout responsive={responsive}>
+    <Layout responsive={responsive} title="ไม่พบหน้านี้" theme="blue">
       <center>
         <h1>404 Page Not Found.</h1>
       </center>
