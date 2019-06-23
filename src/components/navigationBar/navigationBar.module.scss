@@ -1,7 +1,9 @@
 @import '../../shared/css/palette.scss';
 
+$toolbar-height: 80px;
+
 .appbar {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1200;
 }
@@ -20,12 +22,13 @@
 }
 
 .toolbar {
-  height: 80px;
+  height: $toolbar-height;
+  width: 100vw;
   display: flex;
   align-items: center;
   padding: 0 20px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .toolbar[theme='pink'] {
@@ -53,4 +56,8 @@
 
 .navigation {
   padding: 10px;
+}
+
+.whole-content {
+  margin-top: $toolbar-height;
 }

@@ -6,8 +6,12 @@ import DesktopNav from './desktopNavBar'
 import MobileNav from './mobileNavBar'
 
 class NavigationBar extends Component {
+  state = {
+    lastScrollY: 0
+  }
+
   componentDidMount() {
-    window.addEventListener('scroll', this.listenToScroll.bind(this))
+    window.addEventListener('scroll', this.listenToScroll)
   }
 
   componentWillUnmount() {
@@ -15,20 +19,19 @@ class NavigationBar extends Component {
   }
 
   listenToScroll = () => {
-    const winScroll =
-      document.body.scrollTop || document.documentElement.scrollTop
+    const currentScrollY = window.scrollY;
+    const {lastScrollY} = this.state;
+    this.setState({
+      lastScrollY: currentScrollY
+    }) 
 
-    const height =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop
 
-    const scrolled = winScroll / height
-    // console.log('scrolled =', scrolled)
-    if (scrolled > 0.2) {
+    if (currentScrollY > lastScrollY && winScroll > 100) {
       document.getElementById('toolbar').style.height = '40px'
       document.getElementById('logo wrapper').style.height = '30px'
       document.getElementById('logo wrapper').style.width = '30px'
-    } else if (scrolled < 0.1) {
+    } else if (currentScrollY < lastScrollY) {
       document.getElementById('toolbar').style.height = '80px'
       document.getElementById('logo wrapper').style.height = '60px'
       document.getElementById('logo wrapper').style.width = '60px'
@@ -84,7 +87,9 @@ class NavigationBar extends Component {
                 <div className={styles.navigation}>{navigation}</div>
               </div>
             </div>
-            {children}
+            <div className={styles.wholeContent}>
+              {children}
+            </div>
           </div>
         )}
       />

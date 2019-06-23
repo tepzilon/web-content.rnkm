@@ -1,4 +1,36 @@
-.info-container-desktop {
-  // background-color:;
+.info-container[device='desktop'] {
   margin: 0 15vw 0 15vw;
+}
+
+.info-container[device='mobile'],
+.info-container[device='tablet'] {
+  margin: 0 0 0 0;
+}
+
+.logo-wrapper {
+  width: 20%;
+  height: auto;
+  margin: 25px auto 25px auto;
+  border-radius: 1vw;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.logo-wrapper[device='mobile'] {
+  width: 50%;
+  border-radius: 3vw;
+}
+
+.content {
+  margin: 25px 10vw 25px 10vw;
+}
+
+.external-links {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.link-icon {
+  margin: '0 10px 0 10px';
 }
