@@ -4,7 +4,6 @@ import Img from 'gatsby-image'
 import {graphql, useStaticQuery} from 'gatsby'
 
 const baanInfo = ({bundle, device}) => {
-  console.log(device);
   const data = useStaticQuery(graphql`
     query {
       lineIcon: file(relativePath:{regex:"/line.png$/"}){
