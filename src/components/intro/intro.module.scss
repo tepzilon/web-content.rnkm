@@ -1,10 +1,10 @@
 .background {
   background-color: black;
-  height: 80vh;
+  height: auto;
   background-image: url('../../assets/images/background.jpg');
   background-position: center;
   background-repeat: no-repeat;
-  padding-top: 10px;
+  padding-top: 24px;
 }
 .wrapper {
   // background-color: green;
@@ -45,9 +45,6 @@
 }
 
 .logo {
-  // background-color: red;
-  //   background: rgba(0, 0, 0, 0.5);
-  //   border-radius: 20%;
   animation: bounce-in-top 1.2s both;
   width: 160px;
   height: 160px;
