@@ -7,7 +7,7 @@ import MobileNav from './mobileNavBar'
 
 class NavigationBar extends Component {
   componentDidMount() {
-    window.addEventListener('scroll', this.listenToScroll.bind(this))
+    window.addEventListener('scroll', this.listenToScroll)
   }
 
   componentWillUnmount() {
