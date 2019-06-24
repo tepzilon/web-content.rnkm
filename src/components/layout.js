@@ -6,14 +6,14 @@ import NavigationBar from './navigationBar/navigationBar'
 import './layout.scss'
 import 'antd/dist/antd.css'
 
-export default ({ children, responsive, title, theme }) => (
+export default ({ children, device, title, theme }) => (
   <div>
     <GlobalStyles />
     <Helmet
       title={title + ` | รับน้องก้าวใหม่ ปีการศึกษา 2562`}
       link={[{ rel: 'icon', type: 'image/x-icon', href: `${favicon}` }]}
     />
-    <NavigationBar responsive={responsive} title={title} theme={theme}>
+    <NavigationBar device={device} title={title} theme={theme}>
       {children}
     </NavigationBar>
   </div>

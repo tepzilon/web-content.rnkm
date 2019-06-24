@@ -13,12 +13,16 @@ $toolbar-height: 80px;
   color: white;
 }
 
-.header[desktop='true'] {
+.header[device='desktop'] {
   font-size: 1.5rem;
 }
 
-.header[desktop='false'] {
-  font-size: 1rem;
+.header[device='tablet'] {
+  font-size: 1.3rem;
+}
+
+.header[device='mobile'] {
+  font-size: 1.1rem;
 }
 
 .toolbar {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useMediaQuery } from '@material-ui/core'
+import { getResponsive } from '../shared/js/responsive'
 import Intro from '../components/intro/intro'
 // import Featured from '../components/featured/featured'
 // import Suggest from '../components/suggest/suggest'
@@ -7,14 +7,11 @@ import Layout from '../components/layout'
 
 
 export default () => {
-  let responsive = {
-    desktop: useMediaQuery('(min-width:991px)'),
-    tablet: useMediaQuery('(min-width:767px)'),
-    mobile: useMediaQuery('(min-width:479px)'),
-  }
-
+ 
+  const responsive = getResponsive()
+  const device = responsive.getDevice()
   return (
-    <Layout responsive={responsive} title="รับน้องก้าวใหม่" theme="pink">
+    <Layout device={device} title="รับน้องก้าวใหม่" theme="pink">
       <Intro responsive={responsive}/>
       {/* <Featured responsive={responsive} />
       <Suggest responsive={responsive} /> */}      
