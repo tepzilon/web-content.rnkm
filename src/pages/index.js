@@ -6,7 +6,7 @@ import Intro from '../components/intro/intro'
 import Layout from '../components/layout'
 
 
-export default ({ data }) => {
+export default () => {
   let responsive = {
     desktop: useMediaQuery('(min-width:991px)'),
     tablet: useMediaQuery('(min-width:767px)'),
