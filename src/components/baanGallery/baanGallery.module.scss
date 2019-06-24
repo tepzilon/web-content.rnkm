@@ -1,3 +1,20 @@
+.gallery-app {
+    margin-top: 20px;
+    // background-color: tomato;
+}
+
+.gallery-app[device='tablet'],
+.gallery-app[device='desktop'] {
+    margin-left: 30vw;
+    margin-right: 30vw;
+}
+
+.gallery-app[device='mobile'] {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
 .image-wrapper {
     width: 100%;
     height: 100%;

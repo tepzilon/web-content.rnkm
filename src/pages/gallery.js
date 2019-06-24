@@ -3,15 +3,13 @@ import Layout from '../components/layout'
 import { useMediaQuery } from '@material-ui/core'
 import BaanContainer from '../components/baanGallery/baanGallery'
 
+import {getResponsive} from '../shared/js/responsive'
+
 export default () => {
-  let responsive = {
-    desktop: useMediaQuery('(min-width:991px)'),
-    tablet: useMediaQuery('(min-width:767px)'),
-    mobile: useMediaQuery('(min-width:479px)'),
-  }
+  const responsive = getResponsive()
   return (
     <Layout responsive={responsive} title="บ้านรับน้อง" theme="pink">
-      <BaanContainer responsive={responsive} />
+      <BaanContainer device={responsive.getDevice()} />
     </Layout>
   )
 }
