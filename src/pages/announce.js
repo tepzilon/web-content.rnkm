@@ -9,7 +9,7 @@ import './announce.scss'
 export default ({ data }) => {
   const responsive = getResponsive()
   const device = responsive.getDevice()
-  const span = device == 'desktop' ? 12 : 24
+  const span = device === 'desktop' ? 12 : 24
 
   return (
     <Layout device={device} title="ประกาศ" theme="yellow">
