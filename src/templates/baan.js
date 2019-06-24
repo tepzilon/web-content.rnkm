@@ -9,15 +9,17 @@ import {getResponsive} from '../shared/js/responsive'
 
 const baan = ({data}) => {
   const {nameURL} = data.allSitePage.edges[0].node.context
+  //Replace nameURL's each metacharacter to a character with regex syntax.
+  const regexURL = nameURL.replace(/[\^$.|?*+(){}]/g, (symbol) => `\\${symbol}` )
   const bundle = {
     ...data.allSitePage.edges[0].node.context,
     //Fetch image files with according to each baan.
     //For example, the baan with url 'abcdef' will match all image files with prefix 'abcdef' (eg. 'abcdef.xxx.png').
     coverImage: data.coverFiles.edges.filter((image) => (
-                  new RegExp(`^${nameURL}.+cover1$`).test(image.node.name))
+                  new RegExp(`^${regexURL}.+cover1$`).test(image.node.name))
                 )[0].node.childImageSharp.fluid,
     logoImage: data.logoFiles.edges.filter((image) => (
-                new RegExp(`^${nameURL}.+logo.big1$`).test(image.node.name))
+                new RegExp(`^${regexURL}.+logo.big1$`).test(image.node.name))
               )[0].node.childImageSharp.fluid
   }
   const responsive = getResponsive();
@@ -41,6 +43,7 @@ export const query = graphql`
             twitterURL
             lineURL
             instagramURL
+            slogan
           }
         }
       }

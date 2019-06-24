@@ -3,12 +3,10 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 
 import Img from 'gatsby-image'
 
-import { Box } from '@material-ui/core'
-
 import { Row, Col, Tabs } from 'antd'
 
-import SizeSelector from './sizeSelector'
 import styles from './baanGallery.module.scss'
+import './baanGallery.scss'
 
 // import TouchRipple from '@material-ui/core/ButtonBase/TouchRipple'
 
@@ -94,8 +92,11 @@ export default ({device}) => {
 
   return (
     <div className={styles.galleryApp} device={device} >
-      <Tabs defaultActiveKey="1" tabPosition=
-        {device==='desktop'?'left':'top'} size='large'>
+      <Tabs 
+        defaultActiveKey="1" 
+        tabPosition={device==='desktop'?'left':'top'} 
+        size={device==='desktop'?'large':'default'}
+      >
         {baanSizes.map((size) => (
           <TabPane tab={size.title} key={size.key}>
             <BaanGrid size={size.char}/>

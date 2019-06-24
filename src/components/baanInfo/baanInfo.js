@@ -51,8 +51,11 @@ const baanInfo = ({bundle, device}) => {
         <Img fluid = {bundle.logoImage}/>
       </div>
       <div className={styles.content}>
-        <h1 style={{textAlign: 'center'}}>{bundle.nameTH}</h1>
-        <h3 style={{textAlign: 'center'}}>{bundle.description}</h3>
+        <h1 style={{fontWeight: 'bold', textAlign: 'center'}}>{bundle.nameTH}</h1>
+        <h3 style={{fontWeight: 'bold', textAlign: 'center'}}>{bundle.slogan}</h3>
+        <h3 style={{textAlign: 'center'}} dangerouslySetInnerHTML={{
+          __html: bundle.description.replace(/\n/g, "<br/>")
+        }}/>
       </div>
       <div className={styles.externalLinks}>
         {bundle.lineURL !== "" && 
