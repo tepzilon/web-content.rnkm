@@ -1,8 +1,5 @@
-//กูจะเขียนแบบเรียบร้อยละ เริ่มจากไฟล์นี้ 5555+
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
-import { useMediaQuery } from '@material-ui/core'
+import { graphql } from 'gatsby'
 import BaanInfo from '../components/baanInfo/baanInfo'
 import Layout from '../components/layout'
 import {getResponsive} from '../shared/js/responsive'

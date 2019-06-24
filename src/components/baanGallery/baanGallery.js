@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
 import Img from 'gatsby-image'
+<<<<<<< HEAD
 
 import { Row, Col, Tabs } from 'antd'
 
+=======
+import { Row, Col, Tabs } from 'antd'
+>>>>>>> 6ed09f47e46e00564b640379404004e2795e9ec2
 import styles from './baanGallery.module.scss'
 import './baanGallery.scss'
 
