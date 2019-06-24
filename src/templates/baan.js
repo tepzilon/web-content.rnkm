@@ -5,6 +5,7 @@ import Img from 'gatsby-image'
 import { useMediaQuery } from '@material-ui/core'
 import BaanInfo from '../components/baanInfo/baanInfo'
 import Layout from '../components/layout'
+import {getResponsive} from '../shared/js/responsive'
 
 const baan = ({data}) => {
   const {nameURL} = data.allSitePage.edges[0].node.context
@@ -19,18 +20,9 @@ const baan = ({data}) => {
                 new RegExp(`^${nameURL}.+logo.big1$`).test(image.node.name))
               )[0].node.childImageSharp.fluid
   }
-  const responsive = {
-    desktop: useMediaQuery('(min-width:991px)'),
-    tablet: useMediaQuery('(min-width:767px)'),
-    mobile: useMediaQuery('(min-width:479px)'),
-    getDevice: function() {
-      if(this.tablet === true) return 'desktop'
-      else if(this.mobile === true) return 'tablet'
-      else return 'mobile'
-    }
-  }
+  const responsive = getResponsive();
   return (
-    <Layout responsive={responsive} title="ข้อมูลบ้าน" theme="blue">
+    <Layout device={responsive.getDevice()} title="ข้อมูลบ้าน" theme="blue">
       <BaanInfo bundle={bundle} device={responsive.getDevice()}/>
     </Layout>
   )

@@ -9,7 +9,7 @@ import { Row, Col, Tabs } from 'antd'
 
 import SizeSelector from './sizeSelector'
 import styles from './baanGallery.module.scss'
-import './baanGallery.scss'
+
 // import TouchRipple from '@material-ui/core/ButtonBase/TouchRipple'
 
 const { TabPane } = Tabs
@@ -83,7 +83,7 @@ export default ({device}) => {
     else
       return (
         <Link to={'/gallery/'+baan.nameURL}>
-          <div className={styles.buttonWrapper}>
+          <div className={styles.buttonWrapper} device={device}>
             <div className={styles.imageWrapper}>
               <Img fluid={imageFetcher[baan.nameURL]}/>
             </div>
