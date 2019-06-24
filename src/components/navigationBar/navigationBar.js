@@ -41,15 +41,15 @@ class NavigationBar extends Component {
   render() {
     const { device, title, theme, children } = this.props
     const menus = [
-      { text: 'หน้าแรก', link: '/', isExternal: false },
-      { text: 'บ้าน', link: '/gallery', isExternal: false },
+      { text: 'Home', link: '/', isExternal: false },
+      { text: 'BAAN', link: '/gallery', isExternal: false },
       {
-        text: 'ลงทะเบียน/เข้าสู่ระบบ',
+        text: 'Register/Login',
         link: 'https://www.yahoo.com/',
         isExternal: true,
       },
-      { text: 'ประกาศ', link: '/announce', isExternal: false },
-      { text: 'ติดต่อเรา', link: '/contact', isExternal: false },
+      { text: 'Announce', link: '/announce', isExternal: false },
+      { text: 'Q&A', link: '/question', isExternal: false },
     ]
     const navigation =
       device === 'desktop' ? (
