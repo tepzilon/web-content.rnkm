@@ -7,7 +7,7 @@ import MobileNav from './mobileNavBar'
 
 class NavigationBar extends Component {
   state = {
-    lastScrollY: 0
+    lastScrollY: 0,
   }
 
   componentDidMount() {
@@ -19,13 +19,14 @@ class NavigationBar extends Component {
   }
 
   listenToScroll = () => {
-    const currentScrollY = window.scrollY;
-    const {lastScrollY} = this.state;
+    const currentScrollY = window.scrollY
+    const { lastScrollY } = this.state
     this.setState({
-      lastScrollY: currentScrollY
-    }) 
+      lastScrollY: currentScrollY,
+    })
 
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop
+    const winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop
 
     if (currentScrollY > lastScrollY && winScroll > 100) {
       document.getElementById('toolbar').style.height = '40px'
@@ -38,7 +39,7 @@ class NavigationBar extends Component {
     }
   }
   render() {
-    const { responsive, title, theme, children } = this.props
+    const { device, title, theme, children } = this.props
     const menus = [
       { text: 'หน้าแรก', link: '/', isExternal: false },
       { text: 'บ้าน', link: '/gallery', isExternal: false },
@@ -47,14 +48,15 @@ class NavigationBar extends Component {
         link: 'https://www.yahoo.com/',
         isExternal: true,
       },
-      { text: 'ประกาศ', link: '/annouce', isExternal: false },
+      { text: 'ประกาศ', link: '/announce', isExternal: false },
       { text: 'ติดต่อเรา', link: '/contact', isExternal: false },
     ]
-    const navigation = responsive.tablet ? (
-      <DesktopNav menus={menus} theme={theme} />
-    ) : (
-      <MobileNav menus={menus} theme={theme} />
-    )
+    const navigation =
+      device === 'desktop' ? (
+        <DesktopNav menus={menus} theme={theme} />
+      ) : (
+        <MobileNav menus={menus} theme={theme} />
+      )
 
     return (
       <StaticQuery
@@ -80,16 +82,14 @@ class NavigationBar extends Component {
                 </div>
                 <div
                   className={styles.header}
-                  desktop={responsive.tablet ? 'true' : 'false'}
+                  device={device}
                 >
                   | {title}
                 </div>
                 <div className={styles.navigation}>{navigation}</div>
               </div>
             </div>
-            <div className={styles.wholeContent}>
-              {children}
-            </div>
+            <div className={styles.wholeContent}>{children}</div>
           </div>
         )}
       />
