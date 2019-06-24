@@ -8,7 +8,7 @@ import {getResponsive} from '../shared/js/responsive'
 export default () => {
   const responsive = getResponsive()
   return (
-    <Layout responsive={responsive} title="บ้านรับน้อง" theme="pink">
+    <Layout responsive={responsive} title="บ้านรับน้อง" theme="blue">
       <BaanContainer device={responsive.getDevice()} />
     </Layout>
   )

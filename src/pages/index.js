@@ -14,7 +14,7 @@ export default () => {
   }
 
   return (
-    <Layout responsive={responsive} title="รับน้องก้าวใหม่" theme="blue">
+    <Layout responsive={responsive} title="รับน้องก้าวใหม่" theme="pink">
       <Intro responsive={responsive}/>
       {/* <Featured responsive={responsive} />
       <Suggest responsive={responsive} /> */}      

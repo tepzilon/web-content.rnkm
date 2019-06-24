@@ -2,7 +2,7 @@ import React from 'react'
 import { useMediaQuery } from '@material-ui/core'
 import Layout from '../components/layout'
 import { Card } from 'antd'
-import 'antd/dist/antd.css'
+
 
 export default () => {
   let responsive = {
@@ -48,7 +48,7 @@ export default () => {
     {
       question: 'มีการค้างคืนมั้ย มีที่พักให้มั้ย ?',
       answer:
-        'เป็นกิจกรรมไป-กลับทั้ง 3 วัน แต่หากน้องไม่สะดวกจะเดินทางกลับบ้าน สามารถติดต่อค้างคืนในลิงค์ที่อยู่หัวข้อ ANNONCE ได้เลย',
+        'เป็นกิจกรรมไป-กลับทั้ง 3 วัน แต่หากน้องไม่สะดวกจะเดินทางกลับบ้าน สามารถติดต่อค้างคืนในลิงค์ที่อยู่หัวข้อ ANNOUNCE ได้เลย',
     },
     {
       question: 'ใส่ชุดอะไร ?',
@@ -58,19 +58,21 @@ export default () => {
   ]
 
   return (
-    <Layout responsive={responsive} title="ประกาศ" theme="blue">
+    <Layout responsive={responsive} title="ประกาศ" theme="yellow">
       {questions.map(q => (
         <Card
           title={q.question}
+          headStyle={{}}
           style={{
             marginLeft: responsive.mobile ? '30vw' : '10px',
             marginRight: responsive.mobile ? '30vw' : '10px',
-            marginTop: 20,
+            marginTop: 20, 
             marginBottom: 20,
+            borderRadius: '10px',
           }}
           hoverable
         >
-          <u>ตอบ:</u> {q.answer}
+          <u>ตอบ :</u> {q.answer}
         </Card>
       ))}
     </Layout>
