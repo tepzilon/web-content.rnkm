@@ -1,21 +1,20 @@
 import React, { useState } from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
-import ButtonBaan from './buttonBaan'
+
+import Img from 'gatsby-image'
+
 import { Box } from '@material-ui/core'
 
 import { Row, Col, Tabs } from 'antd'
 
 import SizeSelector from './sizeSelector'
 import styles from './baanGallery.module.scss'
-
+import './baanGallery.scss'
 // import TouchRipple from '@material-ui/core/ButtonBase/TouchRipple'
 
 const { TabPane } = Tabs
 
 export default ({device}) => {
-
-  const [size, setSize] = useState('S')
-
   const data = useStaticQuery(
     graphql`
       query {
@@ -51,31 +50,57 @@ export default ({device}) => {
     `
   )
 
-  let imageFetcher = {}
+  const imageFetcher = {}
   data.allFile.edges.forEach(e => {
     imageFetcher[e.node.name.split('.')[0]] = e.node.childImageSharp.fluid
   })
-
-
-  let filteredBaan = data.allBaanJson.edges.filter(
-    baan => baan.node.size === size
+  const getfilteredBaans = (size) => (
+    data.allBaanJson.edges.filter(baan => baan.node.size === size)
   )
+
+  const baanSizes = [
+    {char: 'S', title: 'บ้านขนาดเล็ก (S)', key: 1},
+    {char: 'M', title: 'บ้านขนาดกลาง (M)', key: 2},
+    {char: 'L', title: 'บ้านขนาดใหญ่ (L)', key: 3},
+    {char: 'XL', title: 'บ้านขนาดใหญ่มาก (XL)', key: 4},
+  ]
+
+  const BaanGrid = ({size}) => (
+    <Row>
+      {
+        getfilteredBaans(size).map((baan) => (
+          <Col span={8}>
+            <BaanButton baan={baan.node}/>
+          </Col>
+        ))
+      }
+    </Row>
+  )
+
+  const BaanButton = ({baan}) => {
+    
+    if(imageFetcher[baan.nameURL] === undefined) return <div>{baan.nameURL}</div>
+    else
+      return (
+        <Link to={'/gallery/'+baan.nameURL}>
+          <div className={styles.buttonWrapper}>
+            <div className={styles.imageWrapper}>
+              <Img fluid={imageFetcher[baan.nameURL]}/>
+            </div>
+          </div>
+        </Link>
+      )
+  }
 
   return (
     <div className={styles.galleryApp} device={device} >
-      <Tabs defaultActiveKey="1" style={{backgrounColor: 'tomato'}}>
-        <TabPane tab="ขนาดเล็ก (S)" key="1">
-          Content of Tab Pane 1
-        </TabPane>
-        <TabPane tab="ขนาดกลาง (M)" key="2">
-          Content of Tab Pane 2
-        </TabPane>
-        <TabPane tab="ขนาดใหญ่ (L)" key="3">
-          Content of Tab Pane 3
-        </TabPane>
-        <TabPane tab="ขนาดใหญ่มาก (XL)" key="4">
-          Content of Tab Pane 3
-        </TabPane>
+      <Tabs defaultActiveKey="1" tabPosition=
+        {device==='desktop'?'left':'top'} size='large'>
+        {baanSizes.map((size) => (
+          <TabPane tab={size.title} key={size.key}>
+            <BaanGrid size={size.char}/>
+          </TabPane>
+        ))}
       </Tabs>
     </div>
     // <Box

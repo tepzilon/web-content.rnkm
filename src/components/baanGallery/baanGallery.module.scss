@@ -3,12 +3,12 @@
     // background-color: tomato;
 }
 
-.gallery-app[device='tablet'],
 .gallery-app[device='desktop'] {
-    margin-left: 30vw;
-    margin-right: 30vw;
+    margin-left: 20vw;
+    margin-right: 20vw;
 }
 
+.gallery-app[device='tablet'],
 .gallery-app[device='mobile'] {
     margin-left: 0;
     margin-right: 0;
@@ -20,4 +20,20 @@
     height: 100%;
     border-radius: 10%;
     overflow: hidden;
+    cursor: pointer;
+    background: #ffffff;
+    &:not(hover) {
+        filter: none;
+    }
+    &:hover {
+        filter: drop-shadow(5px 5px 5px grey);
+    }
+    &:active {
+        transform: scale(0.95);
+    }
+    transition: 0.3s;
+}
+
+.button-wrapper {
+   margin: 10px 10px 10px 10px;
 }
