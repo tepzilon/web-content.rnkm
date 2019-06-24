@@ -2,10 +2,12 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import BaanInfo from '../components/baanInfo/baanInfo';
+import { useMediaQuery } from '@material-ui/core'
+import BaanInfo from '../components/baanInfo/baanInfo'
+import Layout from '../components/layout'
+
 const baan = ({data}) => {
   const {nameURL} = data.allSitePage.edges[0].node.context
-
   const bundle = {
     ...data.allSitePage.edges[0].node.context,
     //Fetch image files with according to each baan.
@@ -17,8 +19,21 @@ const baan = ({data}) => {
                 new RegExp(`^${nameURL}.+logo.big1$`).test(image.node.name))
               )[0].node.childImageSharp.fluid
   }
-
-  return <BaanInfo bundle={bundle}/>
+  const responsive = {
+    desktop: useMediaQuery('(min-width:991px)'),
+    tablet: useMediaQuery('(min-width:767px)'),
+    mobile: useMediaQuery('(min-width:479px)'),
+    getDevice: function() {
+      if(this.tablet === true) return 'desktop'
+      else if(this.mobile === true) return 'tablet'
+      else return 'mobile'
+    }
+  }
+  return (
+    <Layout responsive={responsive} title="ข้อมูลบ้าน" theme="blue">
+      <BaanInfo bundle={bundle} device={responsive.getDevice()}/>
+    </Layout>
+  )
 }
 //Queries for each baan data from json and all baans' image
 export const query = graphql`
