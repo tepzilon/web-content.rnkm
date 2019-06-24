@@ -1,15 +1,12 @@
 import React from 'react'
-import { useMediaQuery } from '@material-ui/core'
 import Layout from '../components/layout'
 import { Card } from 'antd'
-
+import { getResponsive } from '../shared/js/responsive'
+import styles from './announce.module.scss'
+import './announce.scss'
 
 export default () => {
-  let responsive = {
-    desktop: useMediaQuery('(min-width:991px)'),
-    tablet: useMediaQuery('(min-width:767px)'),
-    mobile: useMediaQuery('(min-width:479px)'),
-  }
+  const responsive = getResponsive()
 
   const questions = [
     {
@@ -57,24 +54,24 @@ export default () => {
     },
   ]
 
+  const headStyle = {}
+
   return (
     <Layout responsive={responsive} title="ประกาศ" theme="yellow">
-      {questions.map(q => (
-        <Card
-          title={q.question}
-          headStyle={{}}
-          style={{
-            marginLeft: responsive.mobile ? '30vw' : '10px',
-            marginRight: responsive.mobile ? '30vw' : '10px',
-            marginTop: 20, 
-            marginBottom: 20,
-            borderRadius: '10px',
-          }}
-          hoverable
-        >
-          <u>ตอบ :</u> {q.answer}
-        </Card>
-      ))}
+      <div className={styles.container} device={responsive.getDevice()}>
+        <h1>คำถามที่พบบ่อย (FAQ)</h1>
+        {questions.map(q => (
+          <Card
+            title={q.question}
+            // headStyle={}
+            className={styles.card}
+            // hoverable
+          >
+            <span style={{ textDecoration: 'underline' }}>ตอบ</span> :{' '}
+            {q.answer}
+          </Card>
+        ))}
+      </div>
     </Layout>
   )
 }

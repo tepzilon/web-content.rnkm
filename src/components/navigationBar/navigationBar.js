@@ -47,7 +47,7 @@ class NavigationBar extends Component {
         link: 'https://www.yahoo.com/',
         isExternal: true,
       },
-      { text: 'ประกาศ', link: '/annouce', isExternal: false },
+      { text: 'ประกาศ', link: '/announce', isExternal: false },
       { text: 'ติดต่อเรา', link: '/contact', isExternal: false },
     ]
     const navigation = responsive.tablet ? (

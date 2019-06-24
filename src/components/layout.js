@@ -6,8 +6,6 @@ import NavigationBar from './navigationBar/navigationBar'
 import './layout.scss'
 import 'antd/dist/antd.css'
 
-import 'antd/dist/antd.css'
-
 export default ({ children, responsive, title, theme }) => (
   <div>
     <GlobalStyles />
