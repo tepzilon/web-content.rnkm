@@ -13,7 +13,7 @@ export default ({ responsive }) => {
         }}
       >
         <div className={styles.wrapper}>
-          <img src={logo} className={styles.logo} />
+          <img src={logo} className={styles.logo} alt="rnkm logo"/>
           <div className={styles.content}>
             <h1 className={styles.header}>103 We Unite, We CUnique</h1>
             <p>
