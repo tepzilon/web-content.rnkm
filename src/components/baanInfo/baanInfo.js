@@ -9,78 +9,41 @@ const baanInfo = ({bundle, device}) => {
     query {
       lineIcon: file(relativePath:{regex:"/line.png$/"}){
         childImageSharp {
-          fixed(width: 50, height: 50) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 50, maxHeight: 50) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
       facebookIcon: file(relativePath:{regex:"/facebook.png$/"}){
         childImageSharp {
-          fixed(width: 50, height: 50) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 50, maxHeight: 50) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
       facebookShareIcon: file(relativePath:{regex:"/facebook-share.png$/"}) {
         childImageSharp {
-          fixed(width: 167, height: 50) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 167, maxHeight: 50) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
       twitterIcon: file(relativePath:{regex:"/twitter.png$/"}){
         childImageSharp {
-          fixed(width: 50, height: 50) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 50, maxHeight: 50) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
       instagramIcon: file(relativePath:{regex:"/instagram.png$/"}){
         childImageSharp {
-          fixed(width: 50, height: 50) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-
-      lineIcon_mobile: file(relativePath:{regex:"/line.png$/"}){
-        childImageSharp {
-          fixed(width: 30, height: 30) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      facebookIcon_small: file(relativePath:{regex:"/facebook.png$/"}){
-        childImageSharp {
-          fixed(width: 30, height: 30) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      facebookShareIcon_small: file(relativePath:{regex:"/facebook-share.png$/"}) {
-        childImageSharp {
-          fixed(width: 100, height: 30) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      twitterIcon_small: file(relativePath:{regex:"/twitter.png$/"}){
-        childImageSharp {
-          fixed(width: 30, height: 30) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      instagramIcon_small: file(relativePath:{regex:"/instagram.png$/"}){
-        childImageSharp {
-          fixed(width: 30, height: 30) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 50, maxHeight: 50) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
     }
   `)
-  const socialSmallSuffix = (device!=='desktop')?'_small':''
   return (
     <div className={styles.infoContainer} device={device}>
       <div>
@@ -100,16 +63,16 @@ const baanInfo = ({bundle, device}) => {
         {['facebook','line','twitter','instagram'].map(social => (
           bundle[`${social}URL`] !== "" && 
           <a href={bundle[`${social}URL`]}>
-            <Img fixed={data[`${social}Icon${socialSmallSuffix}`].childImageSharp.fixed}
-                className={styles.linkIcon}
-                device={device}/>
+            <div className={styles.linkIcon} device={device} type='social_media'>
+              <Img fluid={data[`${social}Icon`].childImageSharp.fluid}/>
+            </div>
           </a>
         ))}
-        <Divider type='vertical' style={{height: device==='desktop'?'50px':'30px'}}/>
-        <a href={bundle.facebookURL}>
-            <Img fixed={data[`facebookShareIcon${socialSmallSuffix}`].childImageSharp.fixed}
-                className={styles.linkIcon}
-                device={device}/>
+        <Divider type='vertical' style={{height: device!=='mobile'?'50px':'30px'}}/>
+        <a href={`https://www.facebook.com/sharer/sharer.php?u=http://web-content.rnkm.surge.sh/gallery/${bundle.nameURL}`}>
+          <div className={styles.linkIcon} device={device} type='fb_share'>
+            <Img fluid={data[`facebookShareIcon`].childImageSharp.fluid}/>
+          </div>
         </a>
       </div>
     </div>
