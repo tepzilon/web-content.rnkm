@@ -1,0 +1,27 @@
+.whole-wrapper {
+  width: 100vw;
+  height: 320px;
+  background-size: cover;
+  background-position: center
+}
+
+.paragraph-wrapper {
+  font-size: 1.1rem;
+}
+
+.paragraph-wrapper[device='mobile'] {
+  padding: 45px 20vw 45px 20vw;
+}
+.paragraph-wrapper[device='tablet'] {
+  padding: 45px 25vw 45px 25vw;
+}
+.paragraph-wrapper[device='desktop'] {
+  p,h1,h2,h3,h4,h5,h6 {
+    text-align: center
+  }
+  h2 {
+    font-weight: bold
+  }
+  padding: 45px 25vw 45px 25vw;
+  font-size: 1.2rem;
+}

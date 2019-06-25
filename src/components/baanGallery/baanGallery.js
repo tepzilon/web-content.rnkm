@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
 import Img from 'gatsby-image'
-import { Row, Col, Tabs } from 'antd'
+import { Row, Col, Tabs, Select } from 'antd'
 import styles from './baanGallery.module.scss'
-import './baanGallery.scss'
 
 // import TouchRipple from '@material-ui/core/ButtonBase/TouchRipple'
 
 const { TabPane } = Tabs
+const { Option } = Select
 
-export default ({device}) => {
+export default ({ device }) => {
+  const [viewSize, setViewSize] = useState('S')
+
   const data = useStaticQuery(
     graphql`
       query {
@@ -23,19 +25,17 @@ export default ({device}) => {
             }
           }
         }
-        allFile(filter:{
-          relativePath: {
-            regex: "/^baan\/logo\/500px/"
-          },
-          name: {
-            regex: "/big1$/"
+        allFile(
+          filter: {
+            relativePath: { regex: "/^baan/logo/500px/" }
+            name: { regex: "/big1$/" }
           }
-        }) {
+        ) {
           edges {
             node {
               name
               childImageSharp {
-                fluid(maxWidth: 160, maxHeight: 160){
+                fluid(maxWidth: 160, maxHeight: 160) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -50,81 +50,87 @@ export default ({device}) => {
   data.allFile.edges.forEach(e => {
     imageFetcher[e.node.name.split('.')[0]] = e.node.childImageSharp.fluid
   })
-  const getfilteredBaans = (size) => (
+  const getfilteredBaans = size =>
     data.allBaanJson.edges.filter(baan => baan.node.size === size)
-  )
 
   const baanSizes = [
-    {char: 'S', title: 'บ้านขนาดเล็ก (S)', key: 1},
-    {char: 'M', title: 'บ้านขนาดกลาง (M)', key: 2},
-    {char: 'L', title: 'บ้านขนาดใหญ่ (L)', key: 3},
-    {char: 'XL', title: 'บ้านขนาดใหญ่มาก (XL)', key: 4},
+    { char: 'S', text: 'บ้านขนาดเล็ก (S)' },
+    { char: 'M', text: 'บ้านขนาดกลาง (M)' },
+    { char: 'L', text: 'บ้านขนาดใหญ่ (L)' },
+    { char: 'XL', text: 'บ้านขนาดใหญ่มาก (XL)' },
   ]
 
-  const BaanGrid = ({size}) => (
+  const BaanGrid = ({ size }) => (
     <Row>
-      {
-        getfilteredBaans(size).map((baan) => (
-          <Col span={8}>
-            <BaanButton baan={baan.node}/>
-          </Col>
-        ))
-      }
+      {getfilteredBaans(size).map(baan => (
+        <Col span={8}>
+          <BaanButton baan={baan.node} />
+        </Col>
+      ))}
     </Row>
   )
 
-  const BaanButton = ({baan}) => {
-    
-    if(imageFetcher[baan.nameURL] === undefined) return <div>{baan.nameURL}</div>
+  const BaanButton = ({ baan }) => {
+    if (imageFetcher[baan.nameURL] === undefined)
+      return <div>{baan.nameURL}</div>
     else
       return (
-        <Link to={'/gallery/'+baan.nameURL}>
+        <Link to={'/gallery/' + baan.nameURL}>
           <div className={styles.buttonWrapper} device={device}>
             <div className={styles.imageWrapper}>
-              <Img fluid={imageFetcher[baan.nameURL]}/>
+              <Img fluid={imageFetcher[baan.nameURL]} />
             </div>
           </div>
         </Link>
       )
   }
 
+  const getTabletTab = tabs => (
+    <Tabs
+      activeKey={viewSize}
+      tabPosition={'top'}
+      renderTabBar={() => (
+        <div className={styles.sizeSelectorWrapper}>
+          <Select
+            className={styles.sizeSelector}
+            defaultValue={viewSize}
+            onSelect={size => setViewSize(size)}
+          >
+            {baanSizes.map(size => (
+              <Option value={size.char}>{size.text}</Option>
+            ))}
+          </Select>
+        </div>
+      )}
+    >
+      {tabs}
+    </Tabs>
+  )
+
+  const getDesktopTab = tabs => (
+    <Tabs
+      activeKey={viewSize}
+      tabPosition={'left'}
+      size={'large'}
+      onTabClick={size => {
+        setViewSize(size)
+      }}
+    >
+      {tabs}
+    </Tabs>
+  )
+
+  const tabChilds = baanSizes.map(size => (
+    <TabPane tab={size.text} key={size.char} activeKey={viewSize}>
+      <BaanGrid size={size.char} />
+    </TabPane>
+  ))
+
   return (
-    <div className={styles.galleryApp} device={device} >
-      <Tabs 
-        defaultActiveKey="1" 
-        tabPosition={device==='desktop'?'left':'top'} 
-        size={device==='desktop'?'large':'default'}
-      >
-        {baanSizes.map((size) => (
-          <TabPane tab={size.title} key={size.key}>
-            <BaanGrid size={size.char}/>
-          </TabPane>
-        ))}
-      </Tabs>
+    <div className={styles.galleryApp} device={device}>
+      {device === 'desktop'
+        ? getDesktopTab(tabChilds)
+        : getTabletTab(tabChilds)}
     </div>
-    // <Box
-    //   style={{
-    //     marginLeft: responsive.mobile ? '30vw' : '2vw',
-    //     marginRight: responsive.mobile ? '30vw' : '2vw',
-    //     marginTop: '20px',
-    //   }}
-    // >
-    //   <SizeSelector setSize={setSize} />
-    //   <Grid container spacing={2}>
-    //     {filteredBaan.map(baan => (
-    //       <Grid item xs={4}>
-    //         <div className={styles.imageWrapper}>
-    //           <Link to={`gallery/`+baan.node.nameURL}>
-    //             {imageFetcher[baan.node.nameURL] !== undefined ? 
-    //             <ButtonBaan
-    //               key={baan.node.id}
-    //               cover={imageFetcher[baan.node.nameURL]}
-    //             /> : <div>{baan.node.nameURL} ชื่อผิด</div>}
-    //           </Link>
-    //         </div>
-    //       </Grid>
-    //     ))}
-    //   </Grid>
-    // </Box>
   )
 }

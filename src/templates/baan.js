@@ -3,27 +3,42 @@ import { graphql } from 'gatsby'
 import BaanInfo from '../components/baanInfo/baanInfo'
 import Layout from '../components/layout'
 import {getResponsive} from '../shared/js/responsive'
+import { Helmet } from 'react-helmet'
 
 const baan = ({data}) => {
   const {nameURL} = data.allSitePage.edges[0].node.context
   //Replace nameURL's each metacharacter to a character with regex syntax.
   const regexURL = nameURL.replace(/[\^$.|?*+(){}]/g, (symbol) => `\\${symbol}` )
+
+  const coverQuery = data.coverFiles.edges.filter((image) => (
+    new RegExp(`^${regexURL}.+cover1$`).test(image.node.name))
+  )[0].node
+
+  const coverImageFluid = coverQuery.childImageSharp.fluid
+  const coverPublicURL = coverQuery.publicURL
+
   const bundle = {
     ...data.allSitePage.edges[0].node.context,
     //Fetch image files with according to each baan.
     //For example, the baan with url 'abcdef' will match all image files with prefix 'abcdef' (eg. 'abcdef.xxx.png').
-    coverImage: data.coverFiles.edges.filter((image) => (
-                  new RegExp(`^${regexURL}.+cover1$`).test(image.node.name))
-                )[0].node.childImageSharp.fluid,
+    coverImage: coverImageFluid,
     logoImage: data.logoFiles.edges.filter((image) => (
                 new RegExp(`^${regexURL}.+logo.big1$`).test(image.node.name))
               )[0].node.childImageSharp.fluid
   }
   const responsive = getResponsive();
   return (
-    <Layout device={responsive.getDevice()} title="ข้อมูลบ้าน" theme="blue">
-      <BaanInfo bundle={bundle} device={responsive.getDevice()}/>
-    </Layout>
+    <div>
+      <Layout device={responsive.getDevice()} title="ข้อมูลบ้าน" theme="blue">
+        <BaanInfo bundle={bundle} device={responsive.getDevice()}/>
+      </Layout>
+      <Helmet>
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={`บ้าน${bundle.nameTH} - Baan ${bundle.nameEN}`} />
+        <meta property="og:description" content={bundle.slogan} />
+        <meta property="og:image" content={coverPublicURL} />
+      </Helmet>
+    </div>
   )
 }
 //Queries for each baan data from json and all baans' image
@@ -35,6 +50,7 @@ export const query = graphql`
           context {
             nameURL
             nameTH
+            nameEN
             description
             facebookURL
             twitterURL
@@ -56,6 +72,7 @@ export const query = graphql`
       edges {
         node {
           name
+          publicURL
           childImageSharp {
             fluid(maxWidth: 1080, maxHeight: 410) {
               ...GatsbyImageSharpFluid

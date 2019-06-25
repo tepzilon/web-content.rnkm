@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './baan-info.module.scss'
 import Img from 'gatsby-image'
 import {graphql, useStaticQuery} from 'gatsby'
+import { Icon, Divider } from 'antd';
 
 const baanInfo = ({bundle, device}) => {
   const data = useStaticQuery(graphql`
@@ -20,6 +21,13 @@ const baanInfo = ({bundle, device}) => {
           }
         }
       }
+      facebookShareIcon: file(relativePath:{regex:"/facebook-share.png$/"}) {
+        childImageSharp {
+          fixed(width: 167, height: 50) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
       twitterIcon: file(relativePath:{regex:"/twitter.png$/"}){
         childImageSharp {
           fixed(width: 50, height: 50) {
@@ -34,14 +42,45 @@ const baanInfo = ({bundle, device}) => {
           }
         }
       }
+
+      lineIcon_mobile: file(relativePath:{regex:"/line.png$/"}){
+        childImageSharp {
+          fixed(width: 30, height: 30) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      facebookIcon_small: file(relativePath:{regex:"/facebook.png$/"}){
+        childImageSharp {
+          fixed(width: 30, height: 30) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      facebookShareIcon_small: file(relativePath:{regex:"/facebook-share.png$/"}) {
+        childImageSharp {
+          fixed(width: 100, height: 30) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      twitterIcon_small: file(relativePath:{regex:"/twitter.png$/"}){
+        childImageSharp {
+          fixed(width: 30, height: 30) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      instagramIcon_small: file(relativePath:{regex:"/instagram.png$/"}){
+        childImageSharp {
+          fixed(width: 30, height: 30) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
     }
   `)
-
-  const lineIcon = data.lineIcon.childImageSharp.fixed
-  const facebookIcon = data.facebookIcon.childImageSharp.fixed
-  const twitterIcon = data.twitterIcon.childImageSharp.fixed
-  const instagramIcon = data.instagramIcon.childImageSharp.fixed
-
+  const socialSmallSuffix = (device!=='desktop')?'_small':''
   return (
     <div className={styles.infoContainer} device={device}>
       <div>
@@ -51,33 +90,27 @@ const baanInfo = ({bundle, device}) => {
         <Img fluid = {bundle.logoImage}/>
       </div>
       <div className={styles.content}>
-        <h1 style={{fontWeight: 'bold', textAlign: 'center'}}>{bundle.nameTH}</h1>
+        <h1 style={{fontWeight: 'bold', textAlign: 'center'}}>{`บ้าน${bundle.nameTH} - Baan ${bundle.nameEN}`}</h1>
         <h3 style={{fontWeight: 'bold', textAlign: 'center'}}>{bundle.slogan}</h3>
         <h3 style={{textAlign: 'center'}} dangerouslySetInnerHTML={{
           __html: bundle.description.replace(/\n/g, "<br/>")
         }}/>
       </div>
       <div className={styles.externalLinks}>
-        {bundle.lineURL !== "" && 
-          <a href={bundle.lineURL}>
-            <Img fixed={lineIcon} className={styles.linkIcon}/>
+        {['facebook','line','twitter','instagram'].map(social => (
+          bundle[`${social}URL`] !== "" && 
+          <a href={bundle[`${social}URL`]}>
+            <Img fixed={data[`${social}Icon${socialSmallSuffix}`].childImageSharp.fixed}
+                className={styles.linkIcon}
+                device={device}/>
           </a>
-        }
-        {bundle.facebookURL !== "" &&
-          <a href={bundle.facebookURL}>
-            <Img fixed={facebookIcon} className={styles.linkIcon}/>
-          </a>
-        }
-        {bundle.twitterURL !== "" && 
-          <a href={bundle.twitterURL}>
-            <Img fixed={twitterIcon} className={styles.linkIcon}/>
-          </a>
-        }
-        {bundle.instagramURL !== "" &&
-          <a href={bundle.instagramURL}>
-            <Img fixed={instagramIcon} className={styles.linkIcon}/>
-          </a>
-        }
+        ))}
+        <Divider type='vertical' style={{height: device==='desktop'?'50px':'30px'}}/>
+        <a href={bundle.facebookURL}>
+            <Img fixed={data[`facebookShareIcon${socialSmallSuffix}`].childImageSharp.fixed}
+                className={styles.linkIcon}
+                device={device}/>
+        </a>
       </div>
     </div>
   )

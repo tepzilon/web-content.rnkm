@@ -1,5 +1,6 @@
 .info-container[device='desktop'] {
   margin: 0 15vw 0 15vw;
+  font-size: 1.1rem;
 }
 
 .info-container[device='mobile'],
@@ -31,6 +32,14 @@
   justify-content: center;
 }
 
+.e {
+  height: 500px;
+}
+.external-links-divider[device='mobile'],
+.external-links-divider[device='tablet'] {
+  height: 30px;
+}
+
 .link-icon {
-  margin: 0 10px 0 10px;
+  margin: 0 5px 0 5px;
 }
