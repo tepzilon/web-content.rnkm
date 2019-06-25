@@ -11,7 +11,7 @@ export default () => {
  
   const responsive = getResponsive()
   const device = responsive.getDevice()
-  const slider = (device==='desktop' ? <DesktopSlider /> : <MobileSlider />)
+  const slider = (device==='desktop' ? <DesktopSlider /> : <MobileSlider device={device}/>)
   return (
     <Layout device={device} title="Home" theme="pink">
       {/* <Intro responsive={responsive}/> */}

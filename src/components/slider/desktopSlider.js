@@ -1,13 +1,7 @@
 import React from 'react'
 import { Carousel } from 'antd'
 import './desktopSlider.scss'
-import bg0 from '../../assets/images/slider/bg0.jpg'
-import bg1 from '../../assets/images/slider/bg1.jpg'
-import bg2 from '../../assets/images/slider/bg2.jpg'
-import bg3 from '../../assets/images/slider/bg3.jpg'
-import bg4 from '../../assets/images/slider/bg4.jpg'
-import bg5 from '../../assets/images/slider/bg5.jpg'
-import logo from '../../assets/images/rnkm_logo_filled.png'
+import images from './imagesSlick'
 
 export default () => {
   const bgStyle = {
@@ -16,7 +10,7 @@ export default () => {
   }
   const Template = ({ title, subtitle, description }) => (
     <div
-      style={{
+      style={{ 
         height: '100%',
         display: 'flex',
         justifyContent: 'center',
@@ -56,7 +50,7 @@ export default () => {
         easing="ease-in-out"
       >
         <div>
-          <div style={{ backgroundImage: `url(${bg0})`, ...bgStyle }}>
+          <div style={{ backgroundImage: `url(${images.bg0})`, ...bgStyle }}>
             <div
               style={{
                 display: 'flex',
@@ -66,9 +60,23 @@ export default () => {
               }}
             >
               <div style={{ display: 'flex' }}>
-                <img src={logo} className="logo" alt="rnkm logo" />
-                <div style={{ textShadow: '5px 5px 8px black',width: 600, color: 'white',marginLeft:20 }}>
-                  <h1 style={{ color: 'white', fontFamily: 'Blanch Caps',fontSize:70,marginBottom:10 }}>
+                <img src={images.logo} className="logo" alt="rnkm logo" />
+                <div
+                  style={{
+                    textShadow: '5px 5px 8px black',
+                    width: 600,
+                    color: 'white',
+                    marginLeft: 20,
+                  }}
+                >
+                  <h1
+                    style={{
+                      color: 'white',
+                      fontFamily: 'Blanch Caps',
+                      fontSize: 70,
+                      marginBottom: 10,
+                    }}
+                  >
                     103 We Unite, We CUnique
                   </h1>
                   <p style={{ fontSize: 25 }}>
@@ -76,10 +84,16 @@ export default () => {
                     มาร่วมเป็นส่วนหนึ่งในการสร้างความแตกต่างของพวกเราชาวจุฬาฯ
                     ในงานรับน้องก้าวใหม่ "
                   </p>
-                  <p style={{ textAlign: 'center',fontSize:25 }}>
+                  <p style={{ textAlign: 'center', fontSize: 25 }}>
                     พบกัน 3 - 5 สิงหาคม 2562
                   </p>
-                  <p style={{ fontFamily: 'Blanch Caps',fontSize:50,textAlign:'right' }}>
+                  <p
+                    style={{
+                      fontFamily: 'Blanch Caps',
+                      fontSize: 50,
+                      textAlign: 'right',
+                    }}
+                  >
                     #WeuniteCUnique #UniteCU103
                   </p>
                 </div>
@@ -89,7 +103,7 @@ export default () => {
         </div>
 
         <div>
-          <div style={{ backgroundImage: `url(${bg1})`, ...bgStyle }}>
+          <div style={{ backgroundImage: `url(${images.bg1})`, ...bgStyle }}>
             <Template
               title="Together we are proud"
               subtitle="กิจกรรมรับขวัญน้องใหม่"
@@ -99,7 +113,7 @@ export default () => {
         </div>
 
         <div>
-          <div style={{ backgroundImage: `url(${bg2})`, ...bgStyle }}>
+          <div style={{ backgroundImage: `url(${images.bg2})`, ...bgStyle }}>
             <Template
               title="Together we joy"
               subtitle="Freshy Night"
@@ -109,7 +123,7 @@ export default () => {
         </div>
 
         <div>
-          <div style={{ backgroundImage: `url(${bg3})`, ...bgStyle }}>
+          <div style={{ backgroundImage: `url(${images.bg3})`, ...bgStyle }}>
             <Template
               title="Together we are one"
               subtitle="กิจกรรมหอประชุม"
@@ -119,7 +133,7 @@ export default () => {
         </div>
 
         <div>
-          <div style={{ backgroundImage: `url(${bg4})`, ...bgStyle }}>
+          <div style={{ backgroundImage: `url(${images.bg4})`, ...bgStyle }}>
             <Template
               title="Together we share"
               subtitle="กิจกรรมบำเพ็ญประโยชน์"
@@ -129,7 +143,7 @@ export default () => {
         </div>
 
         <div>
-          <div style={{ backgroundImage: `url(${bg5})`, ...bgStyle }}>
+          <div style={{ backgroundImage: `url(${images.bg5})`, ...bgStyle }}>
             <Template
               title="Together we grow"
               subtitle="Content in capsule"
