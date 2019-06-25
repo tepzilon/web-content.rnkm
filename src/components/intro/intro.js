@@ -13,13 +13,11 @@ export default ({ responsive }) => {
         }}
       >
         <div className={styles.wrapper}>
-          <img src={logo} className={styles.logo} alt="rnkm logo"/>
+          <img src={logo} className={styles.logo} alt="rnkm logo" />
           <div className={styles.content}>
             <h1 className={styles.header}>103 We Unite, We CUnique</h1>
             <p>
-              " It’s always better when we are together
-              มาร่วมเป็นส่วนหนึ่งในการสร้างความแตกต่างของพวกเราเหล่าชาวจุฬาในงานรับน้องก้าวใหม่
-              "
+              " It’s always better when we are together มาร่วมเป็นส่วนหนึ่งในการสร้างความแตกต่างของพวกเราชาวจุฬาฯ ในงานรับน้องก้าวใหม่ "
             </p>
             <p style={{ textAlign: 'center' }}>พบกัน 3 - 5 สิงหาคม 2562</p>
             <p className={styles.hashtag}>#WeuniteCUnique #UniteCU103</p>

@@ -12,7 +12,7 @@ export default ({ data }) => {
   const span = device === 'desktop' ? 12 : 24
 
   return (
-    <Layout device={device} title="Announcement" theme="yellow">
+    <Layout device={device} title="Q&A" theme="yellow">
       <div className={styles.container} device={device}>
         <h1>คำถามที่พบบ่อย (FAQ)</h1>
         <Row type="flex" gutter={16}>
@@ -36,7 +36,7 @@ export const query = graphql`
       edges {
         node {
           question
-          answer
+          answer 
         }
       }
     }
