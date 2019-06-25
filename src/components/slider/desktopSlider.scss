@@ -1,0 +1,55 @@
+.ant-carousel .slick-slide {
+    // text-align: center;
+    height: calc(100vh - 80px);
+    // line-height: 160px;
+    // background: #364d79;
+    overflow: hidden;
+  }
+  
+  .ant-carousel .slick-slide h3 {
+    color: #fff;
+  }
+
+  .logo {
+    animation: bounce-in-top 1.2s both;
+    animation-delay: 1s;
+    width: 400px;
+    height: 400px;
+  }
+  
+  @keyframes bounce-in-top {
+    0% {
+      transform: translateY(-250px);
+      animation-timing-function: ease-in;
+      opacity: 0;
+    }
+    38% {
+      transform: translateY(0);
+      animation-timing-function: ease-out;
+      opacity: 1;
+    }
+    55% {
+      transform: translateY(-65px);
+      animation-timing-function: ease-in;
+    }
+    72% {
+      transform: translateY(0);
+      animation-timing-function: ease-out;
+    }
+    81% {
+      transform: translateY(-28px);
+      animation-timing-function: ease-in;
+    }
+    90% {
+      transform: translateY(0);
+      animation-timing-function: ease-out;
+    }
+    95% {
+      transform: translateY(-8px);
+      animation-timing-function: ease-in;
+    }
+    100% {
+      transform: translateY(0);
+      animation-timing-function: ease-out;
+    }
+  }
