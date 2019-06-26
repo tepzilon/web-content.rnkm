@@ -68,7 +68,7 @@ class NavigationBar extends Component {
             file(relativePath: { eq: "rnkm_logo_filled.png" }) {
               childImageSharp {
                 fluid(maxWidth: 120, maxHeight: 120, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

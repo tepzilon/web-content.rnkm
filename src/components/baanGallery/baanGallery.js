@@ -36,7 +36,7 @@ export default ({ device }) => {
               name
               childImageSharp {
                 fluid(maxWidth: 160, maxHeight: 160) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

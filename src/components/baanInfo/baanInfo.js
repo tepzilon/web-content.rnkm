@@ -10,35 +10,35 @@ const baanInfo = ({bundle, device}) => {
       lineIcon: file(relativePath:{regex:"/line.png$/"}){
         childImageSharp {
           fluid(maxWidth: 50, maxHeight: 50) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp,
           }
         }
       }
       facebookIcon: file(relativePath:{regex:"/facebook.png$/"}){
         childImageSharp {
           fluid(maxWidth: 50, maxHeight: 50) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       facebookShareIcon: file(relativePath:{regex:"/facebook-share.png$/"}) {
         childImageSharp {
           fluid(maxWidth: 167, maxHeight: 50) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       twitterIcon: file(relativePath:{regex:"/twitter.png$/"}){
         childImageSharp {
           fluid(maxWidth: 50, maxHeight: 50) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       instagramIcon: file(relativePath:{regex:"/instagram.png$/"}){
         childImageSharp {
           fluid(maxWidth: 50, maxHeight: 50) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
@@ -61,7 +61,7 @@ const baanInfo = ({bundle, device}) => {
       </div>
       <div className={styles.externalLinks}>
         {['facebook','line','twitter','instagram'].map(social => (
-          bundle[`${social}URL`] !== "" && 
+          bundle[`${social}URL`] !== "" &&
           <a href={bundle[`${social}URL`]}>
             <div className={styles.linkIcon} device={device} type='social_media'>
               <Img fluid={data[`${social}Icon`].childImageSharp.fluid}/>
