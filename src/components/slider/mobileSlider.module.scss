@@ -10,10 +10,15 @@
   );
   padding: 30px 40px;
   color: white;
+  height: calc(100vh - 80px);
 }
 
 .intro-wrapper[device='tablet'] {
   display: flex;
+  box-shadow: 0px 9px 30px -4px rgba(0, 0, 0, 0.75);
+}
+
+.intro-wrapper[device='mobile'] {
   box-shadow: 0px 9px 30px -4px rgba(0, 0, 0, 0.75);
 }
 

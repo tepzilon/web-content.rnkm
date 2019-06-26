@@ -1,0 +1,11 @@
+.container{
+
+}
+
+.container[device='desktop']{
+    padding: 20px 25vw;
+}
+
+.container[device='mobile'],.container[device='tablet']{
+    padding: 30px 30px 0 30px;
+}
