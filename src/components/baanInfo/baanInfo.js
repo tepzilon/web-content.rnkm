@@ -71,12 +71,13 @@ const baanInfo = ({bundle, device}) => {
           </a>
         ))}
         <Divider type='vertical' style={{height: '30px'}}/>
-        <div class="fb-share-button" data-href={`${shareURL}`} data-layout="button" data-size="large">
-          <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=
-            ${encodeURIComponent(shareURL)}&amp;src=sdkpreparse`} class="fb-xfbml-parse-ignore">
+        {/* <div className="fb-share-button" data-href={`${shareURL}`} data-layout="button" data-size="large">
+          <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareURL)}&amp;src=sdkpreparse`} className="fb-xfbml-parse-ignore">
             Share
           </a>
-        </div>
+        </div> */}
+       <iframe src={`https://www.facebook.com/plugins/share_button.php?href=${encodeURIComponent(shareURL)}&layout=button&size=large&width=73&height=28`}
+        width="73" height="28" style={{border:'none',overflow:'hidden'}} scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
       </div>
     </div>
   )
