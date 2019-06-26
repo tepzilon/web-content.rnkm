@@ -2,26 +2,36 @@
   width: 100vw;
   height: 320px;
   background-size: cover;
-  background-position: center
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .paragraph-wrapper {
   font-size: 1.0rem;
+  // background-color: tomato;
+  // p,h1,h2,h3,h4,h5,h6 {
+  //   white-space: pre-wrap;
+  // }
 }
 
 .paragraph-wrapper[device='mobile'] {
-  padding: 45px 20vw 45px 20vw;
+  margin-top: 40px;
+  width: 200px;
 }
 .paragraph-wrapper[device='tablet'] {
-  padding: 45px 25vw 45px 25vw;
+  margin-top: 60px;
+  width: 350px;
 }
 .paragraph-wrapper[device='desktop'] {
+  margin-top: 80px;
   p,h1,h2,h3,h4,h5,h6 {
-    text-align: center
+    text-align: center;
   }
   h2 {
     font-weight: bold
   }
-  padding: 45px 30vw 45px 30vw;
+  width: 600px;
   font-size: 1.2rem;
 }

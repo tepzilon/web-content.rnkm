@@ -4,7 +4,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { Row, Col, Tabs, Select } from 'antd'
 import styles from './baanGallery.module.scss'
-
+import './baanGallery.scss'
 // import TouchRipple from '@material-ui/core/ButtonBase/TouchRipple'
 
 const { TabPane } = Tabs

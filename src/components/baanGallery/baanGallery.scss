@@ -1,0 +1,7 @@
+.ant-tabs-tabpane-active {
+  animation: fadein 0.5s;
+}
+@keyframes fadein {
+  from {opacity: 0; transform: translate(15px)}
+  to {opacity: 100; transform: translate(0px)}
+}

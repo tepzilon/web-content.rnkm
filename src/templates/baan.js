@@ -37,6 +37,9 @@ const baan = ({data}) => {
         <meta property="og:title" content={`บ้าน${bundle.nameTH} - Baan ${bundle.nameEN}`} />
         <meta property="og:description" content={bundle.slogan} />
         <meta property="og:image" content={coverPublicURL} />
+
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3&appId=1613395845374285&autoLogAppEvents=1"></script>
       </Helmet>
     </div>
   )
