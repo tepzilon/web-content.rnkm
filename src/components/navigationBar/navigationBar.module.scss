@@ -11,6 +11,7 @@ $toolbar-height: 80px;
 .header {
   flex-grow: 1;
   color: white;
+  transition: font-size 0.3s;
   font-family: "Blanch Caps", sans-serif;
 }
 
@@ -27,6 +28,12 @@ $toolbar-height: 80px;
 }
 
 .toolbar {
+  &.phukun {
+    height: 40px !important;
+    & > .header {
+      font-size: 1.5rem;
+    }
+  }
   height: $toolbar-height;
   width: 100vw;
   display: flex;
@@ -49,11 +56,13 @@ $toolbar-height: 80px;
 }
 
 .logo-wrapper {
-  height: 60px;
   width: 60px;
   border-radius: 50%;
-  transition: background 0.3s;
   padding: 0.2em;
+  transition: background 0.3s, width 0.3s;
+  &.phukun {
+    width: 30px !important;
+  }
   &:active {
     background: rgba(0, 0, 0, 0.3);
   }

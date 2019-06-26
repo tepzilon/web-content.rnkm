@@ -8,6 +8,7 @@ import MobileNav from './mobileNavBar'
 class NavigationBar extends Component {
   state = {
     lastScrollY: 0,
+    phukun: false
   }
 
   componentDidMount() {
@@ -29,13 +30,15 @@ class NavigationBar extends Component {
       document.body.scrollTop || document.documentElement.scrollTop
 
     if (currentScrollY > lastScrollY && winScroll > 100) {
-      document.getElementById('toolbar').style.height = '40px'
-      document.getElementById('logo wrapper').style.height = '30px'
-      document.getElementById('logo wrapper').style.width = '30px'
+      this.setState({ phukun: true })
+      // document.getElementById('toolbar').style.height = '40px'
+      // document.getElementById('logo wrapper').style.height = '30px'
+      // document.getElementById('logo wrapper').style.width = '30px'
     } else if (currentScrollY < lastScrollY) {
-      document.getElementById('toolbar').style.height = '80px'
-      document.getElementById('logo wrapper').style.height = '60px'
-      document.getElementById('logo wrapper').style.width = '60px'
+      this.setState({ phukun: false })
+      // document.getElementById('toolbar').style.height = '80px'
+      // document.getElementById('logo wrapper').style.height = '60px'
+      // document.getElementById('logo wrapper').style.width = '60px'
     }
   }
   render() {
@@ -55,8 +58,8 @@ class NavigationBar extends Component {
       device === 'desktop' ? (
         <DesktopNav menus={menus} theme={theme} />
       ) : (
-        <MobileNav menus={menus} theme={theme} />
-      )
+          <MobileNav menus={menus} theme={theme} />
+        )
 
     return (
       <StaticQuery
@@ -74,8 +77,8 @@ class NavigationBar extends Component {
         render={data => (
           <div>
             <div className={styles.appbar}>
-              <div className={styles.toolbar} theme={theme} id="toolbar">
-                <div className={styles.logoWrapper} id="logo wrapper">
+              <div className={`${styles.toolbar} ${this.state.phukun ? styles.phukun : ""}`} theme={theme} id="toolbar">
+                <div className={`${styles.logoWrapper} ${this.state.phukun ? styles.phukun : ""}`} id="logo wrapper">
                   <Link to="/">
                     <Img fluid={data.file.childImageSharp.fluid} />
                   </Link>
