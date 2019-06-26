@@ -129,3 +129,27 @@
     animation-timing-function: ease-out;
   }
 }
+
+.abs-flex-fullhw {
+  // position: absolute;
+  display: flex;
+  width: 100px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+.layer{
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 80px);
+  display: flex;
+  // align-items: center;
+}
+
+.button-slick{
+  z-index: 1000;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
