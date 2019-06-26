@@ -30,32 +30,10 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-}
-
-.e {
-  height: 500px;
-}
-.external-links-divider[device='mobile'],
-.external-links-divider[device='tablet'] {
-  height: 30px;
+  align-items: center;
 }
 
 .link-icon {
   margin: 0 5px 0 5px;
-}
-
-.link-icon[type='social_media'][device='mobile'] {
   width: 30px;
-}
-.link-icon[type='social_media'][device='tablet'],
-.link-icon[type='social_media'][device='desktop'] {
-  width: 50px;
-}
-
-.link-icon[type='fb_share'][device='mobile'] {
-  width: 100px;
-}
-.link-icon[type='fb_share'][device='tablet'],
-.link-icon[type='fb_share'][device='desktop'] {
-  width: 170px;
 }

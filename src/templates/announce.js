@@ -12,6 +12,7 @@ const announce = ({data}) => {
       <AnnounceContext
         frontmatter={frontmatter}
         html={html}
+        device={responsive.getDevice()}
       />
     </Layout>
   )

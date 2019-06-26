@@ -44,6 +44,8 @@ const baanInfo = ({bundle, device}) => {
       }
     }
   `)
+  const shareURL = `http://web-content.rnkm.surge.sh/gallery/${bundle.nameURL.replace(/\+/g,'%2b')}`
+
   return (
     <div className={styles.infoContainer} device={device}>
       <div>
@@ -63,18 +65,19 @@ const baanInfo = ({bundle, device}) => {
         {['facebook','line','twitter','instagram'].map(social => (
           bundle[`${social}URL`] !== "" &&
           <a href={bundle[`${social}URL`]}>
-            <div className={styles.linkIcon} device={device} type='social_media'>
+            <div className={styles.linkIcon} type='social_media'>
               <Img fluid={data[`${social}Icon`].childImageSharp.fluid}/>
             </div>
           </a>
         ))}
-        <Divider type='vertical' style={{height: device!=='mobile'?'50px':'30px'}}/>
-        <a href={`https://www.facebook.com/sharer/sharer.php?u=
-        http://web-content.rnkm.surge.sh/gallery/${bundle.nameURL.replace(/\+/g,'%2b')}`}>
-          <div className={styles.linkIcon} device={device} type='fb_share'>
-            <Img fluid={data[`facebookShareIcon`].childImageSharp.fluid}/>
-          </div>
-        </a>
+        <Divider type='vertical' style={{height: '30px'}}/>
+        {/* <div className="fb-share-button" data-href={`${shareURL}`} data-layout="button" data-size="large">
+          <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareURL)}&amp;src=sdkpreparse`} className="fb-xfbml-parse-ignore">
+            Share
+          </a>
+        </div> */}
+       <iframe src={`https://www.facebook.com/plugins/share_button.php?href=${encodeURIComponent(shareURL)}&layout=button&size=large&width=73&height=28`}
+        width="73" height="28" style={{border:'none',overflow:'hidden'}} scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
       </div>
     </div>
   )
