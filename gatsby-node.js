@@ -1,16 +1,39 @@
 const path = require('path')
 const data = require('./src/assets/data/baan.json')
 
-exports.createPages = ({actions}) => {
+exports.createPages = ({actions, graphql}) => {
   const {createPage} = actions;
   const template = path.resolve('./src/templates/baan.js')
-
   data.forEach(baan => {
     let path = 'gallery/'+baan.nameURL
     createPage({
       path,
       component: template,
       context: baan,
+    })
+  })
+
+  const announceTemplate = path.resolve('./src/templates/announce.js')
+  return graphql(`
+    {
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              path
+            }
+          }
+        }
+      }
+    }
+  `).then(result => {
+    if(result.errors) return Promise.reject(result.errors)
+    return result.data.allMarkdownRemark.edges.forEach(({node}) => {
+      createPage({
+        path: node.frontmatter.path,
+        component: announceTemplate,
+        context: {},
+      })
     })
   })
 }
