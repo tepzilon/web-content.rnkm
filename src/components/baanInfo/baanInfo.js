@@ -69,7 +69,8 @@ const baanInfo = ({bundle, device}) => {
           </a>
         ))}
         <Divider type='vertical' style={{height: device!=='mobile'?'50px':'30px'}}/>
-        <a href={`https://www.facebook.com/sharer/sharer.php?u=http://web-content.rnkm.surge.sh/gallery/${bundle.nameURL}`}>
+        <a href={`https://www.facebook.com/sharer/sharer.php?u=
+        http://web-content.rnkm.surge.sh/gallery/${bundle.nameURL.replace(/\+/g,'%2b')}`}>
           <div className={styles.linkIcon} device={device} type='fb_share'>
             <Img fluid={data[`facebookShareIcon`].childImageSharp.fluid}/>
           </div>
