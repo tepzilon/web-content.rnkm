@@ -29,7 +29,7 @@ const baan = ({data}) => {
   const responsive = getResponsive();
   return (
     <div>
-      <Layout device={responsive.getDevice()} title="ข้อมูลบ้าน" theme="blue">
+      <Layout device={responsive.getDevice()} title={`Baan ${bundle.nameEN}`} theme="blue">
         <BaanInfo bundle={bundle} device={responsive.getDevice()}/>
       </Layout>
       <Helmet>
