@@ -2,13 +2,30 @@
   h1 {font-weight: bold;}
 }
 
+[device='desktop']
+.whole-wrapper {
+  //bg
+}
+
+.card-wrapper-wrapper[device='mobile'],
+.card-wrapper-wrapper[device='tablet'] {
+  margin: 0 0 0 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .card-wrapper-wrapper {
   margin: 0px 25vw 0 25vw;
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
-.card-wrapper {
+.card-wrapper[device='mobile'],
+.card-wrapper[device='tablet'] {
+  box-shadow: none;
+}
+
+.card-wrapper[device='desktop'] {
   box-shadow: 8px 8px 8px #999999;
 }
 
