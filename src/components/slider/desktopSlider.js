@@ -10,7 +10,33 @@ export default () => {
     height: 'calc(100vh - 80px)',
   }
 
-  const Intro = () => <div>sdfsdf</div>
+  const Intro = () => (
+    <div>
+      <div>
+        <div style={{ backgroundImage: `url(${images.bg0})`, ...bgStyle }}>
+          <div className={styles.wrapper} section="intro">
+            <div className={styles.introWrapper}>
+              <img src={images.logo} className={styles.introImage}/>
+              <div className={styles.introContentWrapper}>
+                <div className={styles.introHeader}>
+                  103 We Unite, We CUnique
+                </div>
+                <div className={styles.introDescription}>
+                  " It’s always better when we are together
+                  มาร่วมเป็นส่วนหนึ่งในการสร้างความแตกต่างของพวกเราชาวจุฬาฯ
+                  ในงานรับน้องก้าวใหม่ "
+                </div>
+                <div className={styles.introDate}>พบกัน 3 - 5 สิงหาคม 2562</div>
+                <div className={styles.introHashtag}>
+                  #WeuniteCUnique #UniteCU103
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 
   const Slide = ({ bg, title, subtitle, description, position }) => (
     <div>
@@ -29,8 +55,10 @@ export default () => {
   )
 
   return (
-    <Carousel autoplay >
-      {/* <Intro /> */}
+    <Carousel
+    // autoplay
+    >
+      <Intro />
       <Slide
         bg={images.bg1}
         title="Together we are proud"
