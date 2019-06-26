@@ -55,7 +55,7 @@ const Slide = ({ bg, title, subtitle, description, position }) => (
 
 const ButtonSlick = ({ onClick, direction }) => (
   <div className={styles.buttonSlick} onClick={onClick} style={{padding:'0 20px'}}>
-    <div>
+    <div className={styles.arrow}>
       {direction === 'left' ? (
         <img src={Arrow} style={{width:45,transform:'rotate(90deg)'}}/>
       ) : (

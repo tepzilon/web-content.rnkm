@@ -154,3 +154,11 @@
 	40% {transform: translateY(-30px);}
 	60% {transform: translateY(-15px);}
 }
+
+.arrow{
+  filter: brightness(0.5);
+  transition: 0.5s;
+  &:hover{
+    filter: brightness(0.9);
+  }
+}
