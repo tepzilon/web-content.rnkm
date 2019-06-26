@@ -1,4 +1,4 @@
-@import '../../shared/css/palette.scss';
+@import "../../shared/css/palette.scss";
 
 $toolbar-height: 80px;
 
@@ -11,18 +11,18 @@ $toolbar-height: 80px;
 .header {
   flex-grow: 1;
   color: white;
-  font-family: 'Blanch Caps',sans-serif;
+  font-family: "Blanch Caps", sans-serif;
 }
 
-.header[device='desktop'] {
+.header[device="desktop"] {
   font-size: 2.3rem;
 }
 
-.header[device='tablet'] {
+.header[device="tablet"] {
   font-size: 2rem;
 }
 
-.header[device='mobile'] {
+.header[device="mobile"] {
   font-size: 2rem;
 }
 
@@ -33,18 +33,18 @@ $toolbar-height: 80px;
   align-items: center;
   padding: 0 20px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
-  transition: height 0.3s;
+  transition: height 0.3s, background-color 0.3s;
 }
 
-.toolbar[theme='pink'] {
+.toolbar[theme="pink"] {
   background-color: $theme-pink;
 }
 
-.toolbar[theme='yellow'] {
+.toolbar[theme="yellow"] {
   background-color: $theme-yellow;
 }
 
-.toolbar[theme='blue'] {
+.toolbar[theme="blue"] {
   background-color: $theme-blue;
 }
 
@@ -52,10 +52,10 @@ $toolbar-height: 80px;
   height: 60px;
   width: 60px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.3);
-  transition: 0.3s;
+  transition: background 0.3s;
+  padding: 0.2em;
   &:active {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -63,7 +63,8 @@ $toolbar-height: 80px;
   padding: 10px;
 }
 
-.navigation[device='mobile'],.navigation[device='tablet'] {
+.navigation[device="mobile"],
+.navigation[device="tablet"] {
   padding: 10px 20px 10px 10px;
 }
 
