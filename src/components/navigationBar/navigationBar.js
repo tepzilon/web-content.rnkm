@@ -86,7 +86,7 @@ class NavigationBar extends Component {
                 >
                   | {title}
                 </div>
-                <div className={styles.navigation}>{navigation}</div>
+                <div className={styles.navigation} device={device}>{navigation}</div>
               </div>
             </div>
             <div className={styles.wholeContent}>{children}</div>

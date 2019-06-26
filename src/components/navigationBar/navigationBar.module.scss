@@ -11,18 +11,19 @@ $toolbar-height: 80px;
 .header {
   flex-grow: 1;
   color: white;
+  font-family: 'Blanch Caps',sans-serif;
 }
 
 .header[device='desktop'] {
-  font-size: 1.5rem;
+  font-size: 2.3rem;
 }
 
 .header[device='tablet'] {
-  font-size: 1.3rem;
+  font-size: 2rem;
 }
 
 .header[device='mobile'] {
-  font-size: 1.1rem;
+  font-size: 2rem;
 }
 
 .toolbar {
@@ -60,6 +61,10 @@ $toolbar-height: 80px;
 
 .navigation {
   padding: 10px;
+}
+
+.navigation[device='mobile'],.navigation[device='tablet'] {
+  padding: 10px 30px 10px 10px;
 }
 
 .whole-content {
