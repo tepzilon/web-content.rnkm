@@ -56,7 +56,7 @@ export default () => {
 
   return (
     <Carousel
-    // autoplay
+    autoplay
     >
       <Intro />
       <Slide
