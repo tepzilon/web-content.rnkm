@@ -37,6 +37,7 @@
     "react-helmet": "^5.2.1",
     "react-slick": "^0.24.0",
     "react-use-media-query-hook": "^0.0.1",
+    "reactn": "^2.1.4",
     "slick-carousel": "^1.8.1",
     "styled-components": "^4.3.1"
   },

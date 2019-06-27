@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
-
+import {useGlobal, setGlobal} from 'reactn'
 import Img from 'gatsby-image'
 import { Row, Col, Tabs, Select } from 'antd'
 import styles from './baanGallery.module.scss'
@@ -9,8 +9,12 @@ import './baanGallery.scss'
 const { TabPane } = Tabs
 const { Option } = Select
 
+setGlobal({
+  viewSize: 'S'
+})
+
 export default ({ device }) => {
-  const [viewSize, setViewSize] = useState('S')
+  const [viewSize, setViewSize] = useGlobal('viewSize')
   const data = useStaticQuery(
     graphql`
       query {
