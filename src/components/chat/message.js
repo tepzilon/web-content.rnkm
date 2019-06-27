@@ -4,7 +4,7 @@ import Textbox from './textbox'
 import styles from './message.module.scss'
 
 const message = ({ user, text ,device }) => {
-  const gender = user === 'me' ? 'male' : 'female'
+  const gender = user === 'me' ? 'female' : 'male'
 
   return (
     <div className={styles.wholeMessageWrapper} user={user}>
