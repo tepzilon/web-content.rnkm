@@ -6,9 +6,9 @@ const footer = () => {
     <div className="footer">
       <div>
         <span>© Rubnongkaomai 2019 · </span>
-        <a href="https://github.com/KKCORR">KKCORR</a>
+        <a href="https://github.com/KKCORR" className="link-footer">KKCORR</a>
         <span> · </span>
-        <a href="https://github.com/techid2000">techid2000</a>
+        <a href="https://github.com/techid2000" className="link-footer">techid2000</a>
       </div>
     </div>
   )

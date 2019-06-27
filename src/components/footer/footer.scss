@@ -6,3 +6,10 @@
     align-items: center;
     padding: 20px 40px;
 }
+
+.link-footer{
+    transition: 0.5s;
+    &:hover{
+        color: #cccccc;
+    }
+}

@@ -9,7 +9,10 @@ import { graphql, useStaticQuery } from 'gatsby'
 export default ({ device }) => {
   const data = useStaticQuery(graphql`
     query {
-      backgrounds : allFile(filter: { relativePath: { regex: "/^slider/" } }) {
+      backgrounds: allFile(
+        filter: { relativePath: { regex: "/^slider/" } }
+        sort: { fields: [name], order: ASC }
+      ) {
         edges {
           node {
             childImageSharp {
@@ -20,9 +23,9 @@ export default ({ device }) => {
           }
         }
       }
-      logo : file(relativePath:{eq:"rnkm_logo_filled.png"}){
-        childImageSharp{
-          fixed(width:160,height:160){
+      logo: file(relativePath: { eq: "rnkm_logo_filled.png" }) {
+        childImageSharp {
+          fixed(width: 160, height: 160) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -37,7 +40,7 @@ export default ({ device }) => {
   const Intro = () => (
     <div className={styles.introWrapper} device={device}>
       <div className={styles.introImageWrapper}>
-       <Img fixed={data.logo.childImageSharp.fixed} />
+        <Img fixed={data.logo.childImageSharp.fixed} />
       </div>
       <div className={styles.introContentWrapper} device={device}>
         <h1 className={styles.introHeader}>We Unite, We CUnique</h1>
@@ -81,7 +84,7 @@ export default ({ device }) => {
           <Template
             image={images[1]}
             title="Together we are proud"
-            subtitle="กิจกรรมรับขวัญน้องใหม่"
+            subtitle="กิจกรรมรับน้องรับขวัญ"
             description="ต้อนรับนิสิตใหม่ ภายใต้รั้วจามจุรี พร้อมแขกรับเชิญสุดพิเศษที่จะมามอบความสนุกสนาน และมาแบ่งปันเรื่องราวสุด exclusive ที่ไม่มีวันลืม"
           />
           <Template

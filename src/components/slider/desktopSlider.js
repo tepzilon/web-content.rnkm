@@ -84,6 +84,10 @@ export default class DesktopSlider extends Component {
     this.carousel.prev()
   }
   render() {
+    const settings = {
+      autoplaySpeed: 1000,
+      lazyLoad : 'progressive',
+    }
     return (
       <div>
         <div>
@@ -104,15 +108,12 @@ export default class DesktopSlider extends Component {
             </div>
             <ButtonSlick onClick={this.next} direction="right" />
           </div>
-          <Carousel
-            autoplay
-            ref={node => (this.carousel = node)}
-          >
+          <Carousel autoplay ref={node => (this.carousel = node)} {...settings}>
             <Intro />
             <Slide
               bg={images.bg1}
               title="Together we are proud"
-              subtitle="กิจกรรมรับขวัญน้องใหม่"
+              subtitle="กิจกรรมรับน้องรับขวัญ"
               description="ต้อนรับนิสิตใหม่ ภายใต้รั้วจามจุรี พร้อมแขกรับเชิญสุดพิเศษที่จะมามอบความสนุกสนาน และมาแบ่งปันเรื่องราวสุด exclusive ที่ไม่มีวันลืม"
               position="right"
             />
