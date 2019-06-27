@@ -85,7 +85,7 @@ export default class DesktopSlider extends Component {
   }
   render() {
     const settings = {
-      autoplaySpeed: 1000,
+      autoplaySpeed: 8000,
       lazyLoad : 'progressive',
     }
     return (
