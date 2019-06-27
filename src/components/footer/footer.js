@@ -5,8 +5,10 @@ const footer = () => {
   return (
     <div className="footer">
       <div>
-        © Rubnongkaomai 2019 · follow us :
-        <a href="https://www.facebook.com/chulafreshmen/"> CU for Freshmen</a>
+        <span>© Rubnongkaomai 2019 · </span>
+        <a href="https://github.com/KKCORR">KKCORR</a>
+        <span> · </span>
+        <a href="https://github.com/techid2000">techid2000</a>
       </div>
     </div>
   )

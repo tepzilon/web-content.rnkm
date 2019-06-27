@@ -105,7 +105,7 @@ export default class DesktopSlider extends Component {
             <ButtonSlick onClick={this.next} direction="right" />
           </div>
           <Carousel
-            // autoplay
+            autoplay
             ref={node => (this.carousel = node)}
           >
             <Intro />

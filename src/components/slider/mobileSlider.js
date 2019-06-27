@@ -9,7 +9,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 export default ({ device }) => {
   const data = useStaticQuery(graphql`
     query {
-      allFile(filter: { relativePath: { regex: "/^slider/" } }) {
+      backgrounds : allFile(filter: { relativePath: { regex: "/^slider/" } }) {
         edges {
           node {
             childImageSharp {
@@ -20,17 +20,24 @@ export default ({ device }) => {
           }
         }
       }
+      logo : file(relativePath:{eq:"rnkm_logo_filled.png"}){
+        childImageSharp{
+          fixed(width:160,height:160){
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
     }
   `)
 
-  const images = data.allFile.edges
+  const images = data.backgrounds.edges
 
   const span = device === 'tablet' ? 12 : 24
 
   const Intro = () => (
     <div className={styles.introWrapper} device={device}>
       <div className={styles.introImageWrapper}>
-        <img src={images.logo} className={styles.introImage} />
+       <Img fixed={data.logo.childImageSharp.fixed} />
       </div>
       <div className={styles.introContentWrapper} device={device}>
         <h1 className={styles.introHeader}>We Unite, We CUnique</h1>
