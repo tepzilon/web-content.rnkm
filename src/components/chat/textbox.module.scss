@@ -1,0 +1,30 @@
+.whole-wrapper{
+    margin: auto 0;
+}
+
+.whole-wrapper[device='desktop']{
+    width: 420px;
+}
+
+.whole-wrapper[device='tablet']{
+    width: 350px;
+}
+.whole-wrapper[device='mobile']{
+    width: 230px;
+}
+
+.align{
+    display: flex;
+}
+
+.align[user='me']{
+    justify-content: flex-end;
+}
+
+.textbox{
+    background-color: #dddddd;
+    border-radius: 20px;
+    padding: 5px 12px;
+    margin: 10px 5px;
+    display: inline-block;
+}

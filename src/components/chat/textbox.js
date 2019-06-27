@@ -1,21 +1,13 @@
 import React from 'react'
+import styles from './textbox.module.scss'
 
-const textbox = ({ text }) => {
+const textbox = ({ user, text, device }) => {
   return (
-      <div style={{ margin: 'auto 0',width:300 }}>
-        <div
-          style={{
-            backgroundColor: '#ddd',
-            borderRadius: 20,
-            padding: '5px 12px',
-            display : 'inline-block',
-            // display:'flex',
-            // justifyContent:'flex-end'
-          }}
-        >
-          {text}
-        </div>
+    <div className={styles.wholeWrapper} device={device}>
+      <div className={styles.align} user={user}>
+        <div className={styles.textbox}>{text}</div>
       </div>
+    </div>
   )
 }
 

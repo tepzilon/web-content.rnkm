@@ -1,17 +1,23 @@
 import React from 'react'
 import Message from './message'
 import { useStaticQuery, graphql } from 'gatsby'
+import styles from './chat.module.scss'
 
-const chat = () => {
+const chat = ({ device }) => {
   const Header = () => (
     <div
       style={{
         backgroundColor: '#0B2E66',
         color: 'white',
         textAlign: 'center',
+        height: 80,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom : 10,
       }}
     >
-      SGCU
+      <div style={{fontSize:40}}>SGCU</div>
     </div>
   )
 
@@ -29,12 +35,15 @@ const chat = () => {
   `)
 
   return (
-    <div style={{ backgroundColor: 'red', width: 600, margin: '0 auto' }}>
+    <div className={styles.chatbox} device={device}>
       <Header />
-      {data.allConversationJson.edges.map( (message) => (
-          <Message user={message.node.user} text={message.node.text} />
-      ) )}
-      
+      {data.allConversationJson.edges.map(message => (
+        <Message
+          user={message.node.user}
+          text={message.node.text}
+          device={device}
+        />
+      ))}
     </div>
   )
 }

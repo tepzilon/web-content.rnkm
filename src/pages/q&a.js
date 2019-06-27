@@ -9,7 +9,7 @@ export default ({ data }) => {
 
   return (
     <Layout device={device} title="Q&A" theme="yellow">
-      <Chat />
+      <Chat device={device}/>
     </Layout>
   )
 }

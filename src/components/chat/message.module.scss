@@ -1,6 +1,6 @@
 .whole-message-wrapper{
     display: flex;
-    padding: 5px 0;
+    padding: 5px 20px;
 }
 
 .whole-message-wrapper[user='me']{
@@ -12,6 +12,6 @@
 }
 
 .wrapper[user='me']{
-    justify-content: flex-end;
+    // justify-content: flex-end;
     flex-direction: row-reverse;
 }
