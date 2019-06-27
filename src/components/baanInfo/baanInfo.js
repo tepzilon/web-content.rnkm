@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './baan-info.module.scss'
 import Img from 'gatsby-image'
 import {graphql, useStaticQuery} from 'gatsby'
-import { Icon, Divider } from 'antd';
+import { Divider } from 'antd';
 
 const baanInfo = ({bundle, device}) => {
   const data = useStaticQuery(graphql`
@@ -76,7 +76,7 @@ const baanInfo = ({bundle, device}) => {
             Share
           </a>
         </div> */}
-       <iframe src={`https://www.facebook.com/plugins/share_button.php?href=${encodeURIComponent(shareURL)}&layout=button&size=large&width=73&height=28`}
+       <iframe title="facebook-share" src={`https://www.facebook.com/plugins/share_button.php?href=${encodeURIComponent(shareURL)}&layout=button&size=large&width=73&height=28`}
         width="73" height="28" style={{border:'none',overflow:'hidden'}} scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
       </div>
     </div>

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Row, Col } from 'antd'
-import images from './imagesSlick'
 import styles from './mobileSlider.module.scss'
 import About from '../about-rnkm/rnkm'
 import Img from 'gatsby-image'
