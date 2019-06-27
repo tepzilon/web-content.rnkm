@@ -1,0 +1,17 @@
+.whole-message-wrapper{
+    display: flex;
+    padding: 5px 20px;
+}
+
+.whole-message-wrapper[user='me']{
+    justify-content: flex-end;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.wrapper[user='me']{
+    // justify-content: flex-end;
+    flex-direction: row-reverse;
+}

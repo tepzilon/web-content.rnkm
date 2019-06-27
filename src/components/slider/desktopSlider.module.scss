@@ -1,6 +1,6 @@
 .wrapper {
   height: 100%;
-  padding: 0 5vw;
+  padding: 0 10vw;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
@@ -127,5 +127,38 @@
   100% {
     transform: translateY(0);
     animation-timing-function: ease-out;
+  }
+}
+
+.layer{
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 80px);
+  display: flex;
+  // align-items: center;
+}
+
+.button-slick{
+  z-index: 1000;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.bounce{
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-30px);}
+	60% {transform: translateY(-15px);}
+}
+
+.arrow{
+  filter: brightness(0.5);
+  transition: 0.5s;
+  &:hover{
+    filter: brightness(0.9);
   }
 }
