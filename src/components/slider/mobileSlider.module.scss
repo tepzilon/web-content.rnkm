@@ -92,11 +92,12 @@
 .image-wrapper {
   display: flex;
   justify-content: center;
+  padding: 10px;
 }
 .image {
-  width: 90%;
   border-radius: 20px;
-  margin: 20px 0;
+  width: 100%;
+  overflow: hidden;
 }
 
 .description {
