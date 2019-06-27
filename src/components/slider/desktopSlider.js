@@ -8,6 +8,8 @@ import Arrow from '../../assets/images/angle-down-solid.svg'
 
 const bgStyle = {
   backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
   height: 'calc(100vh - 80px)',
 }
 
@@ -54,12 +56,16 @@ const Slide = ({ bg, title, subtitle, description, position }) => (
 )
 
 const ButtonSlick = ({ onClick, direction }) => (
-  <div className={styles.buttonSlick} onClick={onClick} style={{padding:'0 20px'}}>
+  <div
+    className={styles.buttonSlick}
+    onClick={onClick}
+    style={{ padding: '0 20px' }}
+  >
     <div className={styles.arrow}>
       {direction === 'left' ? (
-        <img src={Arrow} style={{width:45,transform:'rotate(90deg)'}}/>
+        <img src={Arrow} style={{ width: 45, transform: 'rotate(90deg)' }} />
       ) : (
-        <img src={Arrow} style={{width:45,transform:'rotate(-90deg)'}}/>
+        <img src={Arrow} style={{ width: 45, transform: 'rotate(-90deg)' }} />
       )}
     </div>
   </div>
@@ -78,24 +84,36 @@ export default class DesktopSlider extends Component {
     this.carousel.prev()
   }
   render() {
+    const settings = {
+      autoplaySpeed: 1000,
+      lazyLoad : 'progressive',
+    }
     return (
       <div>
         <div>
           <div className={styles.layer}>
             <ButtonSlick onClick={this.previous} direction="left" />
-            <div style={{ flexGrow: 1,display:'flex',justifyContent:'center',alignItems:'flex-end' ,paddingBottom:50}}>
-              <div style={{width:25,height:25,zIndex:1000}}>
-                <img src={Arrow} className={styles.bounce}/>
+            <div
+              style={{
+                flexGrow: 1,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'flex-end',
+                paddingBottom: 50,
+              }}
+            >
+              <div style={{ width: 25, height: 25, zIndex: 1000 }}>
+                <img src={Arrow} className={styles.bounce} />
               </div>
             </div>
             <ButtonSlick onClick={this.next} direction="right" />
           </div>
-          <Carousel autoplay ref={node => (this.carousel = node)}>
+          <Carousel autoplay ref={node => (this.carousel = node)} {...settings}>
             <Intro />
             <Slide
               bg={images.bg1}
               title="Together we are proud"
-              subtitle="กิจกรรมรับขวัญน้องใหม่"
+              subtitle="กิจกรรมรับน้องรับขวัญ"
               description="ต้อนรับนิสิตใหม่ ภายใต้รั้วจามจุรี พร้อมแขกรับเชิญสุดพิเศษที่จะมามอบความสนุกสนาน และมาแบ่งปันเรื่องราวสุด exclusive ที่ไม่มีวันลืม"
               position="right"
             />

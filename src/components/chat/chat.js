@@ -17,7 +17,7 @@ const chat = ({ device }) => {
         marginBottom : 10,
       }}
     >
-      <div style={{fontSize:40}}>SGCU</div>
+      <div style={{fontSize:40}}>คำถามที่พบบ่อย (FAQ) </div>
     </div>
   )
 

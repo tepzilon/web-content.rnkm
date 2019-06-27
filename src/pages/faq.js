@@ -8,7 +8,7 @@ export default ({ data }) => {
   const device = responsive.getDevice()
 
   return (
-    <Layout device={device} title="Q&A" theme="pink">
+    <Layout device={device} title="FAQ" theme="pink">
       <Chat device={device}/>
     </Layout>
   )
