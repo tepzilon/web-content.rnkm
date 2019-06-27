@@ -1,5 +1,4 @@
-.ant-tabs-tabpane-active[device = 'mobile'],
-.ant-tabs-tabpane-active[device = 'tablet'] {
+.ant-tabs-tabpane-active[device = 'desktop'] {
   animation: fadein 0.5s;
   -webkit-animation: fadein_wk 0.5s;
 }
