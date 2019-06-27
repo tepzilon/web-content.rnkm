@@ -52,7 +52,7 @@ class NavigationBar extends Component {
         isExternal: true,
       },
       { text: 'Dormitory', link: '/announce/dormitory', isExternal: false },
-      { text: 'Q&A', link: '/q&a', isExternal: false },
+      { text: 'FAQ', link: '/faq', isExternal: false },
     ]
     const navigation =
       device === 'desktop' ? (
