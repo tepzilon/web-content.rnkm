@@ -11,7 +11,6 @@ const { Option } = Select
 
 export default ({ device }) => {
   const [viewSize, setViewSize] = useState('S')
-
   const data = useStaticQuery(
     graphql`
       query {
