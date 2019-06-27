@@ -57,7 +57,7 @@ const baanInfo = ({bundle, device}) => {
       <div className={styles.content}>
         <h1 style={{fontWeight: 'bold', textAlign: 'center'}}>{`บ้าน${bundle.nameTH} - Baan ${bundle.nameEN}`}</h1>
         <h3 style={{fontWeight: 'bold', textAlign: 'center'}}>{bundle.slogan}</h3>
-        <h3 style={{textAlign: 'center'}} dangerouslySetInnerHTML={{
+        <h3 style={{textAlign: 'center', wordWrap: 'break-word'}} dangerouslySetInnerHTML={{
           __html: bundle.description.replace(/\n/g, "<br/>")
         }}/>
       </div>
