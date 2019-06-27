@@ -1,11 +1,20 @@
 const path = require('path')
 const data = require('./src/assets/data/baan.json')
 
-exports.createPages = ({actions, graphql}) => {
-  const {createPage} = actions;
+exports.onCreateWebpackConfig = ({ actions, stage, }) => {
+  if (stage === 'build-javascript') {
+    // turn off source-maps
+    actions.setWebpackConfig({
+      devtool: false,
+    })
+  }
+};
+
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
   const template = path.resolve('./src/templates/baan.js')
   data.forEach(baan => {
-    let path = 'gallery/'+baan.nameURL
+    let path = 'gallery/' + baan.nameURL
     createPage({
       path,
       component: template,
@@ -27,8 +36,8 @@ exports.createPages = ({actions, graphql}) => {
       }
     }
   `).then(result => {
-    if(result.errors) return Promise.reject(result.errors)
-    return result.data.allMarkdownRemark.edges.forEach(({node}) => {
+    if (result.errors) return Promise.reject(result.errors)
+    return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.path,
         component: announceTemplate,

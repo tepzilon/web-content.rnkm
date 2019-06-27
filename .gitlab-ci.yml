@@ -1,0 +1,16 @@
+image: node:10.4.1
+
+cache:
+  paths:
+    - node_modules/
+
+deploy_production:
+  stage: deploy
+  only:
+    - master
+  script:
+    - npm install -g yarn
+    - yarn global add firebase-tools
+    - yarn
+    - firebase use --token $FIREBASE_DEPLOY_KEY rnkm-62-244919
+    - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_DEPLOY_KEY

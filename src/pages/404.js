@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
-import { useMediaQuery } from '@material-ui/core'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 export default () => {
   let responsive = {
