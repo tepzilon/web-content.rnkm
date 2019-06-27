@@ -20,6 +20,12 @@
   padding-bottom: 50px;
 }
 
+.card-wrapper {
+  h1 {
+    white-space: pre-wrap;
+  }
+}
+
 .card-wrapper[device='mobile'],
 .card-wrapper[device='tablet'] {
   box-shadow: none;

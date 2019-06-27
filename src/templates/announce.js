@@ -8,7 +8,7 @@ const announce = ({data}) => {
   const { frontmatter, html } = markdownRemark
   const responsive = getResponsive()
   return (
-    <Layout device={responsive.getDevice()} title="ANNOUNCE" theme="blue">
+    <Layout device={responsive.getDevice()} title="ANNOUNCE" theme="pink">
       <AnnounceContext
         frontmatter={frontmatter}
         html={html}
