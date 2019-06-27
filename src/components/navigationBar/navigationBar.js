@@ -51,7 +51,7 @@ class NavigationBar extends Component {
         link: 'https://www.yahoo.com/',
         isExternal: true,
       },
-      { text: 'Announce', link: '/announce', isExternal: false },
+      { text: 'Dormitory', link: '/announce', isExternal: false },
       { text: 'Q&A', link: '/question', isExternal: false },
     ]
     const navigation =

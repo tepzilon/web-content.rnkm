@@ -44,7 +44,7 @@ const baanInfo = ({bundle, device}) => {
       }
     }
   `)
-  const shareURL = `http://web-content.rnkm.surge.sh/gallery/${bundle.nameURL.replace(/\+/g,'%2b')}`
+  const shareURL = `https://rubnongcu.life/gallery/${bundle.nameURL.replace(/\+/g,'%2b')}`
 
   return (
     <div className={styles.infoContainer} device={device}>
