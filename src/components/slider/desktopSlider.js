@@ -83,7 +83,7 @@ export default class DesktopSlider extends Component {
         <div>
           <div className={styles.layer}>
             <ButtonSlick onClick={this.previous} direction="left" />
-            <div style={{ flexGrow: 1,backgroundColor:'red',display:'flex',justifyContent:'center',alignItems:'flex-end' ,paddingBottom:50}}>
+            <div style={{ flexGrow: 1,display:'flex',justifyContent:'center',alignItems:'flex-end' ,paddingBottom:50}}>
               <div style={{width:25,height:25,zIndex:1000}}>
                 <img src={Arrow} className={styles.bounce}/>
               </div>
