@@ -12,5 +12,6 @@ deploy_production:
     - npm install -g yarn
     - yarn global add firebase-tools
     - yarn
+    - yarn build
     - firebase use --token $FIREBASE_DEPLOY_KEY rnkm-62-244919
     - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_DEPLOY_KEY
