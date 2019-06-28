@@ -9,7 +9,7 @@ const logo = () => {
       logo: file(relativePath: { eq: "rnkm_logo_filled.png" }) {
         childImageSharp {
           fluid(maxWidth: 300, maxHeight: 300, quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
