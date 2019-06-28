@@ -14,7 +14,7 @@ const bgStyle = {
 }
 
 const Intro = () => (
-  <div>
+  <div >
     <div>
       <div style={{ backgroundImage: `url(${images.bg0})`, ...bgStyle }}>
         <div className={styles.wrapper} section="intro">
@@ -40,7 +40,7 @@ const Intro = () => (
 )
 
 const Slide = ({ bg, title, subtitle, description, position }) => (
-  <div>
+  <div >
     <div style={{ backgroundImage: `url(${bg})`, ...bgStyle }}>
       <div className={styles.wrapper} position={position}>
         <div className={styles.contentWrapper}>
