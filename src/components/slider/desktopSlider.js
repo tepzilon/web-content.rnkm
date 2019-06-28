@@ -4,7 +4,7 @@ import './desktopSlider.scss'
 import styles from './desktopSlider.module.scss'
 import images from './imagesSlick'
 import About from '../about-rnkm/rnkm'
-import Arrow from '../../assets/images/angle-down-solid.svg'
+import Arrow from '../../assets/images/arrow.svg'
 
 const bgStyle = {
   backgroundPosition: 'center',
