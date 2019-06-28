@@ -1,0 +1,8 @@
+.ant-carousel .slick-slide {
+  height: calc(100vh - 80px);
+  overflow: hidden;
+}
+
+.ant-carousel .slick-dots li button,.ant-carousel .slick-dots li.slick-active button {
+  background-color: black;
+}
