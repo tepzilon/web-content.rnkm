@@ -54,12 +54,14 @@ export const query = graphql`
             nameURL
             nameTH
             nameEN
-            description
+            descriptionTH
+            descriptionEN
             facebookURL
             twitterURL
             lineURL
             instagramURL
-            slogan
+            sloganTH
+            sloganEN
           }
         }
       }
