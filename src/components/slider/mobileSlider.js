@@ -16,7 +16,7 @@ export default ({ device }) => {
           node {
             childImageSharp {
               fluid(maxWidth: 375, maxHeight: 250) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
@@ -25,7 +25,7 @@ export default ({ device }) => {
       logo: file(relativePath: { eq: "rnkm_logo_filled.png" }) {
         childImageSharp {
           fixed(width: 160, height: 160) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
