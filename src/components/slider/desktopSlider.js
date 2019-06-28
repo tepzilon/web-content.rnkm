@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Carousel, Icon } from 'antd'
+import { Carousel } from 'antd'
 import './desktopSlider.scss'
 import styles from './desktopSlider.module.scss'
 import images from './imagesSlick'
@@ -19,7 +19,7 @@ const Intro = () => (
       <div style={{ backgroundImage: `url(${images.bg0})`, ...bgStyle }}>
         <div className={styles.wrapper} section="intro">
           <div className={styles.introWrapper}>
-            <img src={images.logo} className={styles.introImage} />
+            <img src={images.logo} className={styles.introImage} alt="rnkm logo" />
             <div className={styles.introContentWrapper}>
               <div className={styles.introHeader}>103 We Unite, We CUnique</div>
               <div className={styles.introDescription}>
@@ -63,9 +63,9 @@ const ButtonSlick = ({ onClick, direction }) => (
   >
     <div className={styles.arrow}>
       {direction === 'left' ? (
-        <img src={Arrow} style={{ width: 45, transform: 'rotate(90deg)' }} />
+        <img src={Arrow} style={{ width: 45, transform: 'rotate(90deg)' }} alt="left-arrow"/>
       ) : (
-        <img src={Arrow} style={{ width: 45, transform: 'rotate(-90deg)' }} />
+        <img src={Arrow} style={{ width: 45, transform: 'rotate(-90deg)' }} alt="right-arrow"/>
       )}
     </div>
   </div>
@@ -85,7 +85,7 @@ export default class DesktopSlider extends Component {
   }
   render() {
     const settings = {
-      autoplaySpeed: 1000,
+      autoplaySpeed: 8000,
       lazyLoad : 'progressive',
     }
     return (
@@ -103,7 +103,7 @@ export default class DesktopSlider extends Component {
               }}
             >
               <div style={{ width: 25, height: 25, zIndex: 1000 }}>
-                <img src={Arrow} className={styles.bounce} />
+                <img src={Arrow} className={styles.bounce} alt="down-arrrow"/>
               </div>
             </div>
             <ButtonSlick onClick={this.next} direction="right" />

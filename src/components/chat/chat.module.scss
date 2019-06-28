@@ -1,6 +1,28 @@
+.header{
+    background-color: #0B2E66;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.header[device='desktop']{
+    font-size: 40px;
+}
+
+.header[device='tablet']{
+    font-size: 35px;
+}
+
+.header[device='mobile']{
+    font-size: 30px;
+}
+
 .chatbox{
     margin: 0 auto;
-    // padding-top: 20px;
+    padding: 20px 0;
 }
 
 .chatbox[device='desktop']{
