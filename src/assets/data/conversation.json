@@ -1,7 +1,7 @@
 [
   {
     "user": "me",
-    "text": "พี่คะ หนูมีข้อสงสัยค่ะ"
+    "text": "เด็กอินเตอร์เข้าร่วมงานได้มั้ย ?"
   },
   {
     "user": "other",
@@ -21,7 +21,7 @@
   },
   {
     "user": "other",
-    "text": "ติดตามข่าวสารได้ที่ เพจ facebook : CU for Freshmen ได้เลยจ้า"
+    "text": "ติดตามข่าวสารได้ที่ เพจ facebook : <a href='https://www.facebook.com/chulafreshmen/'>CU for Freshmen</a> ได้เลยจ้า"
   },
   {
     "user": "me",
