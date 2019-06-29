@@ -37,6 +37,8 @@ const baanInfo = ({bundle, device}) => {
   //internal references
   const shareURL = `https://rubnongcu.life/gallery/${bundle.nameURL}`
   const baanPrefix = (language) => language === 'TH' ? "บ้าน" : "Baan"
+  const bothLanguage = (bundle.sloganEN!=="" && bundle.descriptionEN!=="");
+  const getDisplayLanguage = () => bothLanguage ? displayLanguage : 'TH';
 
   return (
     <div className={styles.infoContainer} device={device}>
@@ -45,22 +47,24 @@ const baanInfo = ({bundle, device}) => {
       <div className={styles.logoWrapper}
         device={device}><Img fluid={bundle.logoImage}/></div>
       {/*language switcher*/}
-      <div className={styles.languageSwitcherWrapper}>
-        <Group buttonStyle="solid"
-          defaultValue={language}
-          onChange={(e) => {
-            setLanguage(e.target.value);
-            setAnimType("exit");
-          }}
-        >
-          <Button value='TH'>
-            <Flag code={"TH"} height='15'/> ภาษาไทย
-          </Button>
-          <Button value='EN'>
-            <Flag code={"GB"} height='15'/> English
-          </Button>
-        </Group>
-      </div>
+      { bothLanguage &&
+        <div className={styles.languageSwitcherWrapper}>
+          <Group buttonStyle="solid"
+            defaultValue={language}
+            onChange={(e) => {
+              setLanguage(e.target.value);
+              setAnimType("exit");
+            }}
+          >
+            <Button value='TH'>
+              <Flag code={"TH"} height='15'/> ภาษาไทย
+            </Button>
+            <Button value='EN'>
+              <Flag code={"GB"} height='15'/> English
+            </Button>
+          </Group>
+        </div>
+      }
       {/*content*/}
       <div className={styles.textWrapper}
         animType={animType}
@@ -72,10 +76,10 @@ const baanInfo = ({bundle, device}) => {
         }}
       >
         <div className={styles.content}>
-          <h1 type='header'>{`${baanPrefix(displayLanguage)} ${bundle[`name${displayLanguage}`]}`}</h1>
-          <h3 type='header' dangerouslySetInnerHTML={{__html: `${bundle[`slogan${displayLanguage}`]}`}}/>
+          <h1 type='header'>{`${baanPrefix(getDisplayLanguage())} ${bundle[`name${getDisplayLanguage()}`]}`}</h1>
+          <h3 type='header' dangerouslySetInnerHTML={{__html: `${bundle[`slogan${getDisplayLanguage()}`]}`}}/>
           <br/>
-          <h3 dangerouslySetInnerHTML={{__html: `${bundle[`description${displayLanguage}`]}`.replace(/\n/g,'<br/>')}}/>
+          <h3 dangerouslySetInnerHTML={{__html: `${bundle[`description${getDisplayLanguage()}`]}`.replace(/\n/g,'<br/>')}}/>
         </div>
       </div>
       <div className={styles.externalLinks}>
