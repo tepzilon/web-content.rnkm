@@ -82,7 +82,7 @@ const baanInfo = ({bundle, device}) => {
         {['facebook','line','twitter','instagram'].map(social => (
           bundle[`${social}URL`] !== "" &&
           <a href={bundle[`${social}URL`]}>
-            <img src={icons[social]} className={styles.linkIcon}/>
+            <img src={icons[social]} className={styles.linkIcon} alt={social}/>
           </a>
         ))}
         <Divider type='vertical' style={{height: '28px'}}/>
