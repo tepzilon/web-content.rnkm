@@ -32,6 +32,7 @@ const chat = ({ device }) => {
             user={message.node.user}
             text={message.node.text}
             device={device}
+            key={message.node.text}
           />
         ))}
       </div>

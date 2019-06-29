@@ -1,0 +1,18 @@
+@import '../../shared/css/palette.scss';
+
+.ant-drawer-header {
+  padding: 0 20px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  border-radius: 0;
+  background-color: $theme-pink;
+}
+
+.ant-drawer-close {
+  height: 80px;
+  width: 80px;
+  svg {
+    fill: white;
+  }
+}

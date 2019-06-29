@@ -45,7 +45,7 @@ export default class slick extends Component {
         render={data => {
           const backgrounds = data.backgrounds.edges
           const slickSettings = {
-            autoplaySpeed: 1000,
+            autoplaySpeed: 8000,
             fade: true,
             pauseOnHover: false,
             pauseOnDotsHover: true,
