@@ -12,7 +12,7 @@ const { Option } = Select
 setGlobal({
   viewSize: 'S',
   language: 'TH',
-  promiseLanguage: 'TH"'
+  displayLanguage: 'TH'
 })
 
 export default ({ device }) => {
