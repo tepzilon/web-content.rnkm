@@ -23,3 +23,22 @@
   color: $theme-brighter-pink !important;
 }
 
+.ant-select-focused .ant-select-selection,
+.ant-select-selection:focus,
+.ant-select-selection:active {
+  border-color: $theme-pink;
+  box-shadow: 0 0 0 2px $theme-brighter-pink;
+}
+
+.ant-select-selection:hover {
+  border-color: $theme-pink;
+}
+
+.ant-select-dropdown-menu-item-active:not(.ant-select-dropdown-menu-item-disabled),
+.ant-select-dropdown-menu-item:hover:not(.ant-select-dropdown-menu-item-disabled) {
+  background-color: $theme-brighter-pink;
+}
+
+.ant-select-dropdown-menu-item-selected {
+  background-color: $theme-brightest-pink;
+}
