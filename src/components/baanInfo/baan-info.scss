@@ -1,0 +1,7 @@
+@import '../../shared/css/palette.scss';
+
+.ant-radio-button-wrapper-checked {
+  background: $theme-pink !important;
+  border-color: $theme-pink !important;
+  box-shadow: -1px 0 0 0 $theme-pink !important;
+}

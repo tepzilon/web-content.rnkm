@@ -1,5 +1,7 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styles from './baan-info.module.scss'
+import './baan-info.scss'
+
 import Img from 'gatsby-image'
 import {graphql, useStaticQuery} from 'gatsby'
 import { Divider } from 'antd'
@@ -10,7 +12,8 @@ const {Group, Button} = Radio
 
 const baanInfo = ({bundle, device}) => {
   const [language, setLanguage] = useGlobal('language')
-  const [fade, setFade] = useState('in')
+  const [promiseLanguage, setPromiseLanguage] = useGlobal('promiseLanguage')
+  const [animType, setAnimType] = useState('entrance')
   const data = useStaticQuery(graphql`
     query {
       lineIcon: file(relativePath:{regex:"/line.png$/"}){
@@ -54,28 +57,39 @@ const baanInfo = ({bundle, device}) => {
   const baanPrefix = (language) => language === 'TH' ? "บ้าน" : "Baan"
   return (
     <div className={styles.infoContainer} device={device}>
-      <Group buttonStyle="solid" defaultValue={language} onChange={(e) => {
-        setLanguage(e.target.value)
-        console.log(e.target.value)
-      }}>
-        <Button value='TH'>ภาษาไทย</Button>
-        <Button value='EN'>English</Button>
-      </Group>
       <div>
         <Img fluid = {bundle.coverImage}/>
       </div>
       <div className={styles.logoWrapper} device={device}>
         <Img fluid = {bundle.logoImage}/>
       </div>
-      <div className={styles.content}>
-        <h1 style={{fontWeight: 'bold', textAlign: 'center'}}>{`${baanPrefix(language)} ${bundle[`name${language}`]}`}</h1>
-        <h3 style={{fontWeight: 'bold', textAlign: 'center'}} dangerouslySetInnerHTML={{
-          __html: `${bundle[`slogan${language}`]}`
-        }} />
-        <br/>
-        <h3 style={{textAlign: 'center', wordWrap: 'break-word'}} dangerouslySetInnerHTML={{
-          __html: `${bundle[`description${language}`]}`.replace(/\n/g,'<br/>')
-        }}/>
+      <div style={{display: 'flex', justifyContent: 'center'}}>
+      <Group buttonStyle="solid" defaultValue={language} onChange={(e) => {
+        setPromiseLanguage(e.target.value);
+        setAnimType("exit");
+      }}>
+        <Button value='TH'>ภาษาไทย</Button>
+        <Button value='EN'>English</Button>
+      </Group>
+      </div>
+      <div className={styles.textWrapper} animType={animType} onAnimationEnd={
+        () => {
+          if(animType === 'exit') {
+            setLanguage(promiseLanguage);
+            setAnimType('entrance')
+          }
+        }
+      }>
+        <div className={styles.content}>
+          <h1 style={{fontWeight: 'bold', textAlign: 'center'}}>{`${baanPrefix(language)} ${bundle[`name${language}`]}`}</h1>
+          <h3 style={{fontWeight: 'bold', textAlign: 'center'}} dangerouslySetInnerHTML={{
+            __html: `${bundle[`slogan${language}`]}`
+          }} />
+          <br/>
+          <h3 style={{textAlign: 'center', wordWrap: 'break-word'}} dangerouslySetInnerHTML={{
+            __html: `${bundle[`description${language}`]}`.replace(/\n/g,'<br/>')
+          }}/>
+        </div>
       </div>
       <div className={styles.externalLinks}>
         {['facebook','line','twitter','instagram'].map(social => (
