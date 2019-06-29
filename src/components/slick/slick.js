@@ -52,7 +52,7 @@ export default class slick extends Component {
           }
           return (
             <Carousel
-            //   autoplay
+              autoplay
               {...slickSettings}
               ref={node => (this.carousel = node)}
             >
