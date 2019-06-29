@@ -10,8 +10,7 @@ const { TabPane } = Tabs
 const { Option } = Select
 
 setGlobal({
-  language: 'TH',
-  displayLanguage: 'TH'
+  viewSize: 'S'
 })
 
 export default ({ device }) => {
