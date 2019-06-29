@@ -3,6 +3,7 @@ import 'antd/dist/antd.css'
 import { Drawer } from 'antd'
 import { Link } from 'gatsby'
 import styles from './moblieNavigationBar.module.scss'
+import './mobileNavBar.scss'
 
 export default class MobileNavigation extends React.Component {
   state = { visible: false }
@@ -20,9 +21,9 @@ export default class MobileNavigation extends React.Component {
   }
 
   render() {
-    const { menus, theme } = this.props
+    const { menus } = this.props
 
-    const header = <div className={styles.header}>รับน้องก้าวใหม่ 2562</div>
+    const header = <div className={styles.header}>RNKM 2019</div>
 
     const listStyle = {
       textDecoration: 'none',
@@ -54,7 +55,7 @@ export default class MobileNavigation extends React.Component {
           width="70vw"
           bodyStyle={{ padding: 0 }}
         >
-          <div className={styles.divider} theme={theme} />
+          {/* <div className={styles.divider} theme={theme} /> */}
           <div>
             {menus.map(menu => (
               <div key={menu.text}>
@@ -78,6 +79,7 @@ export default class MobileNavigation extends React.Component {
                 )}
               </div>
             ))}
+            
           </div>
         </Drawer>
       </div>

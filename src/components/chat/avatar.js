@@ -8,14 +8,14 @@ const avatar = ({ gender }) => {
       maleAvatar: file(relativePath: { eq: "user/male.png" }) {
         childImageSharp {
           fluid(maxWidth: 50, maxHeight: 50) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       femaleAvatar: file(relativePath: { eq: "user/female.png" }) {
         childImageSharp {
           fluid(maxWidth: 50, maxHeight: 50) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }

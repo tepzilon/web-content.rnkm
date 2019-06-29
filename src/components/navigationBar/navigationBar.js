@@ -47,7 +47,7 @@ class NavigationBar extends Component {
       { text: 'Home', link: '/', isExternal: false },
       { text: 'BAAN', link: '/gallery', isExternal: false },
       {
-        text: 'Register/Login',
+        text: <span>Register <span style={{fontFamily:'Noto Sans',verticalAlign: 'bottom'}}> / </span>Login</span>,
         link: 'https://www.yahoo.com/',
         isExternal: true,
       },
@@ -87,8 +87,11 @@ class NavigationBar extends Component {
                   className={styles.header}
                   device={device}
                 >
-                  | {title}
-                </div>
+                  <div style={{display:'flex',alignItems:'center'}}>
+                    <div style={{width:3,height:30,backgroundColor:'white',margin:'0 5px'}}/> 
+                    <div style={{marginTop:-2,letterSpacing: 1}}> {title}</div>
+                    </div>
+                  </div>
                 <div className={styles.navigation} device={device}>{navigation}</div>
               </div>
             </div>

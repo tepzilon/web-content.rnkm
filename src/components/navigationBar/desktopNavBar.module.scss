@@ -5,12 +5,15 @@
 }
 
 .button {
+    font-family: 'Blanch Caps', 'Noto Sans', sans-serif;
+    font-size: 24px;
     color: white;
     border-radius: 5px;
-    padding: 5px 15px;
-    margin-right: 20px;
+    padding: 0 15px;
+    margin-right: 5px;
+    letter-spacing: .5px;
     &:hover{
-        transition: 0.7s;
+        transition: 0.5s;
         background: rgba(255, 255, 255, .8);
         cursor: pointer;
     }

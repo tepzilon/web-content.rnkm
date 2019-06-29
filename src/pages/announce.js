@@ -7,7 +7,7 @@ export default ({data}) => {
   const responsive = getResponsive()
   const device = responsive.getDevice()
   return (
-    <Layout device={device} title="Annouce" theme="pink">
+    <Layout device={device} title="Dormitory" theme="pink">
       {
         data.allMarkdownRemark.edges.map(md => (
           <Link to={md.node.frontmatter.path}>

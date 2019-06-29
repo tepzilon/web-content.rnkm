@@ -10,6 +10,7 @@ const {Group, Button} = Radio
 
 const baanInfo = ({bundle, device}) => {
   const [language, setLanguage] = useGlobal('language')
+  const [fade, setFade] = useState('in')
   const data = useStaticQuery(graphql`
     query {
       lineIcon: file(relativePath:{regex:"/line.png$/"}){
@@ -51,7 +52,6 @@ const baanInfo = ({bundle, device}) => {
   `)
   const shareURL = `https://rubnongcu.life/gallery/${bundle.nameURL.replace(/\+/g,'%2b')}`
   const baanPrefix = (language) => language === 'TH' ? "บ้าน" : "Baan"
-
   return (
     <div className={styles.infoContainer} device={device}>
       <Group buttonStyle="solid" defaultValue={language} onChange={(e) => {
