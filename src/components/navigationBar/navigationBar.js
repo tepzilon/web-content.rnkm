@@ -75,7 +75,7 @@ class NavigationBar extends Component {
           }
         `}
         render={data => (
-          <div>
+          <div className={styles.wrapper}>
             <div className={styles.appbar}>
               <div className={`${styles.toolbar} ${this.state.phukun ? styles.phukun : ""}`} theme={theme} id="toolbar">
                 <div className={`${styles.logoWrapper} ${this.state.phukun ? styles.phukun : ""}`} id="logo wrapper">

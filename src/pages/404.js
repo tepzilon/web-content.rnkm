@@ -9,9 +9,7 @@ export default () => {
 
   return (
     <Layout device={device} title="Page not found" theme="pink">
-      <center>
-        <h1>404 Page Not Found.</h1>
-      </center>
+      <div> 404 Page Not Found. </div>
     </Layout>
   )
 }

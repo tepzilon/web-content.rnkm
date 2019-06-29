@@ -1,4 +1,4 @@
-@import "../../shared/css/palette.scss";
+@import '../../shared/css/palette.scss';
 
 $toolbar-height: 80px;
 
@@ -12,18 +12,18 @@ $toolbar-height: 80px;
   flex-grow: 1;
   color: white;
   transition: font-size 0.3s;
-  font-family: "Blanch Caps", sans-serif;
+  font-family: 'Blanch Caps', sans-serif;
 }
 
-.header[device="desktop"] {
+.header[device='desktop'] {
   font-size: 2.3rem;
 }
 
-.header[device="tablet"] {
+.header[device='tablet'] {
   font-size: 2rem;
 }
 
-.header[device="mobile"] {
+.header[device='mobile'] {
   font-size: 2rem;
 }
 
@@ -43,15 +43,15 @@ $toolbar-height: 80px;
   transition: height 0.3s, background-color 0.3s;
 }
 
-.toolbar[theme="pink"] {
+.toolbar[theme='pink'] {
   background-color: $theme-pink;
 }
 
-.toolbar[theme="yellow"] {
+.toolbar[theme='yellow'] {
   background-color: $theme-yellow;
 }
 
-.toolbar[theme="blue"] {
+.toolbar[theme='blue'] {
   background-color: $theme-blue;
 }
 
@@ -72,11 +72,15 @@ $toolbar-height: 80px;
   padding: 10px;
 }
 
-.navigation[device="mobile"],
-.navigation[device="tablet"] {
+.navigation[device='mobile'],
+.navigation[device='tablet'] {
   padding: 10px 20px 10px 10px;
 }
 
 .whole-content {
-  margin-top: $toolbar-height;
+  padding-top: $toolbar-height;
+}
+
+.wrapper {
+  min-height: calc(100vh - 60px);
 }
