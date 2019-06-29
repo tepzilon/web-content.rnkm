@@ -2,9 +2,14 @@ import React from 'react'
 import styles from './baan-info.module.scss'
 import Img from 'gatsby-image'
 import {graphql, useStaticQuery} from 'gatsby'
-import { Divider } from 'antd';
+import { Divider } from 'antd'
+import {Radio} from 'antd'
+import {useGlobal} from 'reactn'
+
+const {Group, Button} = Radio
 
 const baanInfo = ({bundle, device}) => {
+  const [language, setLanguage] = useGlobal('language')
   const data = useStaticQuery(graphql`
     query {
       lineIcon: file(relativePath:{regex:"/line.png$/"}){
@@ -45,9 +50,17 @@ const baanInfo = ({bundle, device}) => {
     }
   `)
   const shareURL = `https://rubnongcu.life/gallery/${bundle.nameURL.replace(/\+/g,'%2b')}`
+  const baanPrefix = (language) => language === 'TH' ? "บ้าน" : "Baan"
 
   return (
     <div className={styles.infoContainer} device={device}>
+      <Group buttonStyle="solid" defaultValue={language} onChange={(e) => {
+        setLanguage(e.target.value)
+        console.log(e.target.value)
+      }}>
+        <Button value='TH'>ภาษาไทย</Button>
+        <Button value='EN'>English</Button>
+      </Group>
       <div>
         <Img fluid = {bundle.coverImage}/>
       </div>
@@ -55,13 +68,13 @@ const baanInfo = ({bundle, device}) => {
         <Img fluid = {bundle.logoImage}/>
       </div>
       <div className={styles.content}>
-        <h1 style={{fontWeight: 'bold', textAlign: 'center'}}>{`บ้าน${bundle.nameTH} - Baan ${bundle.nameEN}`}</h1>
+        <h1 style={{fontWeight: 'bold', textAlign: 'center'}}>{`${baanPrefix(language)} ${bundle[`name${language}`]}`}</h1>
         <h3 style={{fontWeight: 'bold', textAlign: 'center'}} dangerouslySetInnerHTML={{
-          __html: `${bundle.sloganTH}<br/>${bundle.sloganEN}`
+          __html: `${bundle[`slogan${language}`]}`
         }} />
         <br/>
         <h3 style={{textAlign: 'center', wordWrap: 'break-word'}} dangerouslySetInnerHTML={{
-          __html: `${bundle.descriptionTH}<br/><br/>${bundle.descriptionEN}`.replace(/\n/g,'<br/>')
+          __html: `${bundle[`description${language}`]}`.replace(/\n/g,'<br/>')
         }}/>
       </div>
       <div className={styles.externalLinks}>
