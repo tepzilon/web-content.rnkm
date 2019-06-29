@@ -1,4 +1,4 @@
-.slide{
+.slide {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,16 +36,30 @@
   height: 40px;
 }
 
-.arrow-down{
+.arrow-down {
   animation: bounce 1.5s infinite;
   filter: brightness(0.1);
   margin: 0 auto;
   width: 40px;
   height: 40px;
+  transition: 0.5s;
+  &:hover {
+    filter: brightness(1.5);
+  }
 }
 
 @keyframes bounce {
-	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-	40% {transform: translateY(-30px);}
-	60% {transform: translateY(-15px);}
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
 }
