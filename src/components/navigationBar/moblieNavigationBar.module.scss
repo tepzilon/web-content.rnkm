@@ -1,10 +1,13 @@
 @import '../../shared/css/palette.scss';
 
 .header {
-  font-size: 36px;
+  font-size: 33px;
   font-family: 'Blanch Caps','Noto Sans',sans-serif;
   color: white;
   letter-spacing: 1px;
+  // @media screen and (max-width: 425px) {
+  //   font-size: 15px;
+  // }
 }
 
 .divider {

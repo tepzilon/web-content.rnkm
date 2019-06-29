@@ -23,7 +23,7 @@ export default class MobileNavigation extends React.Component {
   render() {
     const { menus } = this.props
 
-    const header = <div className={styles.header}>RNKM 2019</div>
+    const header = <div className={styles.header}>Rubnongkaomai 2019</div>
 
     const listStyle = {
       textDecoration: 'none',
@@ -52,7 +52,7 @@ export default class MobileNavigation extends React.Component {
           onClose={this.onClose}
           visible={this.state.visible}
           zIndex={1500}
-          width="70vw"
+          width={280}
           bodyStyle={{ padding: 0 }}
         >
           {/* <div className={styles.divider} theme={theme} /> */}
