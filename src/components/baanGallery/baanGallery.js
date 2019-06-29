@@ -37,7 +37,7 @@ export default ({ device }) => {
             node {
               name
               childImageSharp {
-                fluid(maxWidth: 160, maxHeight: 160) {
+                fluid(maxWidth: 500, maxHeight: 500) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
