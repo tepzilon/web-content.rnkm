@@ -4,7 +4,7 @@ import { getResponsive } from '../shared/js/responsive'
 import Layout from '../components/layout'
 import DesktopInformation from '../components/information/desktopInformation'
 import MobileInformation from '../components/information/mobileInformation'
-import cover from '../assets/images/slider/bg4.jpg'
+import cover from '../assets/images/activities/bg4.jpg'
 
 export default () => {
   const responsive = getResponsive()

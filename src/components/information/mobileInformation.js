@@ -1,10 +1,11 @@
 import React from 'react'
-import MobileSlider from '../slider/mobileSlider'
+import MobileContent from './mobileContent'
 
 const mobileInformation = ({ device }) => {
+ 
   return (
     <div>
-      <MobileSlider device={device} />
+      <MobileContent device={device}/>
     </div>
   )
 }

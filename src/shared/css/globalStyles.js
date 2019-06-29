@@ -20,11 +20,5 @@ export default createGlobalStyle`
         font-style: normal;
         font-weight: normal;
     }
-    @font-face{
-        font-family: "Block";
-        src: url(${fontFiles.BlockRegOTF}) format("opentype");
-        font-style: normal;
-        font-weight: normal;
-    }
 
 `

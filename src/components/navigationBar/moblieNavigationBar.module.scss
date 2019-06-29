@@ -1,7 +1,10 @@
 @import '../../shared/css/palette.scss';
 
 .header {
-  font-size: 1.2rem;
+  font-size: 36px;
+  font-family: 'Blanch Caps','Noto Sans',sans-serif;
+  color: white;
+  letter-spacing: 1px;
 }
 
 .divider {
@@ -22,8 +25,10 @@
 
 .link {
   padding: 10px 10%;
-  font-size: 16px;
-  transition: 0.5s;
+  font-family: 'Blanch Caps','Noto Sans',sans-serif;
+  font-size: 25px;
+  transition: 0.3s;
+  letter-spacing: 0.5px;
   &:active {
     background-color: #ddd;
   }
