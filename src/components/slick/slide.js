@@ -5,7 +5,7 @@ import Arrow from '../../assets/images/arrow.svg'
 
 const slide = ({ background, content, next, previous }) => {
   return (
-    <BackgroundImage fluid={background.node.childImageSharp.fluid} >
+    <BackgroundImage fluid={background.node.childImageSharp.fluid}>
       <div className={styles.slide}>
         <div className={styles.arrowWrapper} onClick={previous}>
           <img
@@ -20,7 +20,9 @@ const slide = ({ background, content, next, previous }) => {
           <div className={styles.arrowDownWrapper} />
           <div className={styles.content}>{content}</div>
           <div className={styles.arrowDownWrapper}>
-            <img src={Arrow} className={styles.arrowDown} alt="down-arrow" />
+            <a href="#about-rnkm">
+              <img src={Arrow} className={styles.arrowDown} alt="down-arrow"/>
+            </a>
           </div>
         </div>
 

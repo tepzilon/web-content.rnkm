@@ -6702,7 +6702,7 @@ imagemin-webp@^5.0.0:
     exec-buffer "^3.0.0"
     is-cwebp-readable "^2.0.1"
 
-imagemin@^6.0.0:
+imagemin@^6.0.0, imagemin@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/imagemin/-/imagemin-6.1.0.tgz#62508b465728fea36c03cdc07d915fe2d8cf9e13"
   integrity sha512-8ryJBL1CN5uSHpiBMX0rJw79C9F9aJqMnjGnrd/1CafegpNuA81RBAAru/jQQEOWlOJJlpRnlcVFF6wq+Ist0A==
@@ -7794,6 +7794,11 @@ jsx-ast-utils@^2.0.1, jsx-ast-utils@^2.1.0:
   integrity sha512-yDGDG2DS4JcqhA6blsuYbtsT09xL8AoLuUR2Gb5exrw7UEM19sBcOTq+YBBhrNbl0PUC4R4LnFu+dHg2HKeVvA==
   dependencies:
     array-includes "^3.0.3"
+
+jump.js@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/jump.js/-/jump.js-1.0.1.tgz#0de2b1631ba9a1c2c6b8572ad277d877e8503600"
+  integrity sha1-DeKxYxupocLGuFcq0nfYd+hQNgA=
 
 jwa@^1.4.1:
   version "1.4.1"
@@ -11135,6 +11140,14 @@ react-reconciler@^0.20.0:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     scheduler "^0.13.6"
+
+react-scrollable-anchor@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/react-scrollable-anchor/-/react-scrollable-anchor-0.6.1.tgz#fd6e78026c744f76414053d06903b82adccb54d9"
+  integrity sha1-/W54Amx0T3ZBQFPQaQO4KtzLVNk=
+  dependencies:
+    jump.js "1.0.1"
+    prop-types "^15.5.10"
 
 react-side-effect@^1.1.0:
   version "1.1.5"

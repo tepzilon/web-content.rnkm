@@ -6,6 +6,7 @@ import NavigationBar from './navigationBar/navigationBar'
 import Footer from './footer/footer'
 import './layout.scss'
 import 'antd/dist/antd.css'
+import { BackTop } from 'antd'
 
 export default ({ children, device, title, theme }) => (
   <div>
@@ -18,5 +19,6 @@ export default ({ children, device, title, theme }) => (
       {children}
     </NavigationBar>
     <Footer />
+    <BackTop />
   </div>
 )
