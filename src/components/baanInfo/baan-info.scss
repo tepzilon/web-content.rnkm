@@ -5,3 +5,10 @@
   border-color: $theme-pink !important;
   box-shadow: -1px 0 0 0 $theme-pink !important;
 }
+
+.ant-radio-button-wrapper:hover {
+  color: $theme-pink !important;
+}
+.ant-radio-button-wrapper-checked:hover {
+  color: $theme-white !important;
+}

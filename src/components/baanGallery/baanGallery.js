@@ -98,6 +98,7 @@ export default ({ device }) => {
           <Select
             className={styles.sizeSelector}
             defaultValue={viewSize}
+            size={device==='tablet'?'large':'default'}
             onSelect={size => setViewSize(size)}
           >
             {baanSizes.map(size => (

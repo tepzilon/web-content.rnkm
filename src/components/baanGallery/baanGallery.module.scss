@@ -1,11 +1,7 @@
-.gallery-app {
-    margin-top: 20px;
-    // background-color: tomato;
-}
-
 .gallery-app[device='desktop'] {
     margin-left: 20vw;
     margin-right: 20vw;
+    margin-top: 15px;
 }
 
 .gallery-app[device='tablet'],
@@ -13,7 +9,6 @@
     margin-left: 0;
     margin-right: 0;
 }
-
 
 .image-wrapper {
     width: 100%;
@@ -47,7 +42,7 @@
 }
 
 .size-selector-wrapper {
-    margin: 20px 0 20px 0;
+    margin: 15px 0 15px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
