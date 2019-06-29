@@ -35,7 +35,7 @@ const baan = ({data}) => {
       <Helmet>
         <meta property="og:type" content="article" />
         <meta property="og:title" content={`บ้าน${bundle.nameTH} - Baan ${bundle.nameEN}`} />
-        <meta property="og:description" content={bundle.slogan} />
+        <meta property="og:description" content={bundle.sloganTH} />
         <meta property="og:image" content={coverPublicURL} />
 
         <div id="fb-root"></div>
