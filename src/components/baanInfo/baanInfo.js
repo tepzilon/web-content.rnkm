@@ -4,7 +4,7 @@ import './baan-info.scss'
 
 import Img from 'gatsby-image'
 import { Divider, Radio } from 'antd'
-import {useGlobal} from 'reactn'
+import {useGlobal, setGlobal} from 'reactn'
 import Flag from 'react-world-flags'
 
 import FacebookIcon from '../../assets/images/aspect/facebook.svg'
@@ -22,6 +22,12 @@ const icons = {
   instagram: InstagramIcon,
   line: LineIcon,
 }
+
+setGlobal({
+  language: 'TH',
+  displayLanguage: 'TH'
+})
+
 const baanInfo = ({bundle, device}) => {
   //hooks
   const [language, setLanguage] = useGlobal('language')
@@ -29,7 +35,7 @@ const baanInfo = ({bundle, device}) => {
   const [animType, setAnimType] = useState('entrance')
   
   //internal references
-  const shareURL = `https://rubnongcu.life/gallery/${bundle.nameURL.replace(/\+/g,'%2b')}`
+  const shareURL = `https://rubnongcu.life/gallery/${bundle.nameURL}`
   const baanPrefix = (language) => language === 'TH' ? "บ้าน" : "Baan"
 
   return (

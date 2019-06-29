@@ -10,7 +10,6 @@ const { TabPane } = Tabs
 const { Option } = Select
 
 setGlobal({
-  viewSize: 'S',
   language: 'TH',
   displayLanguage: 'TH'
 })
