@@ -32,12 +32,12 @@ const baan = ({data}) => {
       <Layout device={responsive.getDevice()} title={`Baan ${bundle.nameEN}`} theme="pink">
         <BaanInfo bundle={bundle} device={responsive.getDevice()}/>
       </Layout>
+      <div style={{height:'20px'}}/>
       <Helmet>
         <meta property="og:type" content="article" />
         <meta property="og:title" content={`บ้าน${bundle.nameTH} - Baan ${bundle.nameEN}`} />
         <meta property="og:description" content={bundle.sloganTH} />
-        <meta property="og:image" content={coverPublicURL} />
-
+        <meta property="og:image" content={coverPublicURL} /
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3&appId=1613395845374285&autoLogAppEvents=1"></script>
       </Helmet>

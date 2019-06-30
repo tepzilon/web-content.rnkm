@@ -10,6 +10,7 @@ export default () => {
     <Layout device={responsive.getDevice()} title="BAAN" theme="pink">
       <BaanSplash device={responsive.getDevice()} />
       <BaanContainer device={responsive.getDevice()} />
+      <div style={{height:'20px'}}/>
     </Layout>
   )
 }
