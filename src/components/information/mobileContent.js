@@ -108,7 +108,7 @@ export default ({ device }) => {
             image={images[1]}
             title="Together we joy"
             subtitle="Freshy Night"
-            description="พบโชว์สุดพิเศษจากศิลปินชื่อดัง ที่จะมาทำให้น้องได้ปลดปล่อยความมันสุดขั้ว"
+            description="พบโชว์สุดพิเศษจากศิลปินชื่อดัง ที่จะมาทำให้น้องได้ปลดปล่อยความมันส์สุดขั้ว"
           />
           <Template
             image={images[2]}

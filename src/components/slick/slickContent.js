@@ -78,7 +78,7 @@ const slide2 = (
   <Slide
     title="Together we joy"
     subtitle="Freshy Night"
-    description="พบโชว์สุดพิเศษจากศิลปินชื่อดัง ที่จะมาทำให้น้องได้ปลดปล่อยความมันสุดขั้ว"
+    description="พบโชว์สุดพิเศษจากศิลปินชื่อดัง ที่จะมาทำให้น้องได้ปลดปล่อยความมันส์สุดขั้ว"
     position="left"
   />
 )
