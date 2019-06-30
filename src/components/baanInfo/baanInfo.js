@@ -36,7 +36,7 @@ const baanInfo = ({bundle, device}) => {
   
   //internal references
   const shareURL = `https://rubnongcu.life/gallery/${bundle.nameURL}`
-  const baanPrefix = (language) => language === 'TH' ? "บ้าน" : "Baan"
+  const baanPrefix = (language) => language === 'TH' ? "บ้าน" : "Baan "
   const bothLanguage = (bundle.sloganEN!=="" && bundle.descriptionEN!=="");
   const getDisplayLanguage = () => bothLanguage ? displayLanguage : 'TH';
 
@@ -76,7 +76,7 @@ const baanInfo = ({bundle, device}) => {
         }}
       >
         <div className={styles.content}>
-          <h1 type='header'>{`${baanPrefix(getDisplayLanguage())} ${bundle[`name${getDisplayLanguage()}`]}`}</h1>
+          <h1 type='header'>{`${baanPrefix(getDisplayLanguage())}${bundle[`name${getDisplayLanguage()}`]}`}</h1>
           <h3 type='header' dangerouslySetInnerHTML={{__html: `${bundle[`slogan${getDisplayLanguage()}`]}`}}/>
           <br/>
           <h3 dangerouslySetInnerHTML={{__html: `${bundle[`description${getDisplayLanguage()}`]}`.replace(/\n/g,'<br/>')}}/>
