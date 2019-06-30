@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './rnkm.module.scss'
-import ScrollableAnchor from 'react-scrollable-anchor'
+// import ScrollableAnchor from 'react-scrollable-anchor'
 
 const rnkm = ({ device }) => {
   return (

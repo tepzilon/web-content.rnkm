@@ -6,7 +6,7 @@ import NavigationBar from './navigationBar/navigationBar'
 import Footer from './footer/footer'
 import './layout.scss'
 import 'antd/dist/antd.css'
-import { BackTop } from 'antd'
+import { BackTop, Icon } from 'antd'
 
 export default ({ children, device, title, theme }) => (
   <div>
@@ -18,7 +18,11 @@ export default ({ children, device, title, theme }) => (
     <NavigationBar device={device} title={title} theme={theme}>
       {children}
     </NavigationBar>
-    <Footer device={device}/>
-    <BackTop />
+    <Footer device={device} />
+    <BackTop>
+      <div style={{ fontSize: 40, color: '#f58fa3', opacity: 0.8 }}>
+        <Icon type="up-circle" theme="filled" />
+      </div>
+    </BackTop>
   </div>
 )
