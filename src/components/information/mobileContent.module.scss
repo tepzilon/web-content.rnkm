@@ -1,5 +1,11 @@
 @import '../../shared/css/palette.scss';
 
+.bg-wrapper {
+  -webkit-box-shadow: 0px 0px 18px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 18px -12px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 18px -12px rgba(0, 0, 0, 0.75);
+}
+
 .intro-wrapper {
   padding: 4vw 4vw;
 }
@@ -17,12 +23,12 @@
   align-items: center;
 }
 
-.intro-image[device='tablet']{
+.intro-image[device='tablet'] {
   width: 20vw;
   height: 20vw;
 }
 
-.intro-image[device='mobile']{
+.intro-image[device='mobile'] {
   width: 45vw;
   height: 45vw;
 }
@@ -43,11 +49,11 @@
     1px 1px 0 #fff;
 }
 
-.intro-header[device='tablet']{
+.intro-header[device='tablet'] {
   font-size: 7vw;
 }
 
-.intro-header[device='mobile']{
+.intro-header[device='mobile'] {
   text-align: center;
   font-size: 14vw;
 }
@@ -56,46 +62,44 @@
   margin-top: -2vw;
 }
 
-.intro-subtitle[device='tablet']{
+.intro-subtitle[device='tablet'] {
   font-size: 2.2vw;
 }
 
-.intro-subtitle[device='mobile']{
+.intro-subtitle[device='mobile'] {
   text-align: center;
   font-size: 4.3vw;
 }
-
 
 .intro-description {
   margin-top: 3vw;
 }
 
-.intro-description[device='tablet']{
+.intro-description[device='tablet'] {
   font-size: 2.3vw;
 }
 
-.intro-description[device='mobile']{
+.intro-description[device='mobile'] {
   text-align: center;
   font-size: 4.4vw;
 }
 
-.intro-first-line[device='tablet']{
+.intro-first-line[device='tablet'] {
   text-indent: 3rem;
 }
 
 .intro-hashtag {
   font-family: 'Blanch Caps', 'Noto Sans', sans-serif;
   color: $theme-blue;
-  
 }
 
-.intro-hashtag[device='tablet']{
+.intro-hashtag[device='tablet'] {
   margin-top: 3vw;
   text-align: right;
   font-size: 4.2vw;
 }
 
-.intro-hashtag[device='mobile']{
+.intro-hashtag[device='mobile'] {
   text-align: center;
   font-size: 8vw;
 }
@@ -121,7 +125,7 @@
 .image-wrapper {
   display: flex;
   justify-content: center;
-  padding: 10px;
+  padding: 25px 15px ;
 }
 .image {
   border-radius: 20px;
