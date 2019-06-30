@@ -18,7 +18,7 @@ const walkSync = dir => {
 walkSync('./').forEach(imgPath => {
   // const webpPath = imgPath.replace(/(?:.(?!\.))+$/, ".webp")
   imagemin([`${imgPath}*`], path.join('./webp', imgPath), {
-    use: [imageminWebp({ quality: 80, resize: { width: 2000, height: 1125 } })],
+    use: [imageminWebp({ quality: 100, resize: { width: 50, height: 50 } })],
   }).then(() => {
     console.log(`${imgPath} optimized`)
   })
