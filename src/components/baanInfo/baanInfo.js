@@ -77,7 +77,7 @@ const baanInfo = ({bundle, device}) => {
       >
         <div className={styles.content}>
           <h1 type='header'>{`${baanPrefix(getDisplayLanguage())}${bundle[`name${getDisplayLanguage()}`]}`}</h1>
-          <h3 type='header' dangerouslySetInnerHTML={{__html: `${bundle[`slogan${getDisplayLanguage()}`]}`}}/>
+          <h3 type='header' dangerouslySetInnerHTML={{__html: `${bundle[`slogan${getDisplayLanguage()}`]}`.replace(/\n/g,'<br/>')}}/>
           <br/>
           <h3 dangerouslySetInnerHTML={{__html: `${bundle[`description${getDisplayLanguage()}`]}`.replace(/\n/g,'<br/>')}}/>
         </div>
