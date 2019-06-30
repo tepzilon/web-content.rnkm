@@ -20,7 +20,7 @@ export default ({ children, device, title, theme }) => (
     </NavigationBar>
     <Footer device={device} />
     <BackTop>
-      <div style={{ fontSize: 40, color: '#f58fa3', opacity: 0.8 }}>
+      <div className="inner-up-to-top-icon">
         <Icon type="up-circle" theme="filled" />
       </div>
     </BackTop>

@@ -45,31 +45,35 @@ export default ({ device }) => {
   const span = device === 'tablet' ? 12 : 24
 
   const Intro = () => (
-    <BackgroundImage fluid={data.background.childImageSharp.fluid}>
-      <div className={styles.introWrapper} device={device}>
-        <div className={styles.introImageWrapper}>
-          <div className={styles.introImage} device={device}>
-            <Img fluid={data.logo.childImageSharp.fluid} />
+    <div className={styles.bgWrapper}>
+      <BackgroundImage fluid={data.background.childImageSharp.fluid}>
+        <div className={styles.introWrapper} device={device}>
+          <div className={styles.introImageWrapper}>
+            <div className={styles.introImage} device={device}>
+              <Img fluid={data.logo.childImageSharp.fluid} />
+            </div>
+          </div>
+          <div className={styles.introContentWrapper} device={device}>
+            <div className={styles.introHeader} device={device}>
+              103 We Unite, We CUnique
+            </div>
+            <div className={styles.introSubtitle} device={device}>
+              " It’s always better when we are together "
+            </div>
+            <div className={styles.introDescription} device={device}>
+              <div className={styles.introFirstLine} device={device}>
+                มาร่วมเป็นส่วนหนึ่งในการสร้างความแตกต่าง
+              </div>
+              <div>ของพวกเราชาวจุฬาฯในงานรับน้องก้าวใหม่</div>
+              <div>พบกัน 3 - 5 สิงหาคม 2562</div>
+            </div>
+            <div className={styles.introHashtag} device={device}>
+              #WeuniteCUnique #UniteCU103
+            </div>
           </div>
         </div>
-        <div className={styles.introContentWrapper} device={device}>
-          <div className={styles.introHeader} device={device}>
-            103 We Unite, We CUnique
-          </div>
-          <div className={styles.introSubtitle} device={device}>
-            " It’s always better when we are together "
-          </div>
-          <div className={styles.introDescription} device={device}>
-            <div className={styles.introFirstLine} device={device}>มาร่วมเป็นส่วนหนึ่งในการสร้างความแตกต่าง</div>
-            <div>ของพวกเราชาวจุฬาฯในงานรับน้องก้าวใหม่</div>
-            <div>พบกัน 3 - 5 สิงหาคม 2562</div>
-          </div>
-          <div className={styles.introHashtag} device={device}>
-            #WeuniteCUnique #UniteCU103
-          </div>
-        </div>
-      </div>
-    </BackgroundImage>
+      </BackgroundImage>
+    </div>
   )
   const Template = ({ image, title, subtitle, description }) => (
     <Col span={span}>
