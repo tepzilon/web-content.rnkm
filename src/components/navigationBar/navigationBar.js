@@ -45,7 +45,7 @@ class NavigationBar extends Component {
     const { device, title, theme, children } = this.props
     const menus = [
       { text: 'Home', link: '/', isExternal: false },
-      { text: 'BAAN', link: '/gallery', isExternal: false },
+      { text: 'BAAN', link: '/baan', isExternal: false },
       // {
       //   text: <span>Register <span style={{fontFamily:'Noto Sans',verticalAlign: 'bottom'}}> / </span>Login</span>,
       //   link: 'https://www.yahoo.com/',

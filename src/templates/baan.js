@@ -31,7 +31,6 @@ const baan = ({data}) => {
     <div>
       <Layout device={responsive.getDevice()} title={`Baan ${bundle.nameEN}`} theme="pink">
         <BaanInfo bundle={bundle} device={responsive.getDevice()}/>
-        <div style={{height:'20px'}}/>
       </Layout>
       <Helmet>
         <meta property="og:type" content="article" />

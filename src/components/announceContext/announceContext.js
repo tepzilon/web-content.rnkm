@@ -7,10 +7,10 @@ import { useStaticQuery, graphql } from 'gatsby'
 const announceContext = ({ frontmatter, html, device }) => {
   const data = useStaticQuery(graphql`
     query {
-      background: file(relativePath: { eq: "background/background1.webp" }) {
+      background: file(relativePath: { eq: "background/seamless_alt.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2000, maxHeight: 1125, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
+          fluid(maxWidth:1080, maxHeight:540) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -18,7 +18,7 @@ const announceContext = ({ frontmatter, html, device }) => {
   `)
 
   return (
-    <BackgroundImage fluid={data.background.childImageSharp.fluid} style={{backgroundRepeat:'repeat'}}>
+    <BackgroundImage fluid={data.background.childImageSharp.fluid} style={{backgroundRepeat:'repeat', backgroundSize: '50%'}}>
       {/* <div className={styles.wholeWrapper} device={device}> */}
       <div className={styles.cardWrapperWrapper} device={device}>
         <div className={styles.cardWrapper} device={device}>
