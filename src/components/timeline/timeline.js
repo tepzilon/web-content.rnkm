@@ -35,7 +35,7 @@ const timeline = ({ device }) => {
       <div className={styles.header} device={device}>
         Timeline
       </div>
-      <Timeline mode={mode} style={{ padding: '0 20vw' }}>
+      <Timeline mode={mode} style={{ padding: '0 14vw' }}>
         {data.allTimelineJson.edges.map(time => (
           <Timeline.Item key={time.node.id} color="#F58FA3">
             <TimeTemplate date={time.node.date} content={time.node.content} />
