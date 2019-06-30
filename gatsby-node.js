@@ -14,7 +14,7 @@ exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
   const template = path.resolve('./src/templates/baan.js')
   data.forEach(baan => {
-    let path = 'gallery/' + baan.nameURL
+    let path = 'baan/' + baan.nameURL
     createPage({
       path,
       component: template,
