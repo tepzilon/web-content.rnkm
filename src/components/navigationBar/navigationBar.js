@@ -46,11 +46,11 @@ class NavigationBar extends Component {
     const menus = [
       { text: 'Home', link: '/', isExternal: false },
       { text: 'BAAN', link: '/gallery', isExternal: false },
-      {
-        text: <span>Register <span style={{fontFamily:'Noto Sans',verticalAlign: 'bottom'}}> / </span>Login</span>,
-        link: 'https://www.yahoo.com/',
-        isExternal: true,
-      },
+      // {
+      //   text: <span>Register <span style={{fontFamily:'Noto Sans',verticalAlign: 'bottom'}}> / </span>Login</span>,
+      //   link: 'https://www.yahoo.com/',
+      //   isExternal: true,
+      // },
       { text: 'Dormitory', link: '/announce/dormitory', isExternal: false },
       { text: 'FAQ', link: '/faq', isExternal: false },
     ]
