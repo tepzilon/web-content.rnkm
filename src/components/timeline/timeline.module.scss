@@ -1,0 +1,28 @@
+.header {
+  font-family: 'Blanch Caps', 'Noto Sans', sans-serif;
+  font-size: 50px;
+  padding: 0 5vw 10px 9vw;
+  color: black;
+}
+
+.header[device='desktop'] {
+  text-align: center;
+}
+
+.timeline-date {
+  font-family: 'Blanch Caps', 'Noto Sans', sans-serif;
+  font-size: 40px;
+}
+
+.timeline-date[device='mobile'] {
+  font-size: 38px;
+}
+
+.timeline-content {
+  font-size: 18px;
+  text-indent: 0.5rem;
+}
+
+.timeline-content[device='mobile'] {
+  font-size: 16px;
+}

@@ -5,6 +5,12 @@
     justify-content: center;
     align-items: center;
     padding: 20px 40px;
+    height: 60px;
+    font-size: 12px;
+}
+
+.footer[device='mobile']{
+    font-size: 3.3vw;
 }
 
 .link-footer{

@@ -1,9 +1,9 @@
 import React from 'react'
 import './footer.scss'
 
-const footer = () => {
+const footer = ({device}) => {
   return (
-    <div className="footer">
+    <div className="footer" device={device}>
       <div>
         <span>© Rubnongkaomai 2019 · </span>
         <a href="https://github.com/KKCORR" className="link-footer">KKCORR</a>
