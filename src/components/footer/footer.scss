@@ -9,6 +9,10 @@
     font-size: 12px;
 }
 
+.footer[device='mobile']{
+    font-size: 3.3vw;
+}
+
 .link-footer{
     transition: 0.5s;
     &:hover{

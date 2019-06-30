@@ -3,7 +3,7 @@
 }
 
 .whole-wrapper[device='desktop']{
-    width: 420px;
+    width: 390px;
 }
 
 .whole-wrapper[device='tablet']{
@@ -22,9 +22,15 @@
 }
 
 .textbox{
-    background-color: #dddddd;
+    background-color: #eeeeee;
     border-radius: 20px;
-    padding: 5px 12px;
+    padding: 10px 13px;
     margin: 10px 5px;
     display: inline-block;
+    word-wrap: break-word;
+}
+
+.textbox[user='me'] {
+    color: white;
+    background-color: #00a8ff;
 }

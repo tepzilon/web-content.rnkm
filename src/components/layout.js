@@ -18,7 +18,7 @@ export default ({ children, device, title, theme }) => (
     <NavigationBar device={device} title={title} theme={theme}>
       {children}
     </NavigationBar>
-    <Footer />
+    <Footer device={device}/>
     <BackTop />
   </div>
 )

@@ -5,14 +5,14 @@ import { useStaticQuery, graphql } from 'gatsby'
 const avatar = ({ gender }) => {
   const data = useStaticQuery(graphql`
     query {
-      maleAvatar: file(relativePath: { eq: "user/male.png" }) {
+      pheeAvatar: file(relativePath: { eq: "user/cu_freshmen.png" }) {
         childImageSharp {
           fluid(maxWidth: 50, maxHeight: 50) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
-      femaleAvatar: file(relativePath: { eq: "user/female.png" }) {
+      nongAvatar: file(relativePath: { eq: "user/nong.png" }) {
         childImageSharp {
           fluid(maxWidth: 50, maxHeight: 50) {
             ...GatsbyImageSharpFluid_withWebp
@@ -23,11 +23,11 @@ const avatar = ({ gender }) => {
   `)
 
   return (
-    <div style={{ height: 50, width: 50 }}>
+    <div style={{ height: 50, width: 50,borderRadius:'50%',overflow:'hidden' }}>
       {gender === 'male' ? (
-        <Img fluid={data.maleAvatar.childImageSharp.fluid} />
+        <Img fluid={data.pheeAvatar.childImageSharp.fluid} />
       ) : (
-        <Img fluid={data.femaleAvatar.childImageSharp.fluid} />
+        <Img fluid={data.nongAvatar.childImageSharp.fluid} />
       )}
     </div>
   )
