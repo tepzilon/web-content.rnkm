@@ -4,7 +4,10 @@
     margin-top: 15px;
 }
 
-.gallery-app[device='tablet'],
+.gallery-app[device='tablet'] {
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
 .gallery-app[device='mobile'] {
     margin-left: 0;
     margin-right: 0;

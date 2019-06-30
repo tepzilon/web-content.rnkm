@@ -37,7 +37,7 @@ export default ({ device }) => {
             node {
               name
               childImageSharp {
-                fluid(maxWidth: 160, maxHeight: 160) {
+                fluid(maxWidth: 500, maxHeight: 500) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
@@ -59,7 +59,7 @@ export default ({ device }) => {
     { char: 'S', text: 'บ้านขนาดเล็ก (S)' },
     { char: 'M', text: 'บ้านขนาดกลาง (M)' },
     { char: 'L', text: 'บ้านขนาดใหญ่ (L)' },
-    { char: 'XL', text: 'บ้านขนาดใหญ่มาก (XL)' },
+    { char: 'XL', text: 'บ้านขนาดใหญ่พิเศษ (XL)' },
   ]
 
   const BaanGrid = ({ size }) => (
