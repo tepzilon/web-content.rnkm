@@ -77,7 +77,7 @@ export default ({ device }) => {
       return <div>{baan.nameURL}</div>
     else
       return (
-        <Link to={'/gallery/' + baan.nameURL}>
+        <Link to={'/baan/' + baan.nameURL}>
           <div className={styles.buttonWrapper} device={device}>
             <div className={styles.imageWrapper}>
               <Img fluid={imageFetcher[baan.nameURL]} />
