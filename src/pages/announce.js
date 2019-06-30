@@ -8,7 +8,7 @@ export default ({ data }) => {
   const responsive = getResponsive()
   const device = responsive.getDevice()
   return (
-    <Layout device={device} title="Dormitory" theme="pink">
+    <Layout device={device} title="Announce" theme="pink">
       <BackgroundImage
         fluid={data.background.childImageSharp.fluid}
         style={{ backgroundRepeat: 'repeat', backgroundSize: '50%' }}
