@@ -1,7 +1,9 @@
 @import '../../shared/css/palette.scss';
 
 .timeline {
-  &[device='tablet'],
+  &[device='tablet'] {
+    padding: 0 50px;
+  }
   &[device='mobile'] {
     padding: 0 27px;
   }
@@ -32,7 +34,6 @@
 }
 
 .timeline-content {
-  
   font-size: 18px;
   text-indent: 0.5rem;
   &[device='tablet'],
@@ -42,6 +43,6 @@
   }
   &[device='mobile'] {
     font-size: 16px;
-    text-indent: 0;
+    margin-left: 16px;
   }
 }

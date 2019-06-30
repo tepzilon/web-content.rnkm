@@ -54,7 +54,7 @@ const baanInfo = ({ bundle, device }) => {
     }
   `)
 
-  console.log(data)
+  // console.log(data)
 
   return (
     <div>
