@@ -1,11 +1,14 @@
 .info-container[device='desktop'] {
   margin: 0 15vw 0 15vw;
-  font-size: 1vw;
+  font-size: 1.2vw;
 }
-.info-container[device='mobile'],
+.info-container[device='mobile'] {
+  margin: 0 0 0 0;
+  font-size: 3.6vw;
+}
 .info-container[device='tablet'] {
   margin: 0 0 0 0;
-  font-size: 3.5vw;
+  font-size: 2.4vw;
 }
 
 .text-wrapper {
