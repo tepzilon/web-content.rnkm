@@ -37,7 +37,7 @@ const baanInfo = ({ bundle, device }) => {
   const [animType, setAnimType] = useState('entrance')
 
   //internal references
-  const shareURL = `https://rubnongcu.life/gallery/${bundle.nameURL}`
+  const shareURL = `https://rubnongcu.life/baan/${bundle.nameURL}`
   const baanPrefix = language => (language === 'TH' ? 'บ้าน' : 'Baan ')
   const bothLanguage = bundle.sloganEN !== '' && bundle.descriptionEN !== ''
   const getDisplayLanguage = () => (bothLanguage ? displayLanguage : 'TH')
