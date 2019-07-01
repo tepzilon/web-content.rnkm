@@ -48,9 +48,7 @@ const introSlide = (
     subtitle={<span>" It’s always better when we are together "</span>}
     description={
       <div>
-        <div>
-          มาร่วมเป็นส่วนหนึ่งในการสร้างความแตกต่างของพวกเรา
-        </div>
+        <div>มาร่วมเป็นส่วนหนึ่งในการสร้างเอกลักษณ์ของพวกเรา</div>
         <div>ชาวจุฬาฯ ในงานรับน้องก้าวใหม่ พบกัน 3 - 5 สิงหาคม 2562</div>
       </div>
     }

@@ -1,0 +1,30 @@
+
+.card {
+  width: 70%;
+  height: 80px;
+  box-shadow: 20px 20px 39px -24px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 20px 20px 39px -24px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 20px 20px 39px -24px rgba(0, 0, 0, 0.75);
+  background-color: #2b5495;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px calc((100vw - 70%) / 2);
+  color: white;
+  font-size: 24px;
+  border-radius: 20px;
+  transition: 0.5s;
+  &[device='tablet']{
+    font-size: 20px;
+  }
+  &[device='mobile']{
+    height: 60px;
+    font-size: 16px;
+  }
+  &:hover{
+    filter: brightness(1.2);
+  }
+  &:active{
+    filter: brightness(1.4);
+  }
+}

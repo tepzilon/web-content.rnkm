@@ -16,7 +16,7 @@ export default () => {
       <Helmet>
         <meta property="og:type" content="article" />
         <meta property="og:title" content="งานรับน้องก้าวใหม่ จุฬาลงกรณ์มหาวิทยาลัย ปีการศึกษา 2562" />
-        <meta property="og:description" content="103 We Unite, We CUnique มาร่วมเป็นส่วนหนึ่งในการสร้างความแตกต่างของพวกเราชาวจุฬาฯ ในงานรับน้องก้าวใหม่" />
+        <meta property="og:description" content="103 We Unite, We CUnique มาร่วมเป็นส่วนหนึ่งในการสร้างเอกลักษณ์ของพวกเราชาวจุฬาฯ ในงานรับน้องก้าวใหม่" />
         <meta property="og:image" content={cover} />
       </Helmet>
       {information}

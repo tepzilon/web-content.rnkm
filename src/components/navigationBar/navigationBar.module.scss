@@ -1,6 +1,6 @@
 @import '../../shared/css/palette.scss';
-
-$toolbar-height: 80px;
+@import '../footer/footer.scss';
+@import '../../shared/css/constant.scss';
 
 .appbar {
   position: fixed;
@@ -82,5 +82,5 @@ $toolbar-height: 80px;
 }
 
 .wrapper {
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - $footer-height);
 }

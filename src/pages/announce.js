@@ -3,6 +3,7 @@ import { getResponsive } from '../shared/js/responsive'
 import Layout from '../components/layout'
 import { graphql, Link } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
+import styles from './announce.module.scss'
 
 export default ({ data }) => {
   const responsive = getResponsive()
@@ -11,27 +12,12 @@ export default ({ data }) => {
     <Layout device={device} title="Announce" theme="pink">
       <BackgroundImage
         fluid={data.background.childImageSharp.fluid}
-        style={{ backgroundRepeat: 'repeat', backgroundSize: '50%' }}
+        style={{ backgroundRepeat: 'repeat', backgroundSize: '50%',height:'calc(100vh - 160px)' }}
       >
-        <div style={{ height: 'calc(100vh - 140px)', padding:30}}>
+        <div>
           {data.allMarkdownRemark.edges.map(md => (
-            <Link to={md.node.frontmatter.path}>
-              <div
-                style={{
-                  width : '70%',
-                  height: 80,
-                  boxShadow: '20px 20px 39px -24px rgba(0,0,0,0.75)',
-                  backgroundColor: 'white',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  margin : '25px calc((100vw - 70%)/2)',
-                  color : '#555555',
-                  fontSize:24
-                }}
-              >
-                {md.node.frontmatter.title}
-              </div>
+            <Link to={md.node.frontmatter.path} key={md.node.frontmatter.title}>
+              <div className={styles.card} device={device}>{md.node.frontmatter.title}</div>
             </Link>
           ))}
         </div>
