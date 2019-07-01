@@ -1,0 +1,16 @@
+@import '../shared/css/constant.scss';
+@import '../shared/css/palette.scss';
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.text{
+  font-family: 'Blanch Caps','Noto Sans',sans-serif;
+  font-size: 15vw;
+  color: $theme-pink;
+  text-shadow: 2px 2px 0 #fff;
+}

@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import { getResponsive } from '../shared/js/responsive'
 import BackgroundImage from 'gatsby-background-image'
 import { useStaticQuery, graphql } from 'gatsby'
+import styles from './404.module.scss'
 
 export default () => {
   const responsive = getResponsive()
@@ -22,26 +23,10 @@ export default () => {
     <Layout device={device} title="Page not found" theme="pink">
       <BackgroundImage
         fluid={data.background.childImageSharp.fluid}
-        style={{ height: 'calc(100vh - 140px)' }}
+        style={{ height: 'calc(100vh - 160px)' }}
       >
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100%',
-          }}
-        >
-          <div
-            style={{
-              fontFamily: "'Blanch Caps','Noto Sans',sans-serif",
-              fontSize: '15vw',
-              color: '#F58FA3',
-              textShadow: '2px 2px 0 #fff',
-            }}
-          >
-            404 Page Not Found
-          </div>
+        <div className={styles.wrapper}>
+          <div className={styles.text}>404 Page Not Found</div>
         </div>
       </BackgroundImage>
     </Layout>
