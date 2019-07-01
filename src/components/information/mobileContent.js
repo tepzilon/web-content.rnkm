@@ -62,9 +62,9 @@ export default ({ device }) => {
             </div>
             <div className={styles.introDescription} device={device}>
               <div className={styles.introFirstLine} device={device}>
-                มาร่วมเป็นส่วนหนึ่งในการสร้างความแตกต่าง
+                มาร่วมเป็นส่วนหนึ่งในการสร้างเอกลักษณ์
               </div>
-              <div>ของพวกเราชาวจุฬาฯในงานรับน้องก้าวใหม่</div>
+              <div>ของพวกเราชาวจุฬาฯ ในงานรับน้องก้าวใหม่</div>
               <div>พบกัน 3 - 5 สิงหาคม 2562</div>
             </div>
             <div className={styles.introHashtag} device={device}>
